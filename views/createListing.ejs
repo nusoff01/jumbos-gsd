@@ -1,23 +1,23 @@
 <!doctype html>
 <html>
 <head>
-	<title>Signup</title>
+	<title>Create Listing</title>
 </head>
 <body>
-	<h1>Sign up to be a part of TextChange: Tufts</h1>
+	<h1>Create a textbook listing</h1>
 	<% if (message.length > 0) { %>
 		<div class="alert alert-danger"><%= message %></div>
 	<% } %>
-	<form action="/signup" method="post">
+	<form action="/listing" method="post">
 		<div>
-			<label>Email</label>
+			<label>book title</label>
 			<input type="text" class="form-control" name="email"/>
 		</div>
 		<div>
-			<label>Password</label>
+			<label>Price</label>
 			<input type="password" class="form-control" name="password"/>
 		</div>
-		<button type="submit">Signup</button>
+		<button type="submit">Create</button>
 	</form>
 </body>
 </html>

@@ -32,7 +32,18 @@ module.exports = function(app, passport) {
 	});
 
 	// process the signup form
-	// app.post('/signup', do all our passport stuff here);
+	app.post('/signup', passport.authenticate('local-signup', {
+		successRedirect : '/profile',
+		failureRedirect : '/signup',
+		failureFlash    : true
+	}));
+
+	//process the login form
+	app.post('/login', passport.authenticate('local-login', {
+		successRedirect : '/profile',
+		failureRedirect : '/login',
+		failureFlash    : true
+	}));
 
 	// =====================================
 	// PROFILE SECTION =====================

@@ -16,9 +16,9 @@ var configDB = require('./config/database.js');
 
 mongoose.connect(process.env.MONGOLAB_URI ||
                  process.env.MONGOHQ_URL  ||
-                 'mongodb://localhost/database');
+                 'mongodb://localhost/tuftsText');
 
-//require('./config/passport')(passport);
+require('./config/passport')(passport);
 
 //express application setup
 app.use(morgan('dev')); //log requests to the console
