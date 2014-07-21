@@ -64,11 +64,12 @@ module.exports = function(app, passport) {
 	});
 
 	//create a new listing
-	app.get('/listing', function(req, res){
-		res.render("createListing.ejs");
-	});
 	var listing = require('./lib/listing.js');
-	app.post('/listing', listing.postNewListing);
+	
+	app.get('/listing/list', listing.getAllListings);
+
+	app.post('/listing/new', listing.postNewListing);
+	app.get('/listing/new', listing.getNewListing);
 };
 
 // route middleware to make sure a user is logged in
