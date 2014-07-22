@@ -5,7 +5,7 @@ var courseSchema = mongoose.Schema({
 	number     : { type : Number},
 	department : { type : String},
 	//books      : { type : object.book}
-});
+}, {collection:'courses'});
 
-exports.course = mongoose.model('course', courseSchema);
+module.exports = mongoose.model('Course', courseSchema);
 

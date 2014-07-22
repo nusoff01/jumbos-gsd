@@ -23,7 +23,7 @@ module.exports = function(passport) {
 		passwordField: 'password',
 		passReqToCallback: true
 	},
-	function(req, email, password, done){
+	function(req, email, password, userName, done){
 		//User.findOne only fires if data is sent back
 		process.nextTick(function(){
 			//check to see if the user exists
@@ -36,11 +36,13 @@ module.exports = function(passport) {
 					var newUser = new User();
 					newUser.userLogin.email = email;
 					newUser.userLogin.password = newUser.generateHash(password);
-					newUser.save(function(err){
-						if(err)
-							throw err;
-						return done(null, newUser);
-					});
+					newUser.userName = "kk";
+					console.log("uername: " + userName);
+					// newUser.save(function(err){
+					// 	if(err)
+					// 		throw err;
+					// 	return done(null, newUser);
+					// });
 				}
 			});
 		});
@@ -53,7 +55,7 @@ module.exports = function(passport) {
         passReqToCallback : true // allows us to pass back the entire request to the callback
     },
     function(req, email, password, done) { // callback with email and password from our form
-
+    	
 		// find a user whose email is the same as the forms email
 		// we are checking to see if the user trying to login already exists
         User.findOne({ 'userLogin.email' :  email }, function(err, user) {

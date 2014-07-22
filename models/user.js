@@ -7,7 +7,7 @@ var userSchema = mongoose.Schema({
 		email    : { type : String },
 		password : { type : String }
 	},
-	name    	 : { type : String },
+	userName     : { type : String },
 	inventory    : [{ type : mongoose.Schema.Types.ObjectId, ref: 'book'}],
 	transactions : [{ type : mongoose.Schema.Types.ObjectId, ref: 'transaction'}]
 

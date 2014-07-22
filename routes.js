@@ -70,6 +70,13 @@ module.exports = function(app, passport) {
 
 	app.post('/listing/new', listing.postNewListing);
 	app.get('/listing/new', listing.getNewListing);
+
+	var book = require('./lib/book.js');
+	app.post('/book/new', book.postNewBook);
+
+	var course = require('./lib/course.js'); 
+	app.post('/course/new', course.postNewCourse);
+	app.get('/course/new', course.getNewCourse);
 };
 
 // route middleware to make sure a user is logged in

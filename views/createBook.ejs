@@ -1,11 +1,11 @@
 <!doctype html>
 <html>
 <head>
-	<title>Create Listing</title>
+	<title>Create Book</title>
 </head>
 <body>
-	<h1>Create a textbook listing</h1>
-	<form action="/listing/new" method="post">
+	<h1>Create a textbook</h1>
+	<form action="/book/new" method="post">
 		<div>
 			<label>book title</label>
 			<input type="text" class="form-control" name="name"/>
@@ -16,6 +16,5 @@
 		</div>
 		<button type="submit">Create</button>
 	</form>
-	<% console.log("user: " + user.userLogin.email) %>
 </body>
 </html>
