@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
 
+
 //set up a schema for user model
 var userSchema = mongoose.Schema({
 	userLogin :{
@@ -8,7 +9,7 @@ var userSchema = mongoose.Schema({
 		password : { type : String }
 	},
 	userName     : { type : String },
-	inventory    : [{ type : mongoose.Schema.Types.ObjectId, ref: 'listing'}],
+	inventory    : [{ type : mongoose.Schema.Types.ObjectId, ref: 'Listing'}],
 	transactions : [{ type : mongoose.Schema.Types.ObjectId, ref: 'transaction'}]
 
 });
