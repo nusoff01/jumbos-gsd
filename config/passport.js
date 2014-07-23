@@ -23,7 +23,7 @@ module.exports = function(passport) {
 		passwordField: 'password',
 		passReqToCallback: true
 	},
-	function(req, email, password, userName, done){
+	function(req, email, password, done){
 		//User.findOne only fires if data is sent back
 		process.nextTick(function(){
 			//check to see if the user exists
@@ -36,13 +36,14 @@ module.exports = function(passport) {
 					var newUser = new User();
 					newUser.userLogin.email = email;
 					newUser.userLogin.password = newUser.generateHash(password);
-					newUser.userName = "kk";
-					console.log("uername: " + userName);
-					// newUser.save(function(err){
-					// 	if(err)
-					// 		throw err;
-					// 	return done(null, newUser);
-					// });
+					newUser.userName = req.body.userName;
+					//console.log("uername: " + req.body.userName);
+					newUser.save(function(err){
+						if(err)
+							throw err;
+
+						return done(null, newUser);
+					});
 				}
 			});
 		});

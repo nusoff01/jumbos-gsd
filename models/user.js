@@ -8,7 +8,7 @@ var userSchema = mongoose.Schema({
 		password : { type : String }
 	},
 	userName     : { type : String },
-	inventory    : [{ type : mongoose.Schema.Types.ObjectId, ref: 'book'}],
+	inventory    : [{ type : mongoose.Schema.Types.ObjectId, ref: 'listing'}],
 	transactions : [{ type : mongoose.Schema.Types.ObjectId, ref: 'transaction'}]
 
 });
