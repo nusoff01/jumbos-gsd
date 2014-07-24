@@ -7,9 +7,9 @@
 	<h1>View all Listings</h1>
 
 	<% for(var i=0; i<listings.length; i++) { %>
-        <li>
-            <%= listings[i]%>
-        </li>
+        <h3>
+            Name of book: <%= listings[i].name%> | Seller: <%= listings[i].seller%> | Price: <%= listings[i].price%>
+        </h3>
     <% } %>
 </body>
 </html>

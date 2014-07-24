@@ -71,6 +71,7 @@ module.exports = function(app, passport) {
 
 	var book = require('./lib/book.js');
 	app.post('/book/new', book.postNewBook);
+	app.get('/book/new', book.getNewBook);
 
 	var course = require('./lib/course.js'); 
 	app.post('/course/new', course.postNewCourse);
