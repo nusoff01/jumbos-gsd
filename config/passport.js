@@ -24,6 +24,7 @@ module.exports = function(passport) {
 		passReqToCallback: true
 	},
 	function(req, email, password, done){
+		var userName = req.body.userName;
 		//User.findOne only fires if data is sent back
 		process.nextTick(function(){
 			//check to see if the user exists
@@ -33,16 +34,25 @@ module.exports = function(passport) {
 				if(user){
 					return done(null, false, req.flash('signupMessage', 'Account allready exists for that email address'));
 				} else {
-					var newUser = new User();
-					newUser.userLogin.email = email;
-					newUser.userLogin.password = newUser.generateHash(password);
-					newUser.userName = req.body.userName;
-					//console.log("uername: " + req.body.userName);
-					newUser.save(function(err){
+					User.findOne({'userName' : userName}, function(err, user){
 						if(err)
-							throw err;
+							return done(err);
+						if(user){
+							return done(null, false, req.flash('signupMessage', 'Account allready exists for that user name'));
+						}
+						else{
+							var newUser = new User();
+							newUser.userLogin.email = email;
+							newUser.userLogin.password = newUser.generateHash(password);
+							newUser.userName = userName;
+							//console.log("uername: " + req.body.userName);
+							newUser.save(function(err){
+								if(err)
+									throw err;
 
-						return done(null, newUser);
+								return done(null, newUser);
+							});
+						}
 					});
 				}
 			});

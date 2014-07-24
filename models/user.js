@@ -1,4 +1,4 @@
-/* user.js
+/* models/user.js
  * 
  */
 
@@ -14,7 +14,7 @@ var userSchema = mongoose.Schema({
 	},
 	userName     : { type : String },
 	inventory    : [{ type : mongoose.Schema.Types.ObjectId, ref: 'Listing'}],
-	transactions : [{ type : mongoose.Schema.Types.ObjectId, ref: 'transaction'}]
+	transactions : [{ type : mongoose.Schema.Types.ObjectId, ref: 'Transaction'}]
 
 });
 
