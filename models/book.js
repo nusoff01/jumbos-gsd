@@ -9,5 +9,5 @@ var bookSchema = mongoose.Schema({
 	name      : { type : String },
 	course    : { type : mongoose.Schema.Types.ObjectId, ref: 'course'}
 });
-exports.book = mongoose.model('Book', bookSchema);
+module.exports = mongoose.model('Book', bookSchema);
 

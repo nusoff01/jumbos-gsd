@@ -13,5 +13,5 @@ var transSchema = mongoose.Schema({
 	startTime : { type : Date }
 });
 
-exports.transaction = mongoose.model('Transaction', transSchema);
+module.exports = mongoose.model('Transaction', transSchema);
 
