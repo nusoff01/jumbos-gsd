@@ -4,11 +4,12 @@
 	<title>View Listings</title>
 </head>
 <body>
+<a href="/">Home</a> <a href="/profile">Profile</a>
 	<h1>View all Listings</h1>
 
 	<% for(var i=0; i<listings.length; i++) { %>
         <h3>
-            Name of book: <%= listings[i].book.name%> | Seller: <%= listings[i].seller%> | Price: <%= listings[i].price%>
+            Name of book: <%= books[i].name %> | Price: $<%= listings[i].price%> | Seller: <%= listings[i].seller%>
         </h3>
     <% } %>
 </body>
