@@ -69,6 +69,11 @@ module.exports = function(app, passport) {
 	app.post('/listing/new', listing.postNewListing);
 	app.get('/listing/new', listing.getNewListing);
 
+	//query listings by title
+	app.get('/listing/title/:q', listing.findListings);
+
+	app.get('/listing/search', listing.getSearch);
+
 	var book = require('./lib/book.js');
 	app.post('/book/new', book.postNewBook);
 	app.get('/book/new', book.getNewBook);

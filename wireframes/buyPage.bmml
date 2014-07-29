@@ -5,7 +5,7 @@
         <text>Peer%20to%20Peer%20Textbooks%0Ahttp%3A//www.p2ptext.com</text>
       </controlProperties>
     </control>
-    <control controlID="2" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="155" y="148" w="616" h="359" measuredW="200" measuredH="186" zOrder="1" locked="false" isInGroup="-1">
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="155" y="133" w="616" h="374" measuredW="200" measuredH="186" zOrder="1" locked="false" isInGroup="-1">
       <controlProperties>
         <backgroundAlpha>1</backgroundAlpha>
         <bold>true</bold>
@@ -15,7 +15,7 @@
         <text>buy%20a%20book%0Asell%20a%20book%0Amy%20listings%0Amy%20transactions</text>
       </controlProperties>
     </control>
-    <control controlID="3" controlTypeID="com.balsamiq.mockups::Title" x="245" y="90" w="-1" h="-1" measuredW="436" measuredH="43" zOrder="2" locked="false" isInGroup="-1">
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Title" x="245" y="81" w="-1" h="-1" measuredW="436" measuredH="43" zOrder="2" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Peer%20to%20Peer%20Text%3A%20Tufts</text>
       </controlProperties>
@@ -29,6 +29,39 @@
       <controlProperties>
         <size>24</size>
         <text>course</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::DataGrid" x="170" y="295" w="473" h="197" measuredW="353" measuredH="201" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <bold>true</bold>
+        <hLines>false</hLines>
+        <text>Book%20Title%2C%20Edition%2C%20Condition%2C%20Price%0AIntroduction%20to%20Biology%2C%205%2C%20Acceptable%2C%20%2425%20%0AIntroduction%20to%20Biology%2C%205%2C%20Very%20Good%2C%20%2445%20%0AIntroduction%20to%20Biology%2C%205%2C%20Like%20New%2C%20%2460%0AIntroduction%20to%20Biology%2C%205%2C%20Like%20New%2C%20%2465%0AIntroduction%20to%20Biology%2C%205%2C%20Like%20New%2C%20%2470%0AIntroduction%20to%20Biology%2C%204%2C%20Like%20New%2C%20%2455</text>
+        <value>0</value>
+        <verticalScrollbar>true</verticalScrollbar>
+        <vLines>false</vLines>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::SubTitle" x="170" y="228" w="-1" h="-1" measuredW="127" measuredH="27" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Deparment%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::TextInput" x="312" y="222" w="72" h="-1" measuredW="56" measuredH="38" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>24</size>
+        <text>BIO</text>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::SubTitle" x="399" y="228" w="-1" h="-1" measuredW="176" measuredH="27" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Course%20Number%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::ComboBox" x="590" y="224" w="-1" h="-1" measuredW="49" measuredH="35" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>24</size>
+        <text>11</text>
       </controlProperties>
     </control>
   </controls>
