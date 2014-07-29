@@ -1,0 +1,46 @@
+TIMEFRAME
+
+Target completion date: August 25, 2014
+
+Week of 7/28-8/3
+
+Backend Fun Fest!
+
+	- Finish all backend functionality except for transactions
+		- Work on verification on the backend of inputed data
+		- Ensure access only granted to logged in sessions
+		- finalize schema
+	- Finish wireframes
+	- Explore Angular, see if we even need it
+	- Explore jQuery for frontend functionality
+
+Week of 8/4 - 8/10
+
+Transactions and Frontend are King.
+	
+	- Complete backend!
+		- create chat functionality using node and socket.io
+		- finish transactions
+	- Begin frontend work
+		- Tie verification into the UI, display errors to the user
+		- Finish all fuctionality of user input going to the backend
+	- Begin designing the user experience
+
+Week of 8/11 - 8/17
+
+Make it look pretty.
+
+	- Fix anything that doesn't work
+	- Design and test, redesign, test some more, etc.
+
+Week of 8/18 - 8/24
+
+Put it on the interwebs.
+	
+	- Explore hosting options for the app
+	- Migrate database over to a mongoDB hosting site
+	- Test (if possible) to see how our host handles loads
+	- Decide on a hosting option and explore options for funding said hosting
+	- FUCK IT WE'll DO IT LIVE.
+
+LAUNCH DAY - 8/25

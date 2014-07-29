@@ -1,0 +1,22 @@
+TASK LIST
+
+Put a plus in a box if that task is complete
+
+
+
+User
+	Create User
+		Verify information       [ ]
+		Store user               [+]
+		UI                       [ ]
+	Login
+		Backend process          [+]
+		UI						 [ ]
+	Logout
+		Backend process          [+]
+		UI						 [ ] 
+Listing
+	Create listing
+		
+	Search for listing
+	Delete listing
