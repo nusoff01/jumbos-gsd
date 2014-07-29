@@ -7,10 +7,25 @@
 <a href="/">Home</a> <a href="/profile">Profile</a>
 	<h1>View all Listings</h1>
 
-	<% for(var i=0; i<listings.length; i++) { %>
-        <h3>
-            Name of book: <%= books[i].name %> | Price: $<%= listings[i].price%> | Seller: <%= listings[i].seller%>
-        </h3>
-    <% } %>
+	<table>
+		<thead>
+			<tr>
+				<th>book name</th>
+				<th>edition</th>
+				<th>condition</th>
+				<th>price</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% for(var i=0; i<listings.length; i++) { %>
+        		<tr>
+            		<td> <%= listings[i].book.name%> </td>
+            		<td> <%= listings[i].edition%> </td>
+            		<td> <%= listings[i].condition%> </td>
+            		<td> $<%= listings[i].price%> </td>
+        		</tr>
+    		<% } %>
+		</tbody>
+	</table>
 </body>
 </html>
