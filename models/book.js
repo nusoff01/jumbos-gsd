@@ -7,7 +7,7 @@ var mongoose = require('mongoose');
 
 var bookSchema = mongoose.Schema({
 	name      : { type : String },
-	course    : { type : mongoose.Schema.Types.ObjectId, ref: 'course'}
+	course    : { type : mongoose.Schema.Types.ObjectId, ref: 'Course'}
 });
 module.exports = mongoose.model('Book', bookSchema);
 

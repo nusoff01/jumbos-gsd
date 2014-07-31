@@ -7,12 +7,26 @@
 <a href="/">Home</a> <a href="/profile">Profile</a>
 	<h1>Find a book</h1>
 
-	<form action="/listing/search" method="get">
+
+	<% if (message) { %>
+		<div class="alert alert-danger"><%= message %></div>
+	<% } %>
+
+	<form action="/listing/search/title" method="get">
 		<div>
 			<label>book title</label>
 			<input type="text" class="form-control" name="q"/>
 		</div>
-		<button type="submit">Search</button>
+		<button type="submit">Search by Title</button>
+	</form>
+
+
+	<form action="/listing/search/course" method="get">
+		<div>
+			<label>book title</label>
+			<input type="text" class="form-control" name="q"/>
+		</div>
+		<button type="submit">Search by Title</button>
 	</form>
 
 

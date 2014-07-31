@@ -27,5 +27,13 @@
     		<% } %>
 		</tbody>
 	</table>
+
+
+
+	<% for(var i=0; i<listings.length; i++) { %>
+        <h3>
+            Name of book: <%= listings[i].book.name%> | Seller: <%= listings[i].seller%> | Price: <%= listings[i].price%>
+        </h3>
+    <% } %>
 </body>
 </html>

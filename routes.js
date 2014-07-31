@@ -70,9 +70,10 @@ module.exports = function(app, passport) {
 	app.get('/listing/new', listing.getNewListing);
 
 	//query listings by title
-	app.get('/listing/title/:q', listing.findListings);
+	//app.get('/listing/title/:q', listing.findListings);
 
-	app.get('/listing/search', listing.findListings);
+	app.get('/listing/search/title', listing.findListingsTitle);
+	app.get('/listing/search/course', listing.findListingsCourse);
 
 //Book procceses
 	var book = require('./lib/book.js');
