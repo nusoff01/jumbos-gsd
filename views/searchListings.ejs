@@ -2,22 +2,19 @@
 <html>
 <head>
 	<title>Find a Book</title>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 </head>
 <body>
 <a href="/">Home</a> <a href="/profile">Profile</a>
 	<h1>Find a book</h1>
 
-	
+	<form action="/listing/search" method="get">
+		<div>
+			<label>book title</label>
+			<input type="text" class="form-control" name="q"/>
+		</div>
+		<button type="submit">Search</button>
+	</form>
 
-	<%
-	$.get("/listing/title/book", function(data, textStatus, jqXHR) { 
-	    console.log("Get resposne:"); 
-	    console.dir(data); 
-	    console.log(textStatus); 
-	    console.dir(jqXHR); 
-	});
-	%>
 
 	<table id="searchResults">
 		<thead>

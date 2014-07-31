@@ -72,12 +72,14 @@ module.exports = function(app, passport) {
 	//query listings by title
 	app.get('/listing/title/:q', listing.findListings);
 
-	app.get('/listing/search', listing.getSearch);
+	app.get('/listing/search', listing.findListings);
 
+//Book procceses
 	var book = require('./lib/book.js');
 	app.post('/book/new', book.postNewBook);
 	app.get('/book/new', book.getNewBook);
 
+//course processes
 	var course = require('./lib/course.js'); 
 	app.post('/course/new', course.postNewCourse);
 	app.get('/course/new', course.getNewCourse);
