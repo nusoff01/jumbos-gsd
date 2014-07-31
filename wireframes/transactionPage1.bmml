@@ -1,0 +1,41 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="771" measuredH="615" mockupW="616" mockupH="615">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="155" y="0" w="616" h="615" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Peer%20to%20Peer%20Textbooks%0Ahttp%3A//www.p2ptext.com</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="179" y="130" w="570" h="450" measuredW="200" measuredH="186" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>1</backgroundAlpha>
+        <bold>true</bold>
+        <position>right</position>
+        <selectedIndex>3</selectedIndex>
+        <size>14</size>
+        <text>buy%20a%20book%0Asell%20a%20book%0Amy%20listings%0Amy%20transactions</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Title" x="245" y="81" w="-1" h="-1" measuredW="436" measuredH="43" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Peer%20to%20Peer%20Text%3A%20Tufts</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::DataGrid" x="188" y="184" w="442" h="227" measuredW="400" measuredH="141" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <bold>true</bold>
+        <hLines>false</hLines>
+        <text>Book%20Title%2C%20Price%2C%20Buyer%2C%20Contact%2C%20Confirm%0AIntroduction%20to%20Biology%2C%20%2450%2C%20User23%2C%20%5BContact%5D%2C%20%5BConfirm%5D%0AIntroduction%20to%20Biology%2C%20%2450%2C%20User33%2C%20%5BContact%5D%2C%20%5BConfirm%5D%0AIntroduction%20to%20Biology%2C%20%2450%2C%20User43%2C%20%5BContact%5D%2C%20%5BConfirm%5D%0AIntroduction%20to%20IR%2C%20%2440%2C%20User1%2C%20%5BContact%5D%2C%20%5BConfirm%5D</text>
+        <value>0</value>
+        <verticalScrollbar>true</verticalScrollbar>
+        <vLines>false</vLines>
+      </controlProperties>
+    </control>
+    <control controlID="18" controlTypeID="com.balsamiq.mockups::Label" x="374" y="145" w="-1" h="-1" measuredW="71" measuredH="24" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>16</size>
+        <text>Requests</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
