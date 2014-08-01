@@ -20,13 +20,18 @@
 		<button type="submit">Search by Title</button>
 	</form>
 
+	<hr />
 
 	<form action="/listing/search/course" method="get">
 		<div>
-			<label>book title</label>
-			<input type="text" class="form-control" name="q"/>
+			<label>Course Department</label>
+			<input type="text" class="form-control" name="department"/>
 		</div>
-		<button type="submit">Search by Title</button>
+		<div>
+			<label>Course Number</label>
+			<input type="number" class="form-control" name="number"/>
+		</div>
+		<button type="submit">Search by Course</button>
 	</form>
 
 
