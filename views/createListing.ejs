@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Create Listing</title>
+	<link href="../javascripts/vendor/jquery-ui/css/custom-theme/jquery-ui-1.9.2.css" rel="stylesheet">
 </head>
 <body>
 	<h1>Create a textbook listing</h1>
@@ -25,7 +26,7 @@
 		<h3>What class is this book for? (optional)</h3>
 		<div>
 			<label>Course Department</label>
-			<input type="string" class="form-control" name="cDepartment"/>
+			<input type="string" class="form-control" name="cDepartment" id="subject" />
 		</div>
 		<div>
 			<label>Course Number</label>
@@ -35,4 +36,13 @@
 	</form>
 	<% console.log("user: " + user.userLogin.email) %>
 </body>
+<script type="text/javascript" src="../javascripts/vendor/jquery-ui/js/jquery-1.8.3.js" ></script>
+<script type="text/javascript" src="../javascripts/vendor/jquery-ui/js/jquery-ui-1.9.2.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+	var subjects = ["ACL <All College Listing>", "AFR <Africana Studies>", "AMR <American Studies>", "ANTH <Anthropology>", "ANW <Africa In the New World>", "ARB <Arabic>", "ARCH <Archeology>", "AST <Astronomy>"];
+
+	$("#subject").autocomplete({source: subjects});
+	});
+</script>
 </html>

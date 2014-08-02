@@ -39,4 +39,5 @@ require('./routes.js')(app, passport); // load our routes and pass in our app an
 
 // launch 
 app.listen(port);
+app.use(express.static(__dirname +  '/public/'));
 console.log('Using port ' + port);
