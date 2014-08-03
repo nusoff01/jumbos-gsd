@@ -29,8 +29,7 @@ Questions
 
 TECHNICAL IMPLEMENTATION
 
-Technologies used - On the backend, we will be using the Express framework and Node.js, and mongodb as our storage. On the frontend, backbone.js will be used extesively, as well as some JQuery. Pure CSS modules will be used for design
-
+Technologies used - On the backend, we will be using the Express framework and Node.js, and mongodb as our storage.
 
 
 

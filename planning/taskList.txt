@@ -3,20 +3,38 @@ TASK LIST
 Put a plus in a box if that task is complete
 
 
+IMMEDIATE TASKS
+	- fix routes for searching
+	- for all user controlled interactions, add 
+		feedback messages so they can correct 
+		their errors
+	- ejs profile standard functions
+	- add authentication for all pages that 
+		require it, dump back to home if not
+		authorized
+
+
 
 User
 	Create User
 		Verify information       [ ]
 		Store user               [+]
-		UI                       [ ]
+		UI/frontend              [ ]
 	Login
 		Backend process          [+]
-		UI						 [ ]
+		UI/frontend				 [ ]
 	Logout
 		Backend process          [+]
-		UI						 [ ] 
+		UI/frontend				 [ ] 
 Listing
 	Create listing
 		
 	Search for listing
+		Search by title 		 [+]
+		Search by course		 [+]
+		UI/frontend				 [ ]
+
+
 	Delete listing
+
+Transaction
