@@ -1,11 +1,9 @@
-<!doctype html>
-<html>
-<head>
-	<title>Create Listing</title>
-	<link href="/javascripts/vendor/jquery-ui/css/custom-theme/jquery-ui-1.9.2.css" rel="stylesheet">
-</head>
-<body>
-	<h1>Create a textbook listing</h1>
+<%- include head.ejs %>
+
+	<% if (message) { %>
+		<div class="alert alert-danger"><%= message %></div>
+	<% } %>
+	
 	<form action="/listing/new" method="post">
 		<div>
 			<label>book title</label>
@@ -22,15 +20,6 @@
 		<div>
 			<label>condition</label>
 			<input type="string" class="form-control" name="condition"/>
-		</div>
-		<h3>What class is this book for? (optional)</h3>
-		<div>
-			<label>Course Department</label>
-			<input type="string" class="form-control" name="cDepartment" id="subject" />
-		</div>
-		<div>
-			<label>Course Number</label>
-			<input type="string" class="form-control" name="cNumber"/>
 		</div>
 		<button type="submit">Create</button>
 	</form>
