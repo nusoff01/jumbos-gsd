@@ -12,7 +12,10 @@ body {
     line-height: 1.7em;
     color: #7f8c8d;
     font-size: 13px;
+    text-align: center;
 }
+
+
 
 h1,
 h2,
@@ -33,6 +36,11 @@ a {
     max-width: 100%;
     height: auto;
 }
+
+.btn-danger a{
+    background-color: rgb(220,0,0);
+}
+
 
 /*
  * -- LAYOUT STYLES --
@@ -63,6 +71,7 @@ a {
     font-size: 100%;
 }
 
+/*
 .pure-form input[type] {
     border: 2px solid #ddd;
     box-shadow: none;
@@ -70,6 +79,7 @@ a {
     width: 100%;
     margin-bottom: 1em;
 }
+*/
 
 /*
  * -- PURE BUTTON STYLES --

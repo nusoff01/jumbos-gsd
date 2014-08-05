@@ -1,14 +1,17 @@
 <%- include head.ejs %>
 	<h2>My Listings</h2>
-	<table>
-		<tr>
-	        <td>Book Name</td>
-	        <td>Price</td>
-	        <td>Edition</td>
-	        <td>Condition</td>
-	    </tr>
+	<table class="pure-table">
+	    <thead>
+	        <tr>
+	            <th>Name</th>
+	            <th>Price</th>
+	            <th>Edition</th>
+	            <th>Condition</th>
+	            
+	        </tr>
+	    </thead>
 
-
+    	<tbody>
 		<% for(var i=0; i<user.inventory.length; i++) { %>
 	        <tr>
 	        	<td>
@@ -23,8 +26,15 @@
 	        	<td>
 	        		<%= user.inventory[i].condition%>
 	        	</td>
+	        	<td>
+	        		<a class=​"btn-danger" href=​"#">​
+	        			<i class="fa fa-trash-o fa-lg"></i>
+	        			Delete 
+	        		</a>​
+	        	</td>
 	        </tr>
 	    <% } %>
+	    </tbody>
 	</table>
 </body>
 </html>
