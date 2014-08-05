@@ -1,14 +1,43 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-	<title><%= pageTitle %></title>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="A layout example that shows off a responsive product landing page.">
+
+    <title>Title</title>
 	<link href="/javascripts/vendor/jquery-ui/css/custom-theme/jquery-ui-1.9.2.css" rel="stylesheet">
 	<link href="/public/styles/style.css"/>
-</head>
 
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+	<link rel="stylesheet" href="/stylesheets/marketing.css">
+<!--[if lte IE 8]>
+  
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+  
+<![endif]-->
+<!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
+<!--<![endif]-->
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/layouts/marketing-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <!--<![endif]-->
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+</head>
 <body>
-	<h1><%= pageTitle %></h1>
-	<h2><a href="/listing/search">Buy a book</a>
-		|| <a href="/listing/new">Sell a book</a>
-		|| <a href="/profile">My profile</a>
+	<div class="header">
+	    <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
+	        <p class="pure-menu-heading" href="">P2PText</p>
+	    </div>
+	</div>
+
+	<h1>Title</h1>
+	<h2 class="headLinks"><a href="/listing/search" class="pure-button pure-button-primary">Buy a book</a>
+		<a href="/listing/new" class="pure-button pure-button-primary">Sell a book</a>
+		<a href="/profile">My profile</a>
 	</h2>
+
+
+
