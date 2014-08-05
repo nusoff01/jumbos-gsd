@@ -1,13 +1,30 @@
 <%- include head.ejs %>
-	<a href="/listing/list">Public Listings</a>
-	<p>
-		<a href="/listing/new">Create a listing</a>
-	</p>
+	<h2>My Listings</h2>
+	<table>
+		<tr>
+	        <td>Book Name</td>
+	        <td>Price</td>
+	        <td>Edition</td>
+	        <td>Condition</td>
+	    </tr>
 
-	<% for(var i=0; i<user.inventory.length; i++) { %>
-        <li>
-            <%= user.inventory[i].book.name%>
-        </li>
-    <% } %>
+
+		<% for(var i=0; i<user.inventory.length; i++) { %>
+	        <tr>
+	        	<td>
+	        		<%= user.inventory[i].book.name%>
+	        	</td>
+	        	<td>
+	        		$<%= user.inventory[i].price%>
+	        	</td>
+	        	<td>
+	        		<%= user.inventory[i].edition%>
+	        	</td>
+	        	<td>
+	        		<%= user.inventory[i].condition%>
+	        	</td>
+	        </tr>
+	    <% } %>
+	</table>
 </body>
 </html>
