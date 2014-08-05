@@ -1,13 +1,40 @@
 <%- include head.ejs %>
-	<a href="/listing/list">Public Listings</a>
-	<p>
-		<a href="/listing/new">Create a listing</a>
-	</p>
+	<h2>My Listings</h2>
+	<table class="pure-table">
+	    <thead>
+	        <tr>
+	            <th>Name</th>
+	            <th>Price</th>
+	            <th>Edition</th>
+	            <th>Condition</th>
+	            
+	        </tr>
+	    </thead>
 
-	<% for(var i=0; i<user.inventory.length; i++) { %>
-        <li>
-            <%= user.inventory[i].book.name%>
-        </li>
-    <% } %>
+    	<tbody>
+		<% for(var i=0; i<user.inventory.length; i++) { %>
+	        <tr>
+	        	<td>
+	        		<%= user.inventory[i].book.name%>
+	        	</td>
+	        	<td>
+	        		$<%= user.inventory[i].price%>
+	        	</td>
+	        	<td>
+	        		<%= user.inventory[i].edition%>
+	        	</td>
+	        	<td>
+	        		<%= user.inventory[i].condition%>
+	        	</td>
+	        	<td>
+	        		<a class=​"btn-danger" href=​"#">​
+	        			<i class="fa fa-trash-o fa-lg"></i>
+	        			Delete 
+	        		</a>​
+	        	</td>
+	        </tr>
+	    <% } %>
+	    </tbody>
+	</table>
 </body>
 </html>
