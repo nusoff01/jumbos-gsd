@@ -1,57 +1,76 @@
 <%- include head.ejs %>
 
 
+	</style>
+
+
 	<% if (message) { %>
 		<div class="alert alert-danger"><%= message %></div>
 	<% } %>
-
-	<form action="/listing/search/title" method="get">
-		<div>
-			<label>book title</label>
-			<input type="text" class="form-control" name="q" id="title"/>
+	<div class="pure-g">
+		<div class="pure-u-1-2 l-box">
+			<form class="pure-form pure-form-aligned" action="/listing/search/title" method="get">
+				<fieldset>
+					<div class="pure-control-group">
+						<label>book title</label>
+						<input type="text" class="form-control" name="q" id="title"/>
+					</div>
+					<button type="submit" class="pure-button">Search by Title</button>
+				</fieldset>
+			</form>
 		</div>
-		<button type="submit">Search by Title</button>
-	</form>
+		<div class="pure-u-1-2 l-box">
+			<form class="pure-form pure-form-aligned" action="/listing/search/course" method="get">
+				<fieldset>
+					<div class="pure-control-group">
+						<label>Course Department</label>
+						<input type="text" class="form-control" name="department"/>
+					</div>
+					<div class="pure-control-group">
+						<label>Course Number</label>
+						<input type="number" class="form-control" name="number"/>
+					</div>
+					<button type="submit" class="pure-button">Search by Course</button>
+				</fieldset>
+			</form>
+		</div>	
+	</div>	
+	<hr/>
+	<table class="pure-table">
+	    <thead>
+	        <tr>
+	            <th>Name</th>
+	            <th>Price</th>
+	            <th>Edition</th>
+	            <th>Condition</th>
+	            
+	        </tr>
+	    </thead>
 
-	<hr />
-
-	<form action="/listing/search/course" method="get">
-		<div>
-			<label>Course Department</label>
-			<input type="text" class="form-control" name="department"/>
-		</div>
-		<div>
-			<label>Course Number</label>
-			<input type="number" class="form-control" name="number"/>
-		</div>
-		<button type="submit">Search by Course</button>
-	</form>
-
-
-	<table id="searchResults">
-		<thead>
-			<tr>
-				<th>book name</th>
-				<th>edition</th>
-				<th>condition</th>
-				<th>price</th>
-			</tr>
-		</thead>
-		<tbody>
-			<% if(listings){ %>
-				<% for(var i=0; i<listings.length; i++) { %>
-	        		<tr>
-	            		<td> <%= listings[i].book.name%> </td>
-	            		<td> <%= listings[i].edition%> </td>
-	            		<td> <%= listings[i].condition%> </td>
-	            		<td> $<%= listings[i].price%> </td>
-	        		</tr>
-	    		<% } %>
-	    	<% } %>
-		</tbody>
+    	<tbody>
+    	<% if(listings){ %>
+			<% for(var i=0; i<listings.length; i++) { %>
+		        <tr>
+		        	<td> <%= listings[i].book.name%> </td>
+		            <td> <%= listings[i].edition%> </td>
+		            <td> <%= listings[i].condition%> </td>
+		            <td> $<%= listings[i].price%> </td>
+		            <td> <a class="pure-button">Buy</a> </td>
+		        </tr>
+		    <% } %>
+		<% } %>    
+	    </tbody>
 	</table>
+
+
+
+
+
+
+
+	
 	<script type="text/javascript" src="/javascripts/vendor/jquery-ui/js/jquery-1.8.3.js" ></script>
-<script type="text/javascript" src="/javascripts/vendor/jquery-ui/js/jquery-ui-1.9.2.min.js"></script>
+	<script type="text/javascript" src="/javascripts/vendor/jquery-ui/js/jquery-ui-1.9.2.min.js"></script>
 	<script type="text/javascript">
 	$(function() {
 
