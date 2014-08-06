@@ -11,7 +11,9 @@ var listingSchema = mongoose.Schema({
 	price      : { type : Number},
 	seller     : { type : String},
 	edition    : { type : Number },
-	condition  : { type : String }
+	condition  : { type : String },
+	status     : { type : String }
+	// status has 4 possible values: "available", "pending", "sold", "cancelled"
 }, {collection:'listings'});
 
 module.exports = mongoose.model('Listing', listingSchema);
