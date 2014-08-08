@@ -57,7 +57,7 @@
 		            <td> $<%= listings[i].price%> </td>
 		            <td> 
 		            <form action="/transaction/postT" method="post">
-		            	<input type="hidden" name="listing" value="<%= listings[i] %>" />
+		            	<input type="hidden" name="listing" value="<%= listings[i]._id %>" />
 		            	<button type="submit" class="pure-button">Buy</button>
 		            </form>
 		            </td>
@@ -82,6 +82,7 @@
 
 		$("#title").autocomplete({source: t});
 	});
+	$('head').append('')
 
 	</script>
 </body>
