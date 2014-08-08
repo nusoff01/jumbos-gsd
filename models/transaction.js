@@ -7,12 +7,12 @@
  */
 
 var mongoose = require('mongoose');
-var Listing = require('Listing');
+var Listing = require('../models/listing.js');
 
 var transSchema = mongoose.Schema({
 	buyer     : { type : String },
 	listing   : { type : mongoose.Schema.Types.ObjectId, ref: 'Listing'},
-	status    : { type : String },
+	status    : { type : String }, //possible values: "ongoing", "completed", "failed"
 	startTime : { type : Date },
 	transTime : { type : Date },
 	transLoc  : { type : String },

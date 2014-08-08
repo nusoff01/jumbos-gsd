@@ -86,6 +86,10 @@ module.exports = function(app, passport) {
 	var course = require('./lib/course.js'); 
 	app.post('/course/new', course.postNewCourse);
 	app.get('/course/new', course.getNewCourse);
+
+//transaction processes
+	var transaction = require('./lib/transaction.js');
+	app.post('/transaction/postT', transaction.postTrans);
 };
 
 // route middleware to make sure a user is logged in

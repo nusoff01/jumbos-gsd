@@ -21,4 +21,12 @@ $(function() {
 		$("#login").show();
 		$("#signup-butn").show();
 	});
+
+	$("#buy-butn").on('click', function(){
+		console.log("pressed");
+	});
 });
+
+buy = function(listing){
+	console.log("listing id: " + listing._id);
+}

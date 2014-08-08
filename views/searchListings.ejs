@@ -55,19 +55,17 @@
 		            <td> <%= listings[i].edition%> </td>
 		            <td> <%= listings[i].condition%> </td>
 		            <td> $<%= listings[i].price%> </td>
-		            <td> <a class="pure-button">Buy</a> </td>
+		            <td> 
+		            <form action="/transaction/postT" method="post">
+		            	<input type="hidden" name="listing" value="<%= listings[i] %>" />
+		            	<button type="submit" class="pure-button">Buy</button>
+		            </form>
+		            </td>
 		        </tr>
 		    <% } %>
 		<% } %>    
 	    </tbody>
 	</table>
-
-
-
-
-
-
-
 	
 	<script type="text/javascript" src="/javascripts/vendor/jquery-ui/js/jquery-1.8.3.js" ></script>
 	<script type="text/javascript" src="/javascripts/vendor/jquery-ui/js/jquery-ui-1.9.2.min.js"></script>
@@ -84,6 +82,7 @@
 
 		$("#title").autocomplete({source: t});
 	});
+
 	</script>
 </body>
 </html>

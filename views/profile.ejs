@@ -12,7 +12,8 @@
 	    </thead>
 
     	<tbody>
-		<% for(var i=0; i<user.inventory.length; i++) { %>
+		<% for(var i=0; i<user.inventory.length; i++) { 
+			if(user.inventory[i].status = "available"){   %>
 	        <tr>
 	        	<td>
 	        		<%= user.inventory[i].book.name%>
@@ -33,7 +34,7 @@
 	        		</a>​
 	        	</td>
 	        </tr>
-	    <% } %>
+	    <% }} %>
 	    </tbody>
 	</table>
 </body>
