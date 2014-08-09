@@ -2,115 +2,49 @@
 
 <html>
     <head>
-<style type="text/css">
-.form-control {
-  display: block;
-  /*width: 100%;*/
-  height: 34px;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #555555;
-  background-color: #ffffff;
-  background-image: none;
-  border: 1px solid #cccccc;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-}
-.form-group {
-  margin-bottom: 15px;
-}
-.has-error .help-block {
-  color: #a94442;
-}
-.has-error {
-  border-color: #a94442;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-}
-.has-error .form-control:focus {
-  border-color: #843534;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
-}
-.has-success .form-control {
-  border-color: #3c763d;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-}
-.has-success .form-control:focus {
-  border-color: #2b542c;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
-}
-
-        </style>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+      <link rel="stylesheet" href="stylesheets/marketing.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/signupValidation.css">
     </head>
 <body ng-app="myApp">
         
-    <div class="col-sm-6">
-        <form name="userForm" novalidate>
-    
-            <div class="form-group" ng-class="{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }">
+    <div class="content-head col-sm-6">
+        <form class="pure-form pure-form-aligned"name="userForm" novalidate>
+        <fieldset>
+            <div class="pure-control-group" ng-class="{ 'has-error' : userForm.userName.$invalid && !userForm.userName.$pristine}">
                 <label>Username</label>
-                <input type="text" name="username" class="form-control" ng-model="user.username" ng-minlength="3" ng-maxlength="8">
-                <p ng-show="userForm.username.$error.minlength" class="help-block">Username is too short.</p>
-                <p ng-show="userForm.username.$error.maxlength" class="help-block">Username is too long.</p>
+                <input type="text" name="userName" class="form-control" ng-model="user.userName" ng-minlength="3" ng-maxlength="8" required>
+                <p ng-show="userForm.userName.$error.minlength" class="help-block">Username is too short.</p>
+                <p ng-show="userForm.userName.$error.maxlength" class="help-block">Username is too long.</p>
+                <p ng-show="userForm.userName.$error.required && !userForm.userName.$pristine" class="help-block">username is required</p>
             </div>
     
-            <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+            <div class="pure-control-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine}">
                 <label>Email</label>
                 <input type="email" name="email" class="form-control" ng-model="user.email">
-                <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
+                <p ng-show="userForm.email.$invalid && !userForm.email.$pristine && !userForm.email.$error.required" class="help-block">Enter a valid email.</p>
+                <p ng-show="userForm.email.$error.required && !userForm.email.$pristine" class="help-block">Email is required</p>
             </div>
     
-            <div class="form-group" ng-class="{ 'has-error' : userForm.password.$invalid-minlength}">
+            <div class="pure-control-group" ng-class="{ 'has-error' : userForm.password.$invalid-minlength}">
                 <label class="control-label">Password</label>
-                <input class="form-control" ng-model="user.password" type="password" name="password" ng-minlength=6 />
-                <p ng-show="userForm.password.$invalid-minlength" class="help-block">Your password is too short.</p>
+                <input class="form-control" ng-model="user.password" type="password" name="password" ng-minlength="6">
+                <p ng-show="userForm.password.$invalid-minlength" class="help-block">Password is too short.</p>
             </div>
     
-            <div class="form-group" ng-class="{'has-error' : userForm.confirmPassword.$error.match}">    
+            <div class="pure-control-group" ng-class="{'has-error' : userForm.confirmPassword.$error.match}">    
                 <label class="control-label">Confirm</label>  
-                <input class="form-control" ng-model="user.passwordConfirm" type="password" data-match="user.password" name="confirmPassword" required/>    
+                <input class="form-control" ng-model="user.passwordConfirm" type="password" data-match="user.password" name="confirmPassword"/>    
                 <p ng-show="userForm.confirmPassword.$error.match" class="help-block">Passwords do not match.</p>
             <div>
     
-            <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Submit</button>
-            
+            <button type="submit" class="pure-button pure-button-primary" ng-disabled="userForm.$invalid">Submit</button>
+            </fieldset>
         </form>
     </div>
     
 </body>
-<script type="text/javascript" src="jumbos-gsd\public\javascripts\vendor\jquery-ui\js\jquery-1.8.3.js"></script>
-<script type="text/javascript" src="codeschool/Angular/angular.min.js"></script>
-<script>
-    // create angular app
-    var app = angular.module('myApp', []);
-
-    // create angular directive for matching
-    app.directive('match', function () {
-        return {
-            require: 'ngModel',
-            restrict: 'A', // restrict to attributes
-            scope: {
-                match: '='
-            },
-            link: function(scope, elem, attrs, ctrl) {
-                // watch the 'confirmPassword' field for changes
-                scope.$watch(function() {
-                    return (ctrl.$pristine && angular.isUndefined(ctrl.$modelValue)) || scope.match === ctrl.$modelValue;
-                },
-                // update the validaty of 'confirmPassword' as it changes
-                function(currentValue) {
-                    ctrl.$setValidity('match', currentValue);
-                });
-            }
-        };
-    });
-</script>
+<script type="text/javascript" src="javascripts\vendor\jquery-ui\js\jquery-1.8.3.js"></script>
+<script type="text/javascript" src="../../codeschool/Angular/angular.min.js"></script>
+<script type="text/javascript" src="javascripts/matchDirective.js"></script>
 </html>

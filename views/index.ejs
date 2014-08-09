@@ -25,8 +25,9 @@
     <!--[if gt IE 8]><!-->
     <!--<![endif]-->
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/signupValidation.css">
 </head>
-<body>
+<body ng-app="myApp">
 	<div class="header">
 	    <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
 	        <a class="pure-menu-heading" href="">P2PText</a>
@@ -46,10 +47,6 @@
 	    </div>
 	</div>
 
-
-
-
-
 	<div class="content-wrapper">
 		<div class="content-head" id="login">
 			<form class="pure-form pure-form-aligned" action="/login" method="post">
@@ -63,35 +60,53 @@
 						<label>Password</label>
 						<input type="password" class="form-control" name="password"/>
 					</div>
-					<button type="submit" class="pure-button pure-button-primary">Login</button>
+					<button type="submit" class="pure-button">Login</button>
 				</fieldset>
 			</form>
 		</div>
 
 
 		<div class="content-head" id="signup">
-			<form class="pure-form pure-form-aligned" action="/signup" method="post">
-				<fieldset>
-					<legend>Sign up to be a part of Peer-to-Peer Text: Tufts</legend>
-					<div class="pure-control-group">
-						<label>Username</label>
-						<input type="text" class="form-control" name="userName" />
-					</div>	
-					<div class="pure-control-group">
-						<label>Email</label>
-						<input type="text" class="form-control" name="email" />
-					</div>
-					<div class="pure-control-group">
-						<label>Password</label>
-						<input type="password" class="form-control" name="password"/>
-					</div>
-					<button type="submit" class="pure-button pure-button-primary">Signup</button>
-				</fieldset>
+			<form name="userForm" class="pure-form pure-form-aligned" action="/signup" method="post">
+        		<fieldset>
+        			<legend>Sign Up</legend>
+        		    <div class="pure-control-group" ng-class="{ 'has-error' : userForm.userName.$invalid && !userForm.userName.$pristine}">
+        		        <label>Username</label>
+        		        <input type="text" name="userName" class="form-control" ng-model="user.userName" ng-minlength="3" ng-maxlength="8" required/>
+        		        <p ng-show="userForm.userName.$error.minlength" class="help-block">Username is too short.</p>
+        		        <p ng-show="userForm.userName.$error.maxlength" class="help-block">Username is too long.</p>
+        		        <p ng-show="userForm.userName.$error.required && !userForm.userName.$pristine" class="help-block">username is required</p>
+        		    </div>
+    
+            		<div class="pure-control-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine}">
+            		    <label>Email</label>
+            		    <input type="email" name="email" class="form-control" ng-model="user.email" required/>
+            		    <p ng-show="userForm.email.$invalid && !userForm.email.$pristine && !userForm.email.$error.required" class="help-block">Enter a valid email.</p>
+            		    <p ng-show="userForm.email.$error.required && !userForm.email.$pristine" class="help-block">Email is required</p>
+            		</div>
+    
+            		<div class="pure-control-group" ng-class="{ 'has-error' : userForm.password.$invalid-minlength}">
+            		    <label class="control-label">Password</label>
+            		    <input class="form-control" ng-model="user.password" type="password" name="password" ng-minlength="6">
+            		    <p ng-show="userForm.password.$invalid-minlength" class="help-block">Password is too short.</p>
+            		</div>
+    
+            		<div class="pure-control-group" ng-class="{'has-error' : userForm.confirmPassword.$error.match}">    
+            		    <label class="control-label">Confirm</label>  
+            		    <input class="form-control" ng-model="user.passwordConfirm" type="password" data-match="user.password" name="confirmPassword" required/>    
+            		    <p ng-show="userForm.confirmPassword.$error.match" class="help-block">Passwords do not match.</p>
+            		<div>
+    
+            		<button type="submit" class="submit pure-button" ng-disabled="userForm.$invalid">Submit</button>
+        		</fieldset>
 			</form>
 		</div>
 	</div>
 </body>
 <script type="text/javascript" src="/javascripts/vendor/jquery-ui/js/jquery-1.8.3.js"></script>
 <script type="text/javascript" src="/javascripts/index.js"></script>
+<script type="text/javascript" src="/javascripts/vendor/angular/angular.min.js"></script>
+<script type="text/javascript" src="/javascripts/matchDirective.js"></script>
+
 </html>
 
