@@ -31,34 +31,35 @@
 	<div class="header">
 	    <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
 	        <a class="pure-menu-heading" href="">P2PText</a>
+	        <ul>
+	        	<li><a href="#" id="signup-butn">Sign Up</a></li>
+	        	<li><a href="#" id="login-butn">Login</a></li>
+	        </ul>
 	    </div>
 	</div>
-
+<!-- 
 	<div class="splash-container">
 	    <div class="splash">
-	        <h1 class="splash-head">Peer-to-Peer Text: Tufts</h1>
+	        <h1 class="splash-head">Peer-to-Peer Text</h1>
 	        <p class="splash-subhead">
 	            A convenient textbook exchange network which cuts out the middle man.
 	        </p>
-	        <p>
-	            <button class="pure-button pure-button-primary" id="signup-butn">Sign Up</button>
-	            <button class="pure-button pure-button-primary" id="login-butn">Login</button>
-	        </p>
 	    </div>
-	</div>
+	</div> -->
 
-	<div class="content-wrapper">
-		<div class="content-head" id="login">
+	<div class="form-content">
+
+		<div class="content-head pure-u-3-5" id="login">
 			<form class="pure-form pure-form-aligned" action="/login" method="post">
 				<fieldset>
 					<legend>Login</legend>
 					<div class="pure-control-group">
 						<label>Email</label>
-						<input type="text" class="form-control" name="email" />
+						<input type="text" class="form-control" name="email" placeholder="Email"/>
 					</div>
 					<div class="pure-control-group">
 						<label>Password</label>
-						<input type="password" class="form-control" name="password"/>
+						<input type="password" class="form-control" name="password" placeholder="Password"/>
 					</div>
 					<button type="submit" class="pure-button">Login</button>
 				</fieldset>
@@ -66,7 +67,7 @@
 		</div>
 
 
-		<div class="content-head" id="signup">
+		<div class="content-head pure-u-3-5" id="signup">
 			<form name="userForm" class="pure-form pure-form-aligned" action="/signup" method="post">
         		<fieldset>
         			<legend>Sign Up</legend>
