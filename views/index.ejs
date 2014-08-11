@@ -53,6 +53,9 @@
 			<form class="pure-form pure-form-aligned" action="/login" method="post">
 				<fieldset>
 					<legend>Login</legend>
+						<% if (message.length > 0) { %>
+							<p class="alert"><%= message %></p>
+						<% } %>
 					<div class="pure-control-group">
 						<label>Email</label>
 						<input type="text" class="form-control" name="email" placeholder="Email"/>

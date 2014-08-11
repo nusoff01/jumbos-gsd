@@ -4,7 +4,7 @@ module.exports = function(app, passport) {
 	// HOME PAGE (with login links) ========
 	// =====================================
 	app.get('/', function(req, res) {
-		res.render('index.ejs'); // load the index.ejs file
+		res.render('index.ejs', { message: req.flash('loginMessage') }); // load the index.ejs file
 	});
 
 	// =====================================
@@ -40,7 +40,7 @@ module.exports = function(app, passport) {
 	//process the login form
 	app.post('/login', passport.authenticate('local-login', {
 		successRedirect : '/profile',
-		failureRedirect : '/login',
+		failureRedirect : '/',
 		failureFlash    : true
 	}));
 
