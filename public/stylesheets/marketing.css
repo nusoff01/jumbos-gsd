@@ -7,6 +7,21 @@ New CSS
 .profile {
     margin-top: 85px;
 }
+.alert {
+  color: #a94442;
+  margin: 0;
+}
+.books {
+    text-align: left;
+    margin: 0;
+}
+.books ul {
+    list-style-type: none;
+}
+
+.books ul li{
+    display: inline;
+}
 /*
 End of new content
 */

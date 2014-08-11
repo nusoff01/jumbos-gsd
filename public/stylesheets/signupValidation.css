@@ -16,10 +16,7 @@
   -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }*/
-.alert {
-  color: #a94442;
-  margin: 0;
-}
+
 .help-block {
   margin:0;
 }

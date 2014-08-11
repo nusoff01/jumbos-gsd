@@ -1,5 +1,5 @@
 <%- include head.ejs %>
-
+<div class="profile">
 	<% if (message) { %>
 		<div class="alert alert-danger">
 			<%= message %>
@@ -8,36 +8,39 @@
 			<% } %>
 		</div>
 	<% } %>
-	
-	<form class="pure-form pure-form-aligned" action="/listing/new" method="post">
-		<fieldset>
-			<div class="pure-control-group">
-				<label for="name">book title</label>
-				<input id="name" type="text" class="form-control" name="name"/>
-			</div>
-			
-			<div class="pure-control-group">
-				<label for="price">Price</label>
-				<input id="price" type="number" class="form-control" name="price"/>
-			</div>
-			
-			<div class="pure-control-group">
-				<label for="edition">Edition</label>
-				<input id="edition" type="number" name="edition"/>
-			</div>	
-			
-			<div class="pure-control-group">
-				<label for="condition">condition</label>
-				<select class="form-control" name="condition" id="condition">
-					<option>Like New</option>
-					<option>Very Good</option>
-					<option>Good</option>
-					<option>Acceptable</option>
-				</select>
-			</div>
-			<button type="submit" class="pure-button pure-button-primary">Create</button>
-		</fieldset>
-	</form>
+	<div class="pure-u">
+		<h2>Publish Book to Market</h2>
+		<form class="pure-form pure-form-aligned" action="/listing/new" method="post">
+			<fieldset>
+				<div class="pure-control-group">
+					<label for="name">Book Title</label>
+					<input id="name" type="text" class="form-control" name="name"/>
+				</div>
+				
+				<div class="pure-control-group">
+					<label for="price">Price</label>
+					<input id="price" type="number" class="form-control" name="price"/>
+				</div>
+				
+				<div class="pure-control-group">
+					<label for="edition">Edition</label>
+					<input id="edition" type="number" name="edition"/>
+				</div>	
+				
+				<div class="pure-control-group">
+					<label for="condition">Condition</label>
+					<select class="form-control" name="condition" id="condition">
+						<option>Like New</option>
+						<option>Very Good</option>
+						<option>Good</option>
+						<option>Acceptable</option>
+					</select>
+				</div>
+				<button type="submit" class="pure-button">Create</button>
+			</fieldset>
+		</form>
+	</div>
+</div>
 </body>
 <script type="text/javascript" src="../javascripts/vendor/jquery-ui/js/jquery-1.8.3.js" ></script>
 <script type="text/javascript" src="../javascripts/vendor/jquery-ui/js/jquery-ui-1.9.2.min.js"></script>

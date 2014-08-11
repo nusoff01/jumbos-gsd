@@ -1,66 +1,90 @@
 <%- include head.ejs %>
 <div class="profile">
-	<h2>My Listings</h2>
-	<table class="pure-table">
-	    <thead>
-	        <tr>
-	            <th>Name</th>
-	            <th>Price</th>
-	            <th>Edition</th>
-	            <th>Condition</th>
-	            
-	        </tr>
-	    </thead>
+	
+	<h1>My Listings</h1>
 
-    	<tbody>
-		<% for(var i=0; i<user.inventory.length; i++) { 
-			if(user.inventory[i].status = "available"){   %>
-	        <tr>
-	        	<td>
-	        		<%= user.inventory[i].book.name%>
-	        	</td>
-	        	<td>
-	        		$<%= user.inventory[i].price%>
-	        	</td>
-	        	<td>
-	        		<%= user.inventory[i].edition%>
-	        	</td>
-	        	<td>
-	        		<%= user.inventory[i].condition%>
-	        	</td>
-	        	<td>
-	        		<a class=​"btn-danger" href=​"#">​
-	        			<i class="fa fa-trash-o fa-lg"></i>
-	        			Delete 
-	        		</a>​
-	        	</td>
-	        </tr>
-	    <% }} %>
-	    </tbody>
-	</table>
-	<h2>My Purchases</h2>
-	<table class="pure-table">
-		<thead>
-			<th>Book</th>
-			<th>Price</th>
-			<th>Seller</th>
-			<th>Status</th>
-		</thead>
-	    <tbody>
-	    <% for(var i=0; i<user.transactions.length; i++) { %>
-	    	<tr>
-	    		<td><%= user.transactions[i].listing.book.name%></td>
-	    		<td>$<%= user.transactions[i].listing.price%></td>
-	        	<td>
-	        		<%= user.transactions[i].listing.seller%> 
-	        	</td>
-	        	<td>
-	        		<%= user.transactions[i].status%>
-	        	</td>
-	        </tr>
-	    	<%=user.transactions[i].listing%>
-	    <% } %>
-	    </tbody>
-	</table>
+	<div class="pure-u">
+		<div class="books">
+			<ul>
+				<% for(var i=0; i<user.inventory.length; i++) { 
+					if(user.inventory[i].status = "available"){   %>
+				<li>
+				<h2><%=user.inventory[i].book.name%></h2>
+				<ul>
+					<li>$<%=user.inventory[i].price%></li>
+					<li>Edition:<%=user.inventory[i].edition%></li>
+					<li>Condition: <%=user.inventory[i].condition%></li>
+					<li><a class="alert" href="#"><i class="fa fa-trash-o fa-lg"></i>Delete </a></li>
+				</ul>
+				</li>
+	    		<% }} %>
+			</ul>
+		</div>
+	</div>
+	<div class="pure-u-5-5">
+		<table class="pure-table pure-table-horizontal">
+	    	<thead>
+	        	<tr>
+	            	<th>Name</th>
+	            	<th>Price</th>
+	            	<th>Edition</th>
+	            	<th>Condition</th>
+	            	<th></th>
+	        	</tr>
+	    	</thead>
+
+    		<tbody>
+			<% for(var i=0; i<user.inventory.length; i++) { 
+				if(user.inventory[i].status = "available"){   %>
+	        	<tr>
+	        		<td>
+	        			<%= user.inventory[i].book.name%>
+	        		</td>
+	        		<td>
+	        			$<%= user.inventory[i].price%>
+	        		</td>
+	        		<td>
+	        			<%= user.inventory[i].edition%>
+	        		</td>
+	        		<td>
+	        			<%= user.inventory[i].condition%>
+	        		</td>
+	        		<td>
+	        			<a class="alert" href=​"#">​
+	        				<i class="fa fa-trash-o fa-lg"></i>
+	        				Delete 
+	        			</a>​
+	        		</td>
+	        	</tr>
+	    	<% }} %>
+	    	</tbody>
+		</table>
+	</div>
+	<div class="pure-u-5-5">
+		<h2>My Purchases</h2>
+		<table class="pure-table pure-table-horizontal">
+			<thead>
+				<th>Book</th>
+				<th>Price</th>
+				<th>Seller</th>
+				<th>Status</th>
+			</thead>
+		    <tbody>
+		    <% for(var i=0; i<user.transactions.length; i++) { %>
+		    	<tr>
+		    		<td><%= user.transactions[i].listing.book.name%></td>
+		    		<td>$<%= user.transactions[i].listing.price%></td>
+		        	<td>
+		        		<%= user.transactions[i].listing.seller%> 
+		        	</td>
+		        	<td>
+		        		<%= user.transactions[i].status%>
+		        	</td>
+		        </tr>
+		    	<%=user.transactions[i].listing%>
+		    <% } %>
+		    </tbody>
+		</table>
+	</div>
 </div>
 <%- include footer.ejs %>
