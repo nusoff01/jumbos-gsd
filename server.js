@@ -1,17 +1,18 @@
-var express = require('express');
-var app = express();
-var port  = 5000;
-var mongoose = require('mongoose');
-var passport = require('passport');
-var flash 	 = require('connect-flash');
+var io           = require('socket.io');
+var express      = require('express');
+var app          = express();
+var port         = 5000;
+var mongoose     = require('mongoose');
+var passport     = require('passport');
+var flash 	     = require('connect-flash');
 
 var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
 
-var configDB = require('./config/database.js');
-var listing = require('./lib/listing.js');
+var configDB     = require('./config/database.js');
+var listing      = require('./lib/listing.js');
 
 //config
 
@@ -33,6 +34,9 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
+//create global variable message
+app.set('message', '');
+
 // routes 
 require('./routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
 
@@ -41,3 +45,5 @@ require('./routes.js')(app, passport); // load our routes and pass in our app an
 app.listen(port);
 app.use(express.static(__dirname +  '/public/'));
 console.log('Using port ' + port);
+
+
