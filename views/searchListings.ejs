@@ -39,6 +39,7 @@
 	            <th>Name</th>
 	            <th>Edition</th>
 	            <th>Condition</th>
+	            <th>Seller</th>
 	            <th>Price</th>
 	            <th></th>
 	        </tr>
@@ -47,18 +48,22 @@
     	<tbody>
     	<% if(listings){ %>
 			<% for(var i=0; i<listings.length; i++) { %>
-		        <tr>
-		        	<td> <%= listings[i].book.name%> </td>
-		            <td> <%= listings[i].edition%> </td>
-		            <td> <%= listings[i].condition%> </td>
-		            <td> $<%= listings[i].price%> </td>
-		            <td> 
-		            <form action="/transaction/postT" method="post">
-		            	<input type="hidden" name="listing" value="<%= listings[i]._id %>" />
-		            	<button type="submit" class="pure-button">Buy</button>
-		            </form>
-		            </td>
-		        </tr>
+				<% console.log('userName: ' + user.userName) %>
+				<% if(listings[i].seller != user.userName){ %>
+			        <tr>
+			        	<td> <%= listings[i].book.name %></td>
+			            <td> <%= listings[i].edition %>  </td>
+			            <td> <%= listings[i].condition %></td>
+			            <td> <%= listings[i].seller %>   </td>
+			            <td> $<%= listings[i].price %>   </td>
+			            <td> 
+			            <form action="/transaction/postT" method="post">
+			            	<input type="hidden" name="listing" value="<%= listings[i]._id %>" />
+			            	<button type="submit" class="pure-button">Buy</button>
+			            </form>
+			            </td>
+			        </tr>
+			    <% } %>
 		    <% } %>
 		<% } %>    
 	    </tbody>
