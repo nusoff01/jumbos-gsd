@@ -72,6 +72,8 @@ module.exports = function(app, passport) {
 	//query listings by title
 	//app.get('/listing/title/:q', listing.findListings);
 
+	app.post('/listing/delete',       listing.deleteListing);
+
 
 	app.get('/listing/search',        listing.findListings);
 	app.get('/listing/search/title',  listing.findListingsTitle);

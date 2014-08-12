@@ -5,24 +5,6 @@
 	<% } %> 
 	<h1>My Listings</h1>
 
-	<div class="pure-u">
-		<div class="books">
-			<ul>
-				<% for(var i=0; i<user.inventory.length; i++) { 
-					if(user.inventory[i].status = "available"){   %>
-				<li>
-				<h2><%=user.inventory[i].book.name%></h2>
-				<ul>
-					<li>$<%=user.inventory[i].price%></li>
-					<li>Edition:<%=user.inventory[i].edition%></li>
-					<li>Condition: <%=user.inventory[i].condition%></li>
-					<li><a class="alert" href="#"><i class="fa fa-trash-o fa-lg"></i>Delete </a></li>
-				</ul>
-				</li>
-	    		<% }} %>
-			</ul>
-		</div>
-	</div>
 	<div class="pure-u-5-5">
 		<table class="pure-table pure-table-horizontal">
 	    	<thead>
@@ -52,10 +34,10 @@
 	        			<%= user.inventory[i].condition%>
 	        		</td>
 	        		<td>
-	        			<a class="alert" href=​"#">​
-	        				<i class="fa fa-trash-o fa-lg"></i>
-	        				Delete 
-	        			</a>​
+	        			<form action="/listing/delete" method="post">
+		            		<input type="hidden" name="id" value="<%= user.inventory[i]._id %>" />
+		            		<button type="submit" class="alert"><i class="fa fa-trash-o fa-lg"></i>Delete </button>
+		            	</form>
 	        		</td>
 	        	</tr>
 	    	<% }} %>
@@ -83,7 +65,7 @@
 		        		<%= user.transactions[i].status%>
 		        	</td>
 		        </tr>
-		    	<%=user.transactions[i].listing%>
+		    
 		    <% } %>
 		    </tbody>
 		</table>
