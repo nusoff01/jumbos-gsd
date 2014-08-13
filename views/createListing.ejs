@@ -10,35 +10,37 @@
 	<% } %>
 	<div class="pure-u">
 		<h2>Publish Book to Market</h2>
-		<form class="pure-form pure-form-aligned" action="/listing/new" method="post">
-			<fieldset>
-				<div class="pure-control-group">
-					<label for="name">Book Title</label>
-					<input id="name" type="text" class="form-control" name="name"/>
-				</div>
-				
-				<div class="pure-control-group">
-					<label for="price">Price</label>
-					<input id="price" type="number" class="form-control" name="price"/>
-				</div>
-				
-				<div class="pure-control-group">
-					<label for="edition">Edition</label>
-					<input id="edition" type="number" name="edition"/>
-				</div>	
-				
-				<div class="pure-control-group">
-					<label for="condition">Condition</label>
-					<select class="form-control" name="condition" id="condition">
-						<option>Like New</option>
-						<option>Very Good</option>
-						<option>Good</option>
-						<option>Acceptable</option>
-					</select>
-				</div>
-				<button type="submit" class="pure-button">Create</button>
-			</fieldset>
-		</form>
+		<div class="form-container">
+			<form class="pure-form pure-form-aligned" action="/listing/new" method="post">
+				<fieldset class="pure-from-fieldset">
+					<div class="pure-control-group">
+						<label for="name">Book Title</label>
+						<input id="name" type="text" class="form-control" name="name"/>
+					</div>
+					
+					<div class="pure-control-group">
+						<label for="price">Price</label>
+						<input id="price" type="number" class="form-control" name="price"/>
+					</div>
+					
+					<div class="pure-control-group">
+						<label for="edition">Edition</label>
+						<input id="edition" type="number" name="edition"/>
+					</div>	
+					
+					<div class="pure-control-group">
+						<label for="condition">Condition</label>
+						<select class="form-control" name="condition" id="condition">
+							<option>Like New</option>
+							<option>Very Good</option>
+							<option>Good</option>
+							<option>Acceptable</option>
+						</select>
+					</div>
+					<button type="submit" class="pure-button">Create</button>
+				</fieldset>			
+			</form>
+		</div>
 	</div>
 </div>
 </body>
