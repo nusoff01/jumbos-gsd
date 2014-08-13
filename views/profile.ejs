@@ -48,14 +48,24 @@
 		<h2>My Purchases</h2>
 		<table class="pure-table pure-table-horizontal">
 			<thead>
+				<th></th>
 				<th>Book</th>
 				<th>Price</th>
 				<th>Seller</th>
 				<th>Status</th>
 			</thead>
 		    <tbody>
-		    <% for(var i=0; i<user.transactions.length; i++) { %>
+		    <% console.log('Trans number: ' + user.transactions.length) %>
+		    <% for(var i=0; i < user.transactions.length; i++) { %>
 		    	<tr>
+		    		<td>
+		    			<% if(user.transactions[i].buyer == user.userName){ %>
+		    				BUYER
+		    			<% } else { %>
+		    				SELLER
+		    			<% } %>
+
+		    		</td>
 		    		<td><%= user.transactions[i].listing.book.name%></td>
 		    		<td>$<%= user.transactions[i].listing.price%></td>
 		        	<td>

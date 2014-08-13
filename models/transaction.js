@@ -16,7 +16,8 @@ var transSchema = mongoose.Schema({
 	startTime : { type : Date },
 	transTime : { type : Date },
 	transLoc  : { type : String },
-	transConv : [{ type : String }]
+	transConv : [{ type : String }],
+	seller    : { type : String } //had to add this to make rendering the profile page easier
 });
 
 module.exports = mongoose.model('Transaction', transSchema);
