@@ -44,9 +44,9 @@
 	    	</tbody>
 		</table>
 	</div>
-	<div class="pure-u-5-5">
-		<h2>My Purchases</h2>
-		<table class="pure-table pure-table-horizontal" >
+	<div >
+		<h2>Transactions</h2>
+		<table class="pure-table " >
 			<thead>
 				<th></th>
 				<th>Book</th>
@@ -57,7 +57,7 @@
 		    <% console.log('Trans number: ' + user.transactions.length) %>
 		    <tbody>
 		    	<% for(var i=0; i < user.transactions.length; i++) { %>
-			    	<tr class="tableHeader">
+			    	<tr>
 			    		<td>
 			    			<% if(user.transactions[i].buyer == user.userName){ %>
 			    				BUYER
@@ -76,26 +76,23 @@
 			        	</td>
 			        </tr>
 			       
-			        <tr class="tContent"><td>
-			  			hey
-			        </td></tr>
+			        <!-- <tr class="tContent"><td class="chatClient" colspan="100%">
+			        	<form class="pure-form">
+						    <input type="text" class="pure-input-rounded">
+						    <button type="submit" class="pure-button">Search</button>
+						</form>
+			        </tr> -->
 		    	<% } %>
 		    </tbody>
 		</table>
 	</div>
 </div>
 
-<div class="chatClient">boo</div>
+
 
 
 <script type="text/javascript" src="/javascripts/vendor/jquery-ui/js/jquery-1.8.3.js" ></script>
 <script type="text/javascript" src="/javascripts/vendor/jquery-ui/js/jquery-ui-1.9.2.min.js"></script>
-<script type="text/javascript">
-	$(function() {
-		$('tbody').accordion({header: '.tableHeader'});
-	});
-</script>
-
 
 </body>
 </html>

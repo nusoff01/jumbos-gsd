@@ -24,3 +24,13 @@ a {
 	border-color: black;
 	border-radius: 5px;
 }
+
+table {
+	width: 100%;
+	margin: 20px auto;
+}
+
+tr, th {
+	margin: 0;
+	width: 100%;
+}

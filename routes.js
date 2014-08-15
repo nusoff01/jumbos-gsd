@@ -64,20 +64,20 @@ module.exports = function(app, passport) {
 	//create a new listing
 	var listing = require('./lib/listing.js');
 	
-	app.get('/listing/list', listing.getAllListings);
+	app.get('/listing/list', isLoggedIn, listing.getAllListings);
 
-	app.post('/listing/new', listing.postNewListing);
-	app.get('/listing/new', listing.getNewListing);
+	app.post('/listing/new', isLoggedIn, listing.postNewListing);
+	app.get('/listing/new', isLoggedIn, listing.getNewListing);
 
 	//query listings by title
 	//app.get('/listing/title/:q', listing.findListings);
 
-	app.post('/listing/delete',       listing.deleteListing);
+	app.post('/listing/delete', listing.deleteListing);
 
 
-	app.get('/listing/search',        listing.findListings);
-	app.get('/listing/search/title',  listing.findListingsTitle);
-	app.get('/listing/search/course', listing.findListingsCourse);
+	app.get('/listing/search', isLoggedIn, listing.findListings);
+	app.get('/listing/search/title', isLoggedIn, listing.findListingsTitle);
+	app.get('/listing/search/course', isLoggedIn, listing.findListingsCourse);
 
 //Book procceses
 	var book = require('./lib/book.js');

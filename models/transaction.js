@@ -16,7 +16,13 @@ var transSchema = mongoose.Schema({
 	startTime : { type : Date },
 	transTime : { type : Date },
 	transLoc  : { type : String },
-	transConv : [{ type : String }],
+
+	transConv : [{
+		mContent: { type : String },
+		mSender:  { type : String },
+		mTime:    { type : String },
+		mType:    { type : String } //options: "userM", "errorM", "meetupM"
+	}],   
 	seller    : { type : String } //had to add this to make rendering the profile page easier
 });
 
