@@ -82,14 +82,15 @@
 			        			<div class="chat-log">
 			        				
 			        			</div>
-					        	<form class="pure-form">
-
-					        		<div style="overflow:hidden; padding-right: .5em">
-								    	<input type="text" class="pure-input-2-3 message">
-								    </div>
-								    <button type="submit" class="pure-button" style="float:right">Send</button>
-								    <button type="submit" class="pure-button message">Set meetup</button>
+					        	<form class="pure-form" action="/transaction/addM" method="post">
+					        		<fieldset>
+					        			<input type="text" class="pure-input-2-3 message" name="message">
+					        			<input type="hidden" class="pure-input-2-3 message" name="trans" value='<%= user.transactions[i]._id%>'>
+					        			<button type="submit" class="pure-button">Send</button>
+					        		</fieldset>
 								</form>
+
+								<button type="submit" class="pure-button message">Set meetup</button>
 								
 
 
