@@ -80,6 +80,10 @@
 			        	<td  colspan="100%">
 			        		<div class="interaction">
 			        			<div class="chat-log">
+			        			<% if(user.transactions[i].transConv){
+			        				for(j = 0; j < user.transactions[i].transConv.length; j++){ %>
+			        				<h3><%= user.transactions[i].transConv[j].mContent %></h3>
+			        				<% }} %>
 			        				
 			        			</div>
 					        	<form class="pure-form" action="/transaction/addM" method="post">
