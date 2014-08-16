@@ -22,6 +22,8 @@ mongoose.connect(process.env.MONGOLAB_URI ||
 
 require('./config/passport')(passport);
 
+
+
 //express application setup
 app.use(morgan('dev')); //log requests to the console
 app.use(cookieParser()); //read cookies
