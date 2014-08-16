@@ -36,7 +36,7 @@
 	        		<td>
 	        			<form action="/listing/delete" method="post">
 		            		<input type="hidden" name="id" value="<%= user.inventory[i]._id %>" />
-		            		<button type="submit" class="alert"><i class="fa fa-trash-o fa-lg"></i>Delete </button>
+		            		<button type="submit" class="alert pure-button"><i class="fa fa-trash-o fa-lg"></i> Delete </button>
 		            	</form>
 	        		</td>
 	        	</tr>
@@ -48,8 +48,8 @@
 		<h2>Transactions</h2>
 		<table class="pure-table " >
 			<thead>
-				<th></th>
-				<th>Book</th>
+				<th>Book Title</th>
+				<th>Role</th>
 				<th>Price</th>
 				<th>Seller</th>
 				<th>Status</th>
@@ -58,6 +58,7 @@
 		    <tbody>
 		    	<% for(var i=0; i < user.transactions.length; i++) { %>
 			    	<tr>
+			    		<td><%= user.transactions[i].listing.book.name%></td>
 			    		<td>
 			    			<% if(user.transactions[i].buyer == user.userName){ %>
 			    				BUYER
@@ -66,7 +67,6 @@
 			    			<% } %>
 
 			    		</td>
-			    		<td><%= user.transactions[i].listing.book.name%></td>
 			    		<td>$<%= user.transactions[i].listing.price%></td>
 			        	<td>
 			        		<%= user.transactions[i].listing.seller%> 
@@ -76,12 +76,45 @@
 			        	</td>
 			        </tr>
 			       
-			        <!-- <tr class="tContent"><td class="chatClient" colspan="100%">
-			        	<form class="pure-form">
-						    <input type="text" class="pure-input-rounded">
-						    <button type="submit" class="pure-button">Search</button>
-						</form>
-			        </tr> -->
+			        <tr class="tContent">
+			        	<td  colspan="100%">
+			        		<div class="interaction">
+			        			<div class="chat-log">
+			        				
+			        			</div>
+					        	<form class="pure-form">
+
+					        		<div style="overflow:hidden; padding-right: .5em">
+								    	<input type="text" class="pure-input message">
+								    </div>
+								    <button type="submit" class="pure-button" style="float:right">Send</button>
+								    <button type="submit" class="pure-button message">Set meetup</button>
+								</form>
+								
+
+
+								<form class="pure-form pure-form-aligned" action="/transaction/addLT" method="post">
+									<fieldset class="pure-from-fieldset">
+										<div class="pure-control-group">
+											<label for="name">Location</label>
+											<input type="text" class="form-control" name="location"/>
+										</div>
+										
+										<div class="pure-control-group">
+											<label for="price">Time</label>
+											<input type="string" class="form-control" name="time"/>
+										</div>
+										
+										<div class="pure-control-group">
+											<label for="time">Day</label>
+											<input type="date" class="form-control datePic" name="day"/>
+										</div>	
+										<button type="submit" class="pure-button" >Suggest</button>
+									</fieldset>			
+								</form>
+							</div>
+						</td>
+			        </tr>
 		    	<% } %>
 		    </tbody>
 		</table>
@@ -95,4 +128,9 @@
 <script type="text/javascript" src="/javascripts/vendor/jquery-ui/js/jquery-ui-1.9.2.min.js"></script>
 
 </body>
+
+<script>
+	// $(".datePic").datepicker({dateFormat:'mm-dd-yy'}).datepicker("setDate", new Date());
+</script>
+
 </html>

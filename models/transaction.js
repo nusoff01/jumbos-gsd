@@ -14,14 +14,14 @@ var transSchema = mongoose.Schema({
 	listing   : { type : mongoose.Schema.Types.ObjectId, ref: 'Listing'},
 	status    : { type : String }, //possible values: "ongoing", "completed", "failed"
 	startTime : { type : Date },
-	transTime : { type : Date },
-	transLoc  : { type : String },
+	transTime : { type : Date },   //prospective meetup time
+	transLoc  : { type : String }, //prospective meetup location
 
 	transConv : [{
 		mContent: { type : String },
 		mSender:  { type : String },
-		mTime:    { type : String },
-		mType:    { type : String } //options: "userM", "errorM", "meetupM"
+		mTime:    { type : Date   }, 
+		mType:    { type : String }  //options: "userM", "errorM", "meetupM"
 	}],   
 	seller    : { type : String } //had to add this to make rendering the profile page easier
 });

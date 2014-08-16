@@ -92,6 +92,8 @@ module.exports = function(app, passport) {
 //transaction processes
 	var transaction = require('./lib/transaction.js');
 	app.post('/transaction/postT', transaction.postTrans);
+	app.post('/transaction/addLT', transaction.addLocTime);
+	app.post('/transaction/addM',  transaction.addMessage);
 };
 
 // route middleware to make sure a user is logged in
