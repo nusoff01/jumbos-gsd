@@ -52,6 +52,16 @@ body {
     margin:10px;
     min-height:200px;
     background-color:#2d3e50;
+    color: white;
+}
+
+.chat-log h3 {
+    color:white;
+    text-align: left;
+}
+
+.chat-alert h3 {
+    color: red;
 }
 
 .pure-g > div {

@@ -23,7 +23,11 @@ a {
 	border-width: 2px;
 	border-color: black;
 	border-radius: 5px;
+	color:white;
+	text-align: left;
 }
+
+
 
 table {
 	width: 100%;
