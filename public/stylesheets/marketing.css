@@ -1,6 +1,29 @@
 /*
 New CSS
 */
+@media screen and (max-width:600px) {
+    body {
+        padding: 0px !important;
+        font-size:13px !important;
+    }
+
+    .scroll-table-out {
+        overflow-x: scroll;
+        max-width: 320px;
+    }
+
+    .scroll-table {
+
+    }
+}
+.paddL {
+    padding-left: 10px !important;
+}
+
+.paddR {
+    padding-right: 10px !important;
+}
+
 .form-content {
     margin-top: 30px;
 }
