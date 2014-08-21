@@ -11,11 +11,19 @@ New CSS
         overflow-x: scroll;
         max-width: 320px;
     }
-
-    .scroll-table {
-
-    }
 }
+
+.transaction {
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    margin: 5px auto;
+}
+
+.title, .type {
+    display: inline-block;
+    margin: 5px auto;
+}
+
 .paddL {
     padding-left: 10px !important;
 }

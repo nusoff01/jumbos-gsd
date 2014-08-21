@@ -44,96 +44,66 @@
 	    	</tbody>
 		</table>
 	</div>
-	<div class="scroll-table-out">
-		<h2>Transactions</h2>
-		<table class="pure-table" >
-			<thead>
-				<th>Book Title</th>
-				<th>Role</th>
-				<th>Price</th>
-				<th>Seller</th>
-				<th>Status</th>
-			</thead>
-		    <% console.log('Trans number: ' + user.transactions.length) %>
-		    <tbody>
-		    	<% for(var i=0; i < user.transactions.length; i++) { %>
-			    	<tr>
-			    		<td><%= user.transactions[i].listing.book.name%></td>
-			    		<td>
-			    			<% if(user.transactions[i].buyer == user.userName){ %>
-			    				BUYER
-			    			<% } else { %>
-			    				SELLER
-			    			<% } %>
+	<h2>Transactions</h2>
+	<% for(var i=0; i < user.transactions.length; i++) { %>
+		<div class="transaction">
+			<div>
+				<h3 class="title"><%= user.transactions[i].listing.book.name%></h3>
+				<p class="price">$<%= user.transactions[i].listing.price%></p>
+				<button class="pure-button chat" >Chat w/ <%= user.transactions[i].listing.seller%></button>
+			</div>
+			<div class="tContent">
+				<div class="interaction">
+			        <div class="chat-log">
+			        	<% if(user.transactions[i].transConv){
+			        		for(j = 0; j < user.transactions[i].transConv.length; j++){ 
+			        			conv = user.transactions[i].transConv[j]%>
+			        		<h3 class='<%= conv.mType%>'><%= conv.mContent %></h3>
+			        	<% }} %>
+			        </div>
+					<form class="pure-form" action="/transaction/addM" method="post">
+						<fieldset>
+							<input type="text" class="pure-input-2-3 message" name="message">
+							<input type="hidden" class="pure-input-2-3 message" name="trans" value='<%= user.transactions[i]._id%>'>
+							<button type="submit" class="pure-button">Send</button>
+						</fieldset>
+					</form>
 
-			    		</td>
-			    		<td>$<%= user.transactions[i].listing.price%></td>
-			        	<td>
-			        		<%= user.transactions[i].listing.seller%> 
-			        	</td>
-			        	<td>
-			        		<%= user.transactions[i].status%>
-			        	</td>
-			        </tr>
-			       
-			        <tr class="tContent">
-			        	<td  colspan="100%">
-			        		<div class="interaction">
-			        			<div class="chat-log">
-			        			<% if(user.transactions[i].transConv){
-			        				for(j = 0; j < user.transactions[i].transConv.length; j++){ 
-			        					conv = user.transactions[i].transConv[j]%>
-			        				<h3 class='<%= conv.mType%>'><%= conv.mContent %></h3>
-			        				<% }} %>
-			        				
-			        			</div>
-					        	<form class="pure-form" action="/transaction/addM" method="post">
-					        		<fieldset>
-					        			<input type="text" class="pure-input-2-3 message" name="message">
-					        			<input type="hidden" class="pure-input-2-3 message" name="trans" value='<%= user.transactions[i]._id%>'>
-					        			<button type="submit" class="pure-button">Send</button>
-					        		</fieldset>
-								</form>
-
-								<button type="submit" class="pure-button message">Set meetup</button>
+					<button type="submit" class="pure-button message">Set meetup</button>
 								
 
 
-								<form class="pure-form pure-form-aligned" action="/transaction/addLT" method="post">
-									<fieldset class="pure-from-fieldset">
-										<div class="pure-control-group">
-											<label for="name">Location</label>
-											<input type="text" class="form-control" name="location"/>
-										</div>
-										
-										<div class="pure-control-group">
-											<label for="price">Time</label>
-											<input id="basicExample" type="text" class="time" name="time" />
-										</div>
-										
-										<div class="pure-control-group">
-											<label for="time">Day</label>
-											
-											<input type="date" class="form-control datePic" name="day"/>
-
-											<script>
-								                $(function() {
-								                    $('#basicExample').timepicker();
-								                 
-								                });
-								            </script>
-										</div>	
-										<input type="hidden" class="pure-input-2-3 message" name="trans" value='<%= user.transactions[i]._id%>'>
-										<button type="submit" class="pure-button" >Suggest</button>
-									</fieldset>			
-								</form>
+					<form class="pure-form pure-form-aligned" action="/transaction/addLT" method="post">
+						<fieldset class="pure-from-fieldset">
+							<div class="pure-control-group">
+								<label for="name">Location</label>
+								<input type="text" class="form-control" name="location"/>
 							</div>
-						</td>
-			        </tr>
-		    	<% } %>
-		    </tbody>
-		</table>
-	</div>
+							
+							<div class="pure-control-group">
+								<label for="price">Time</label>
+								<input id="basicExample" type="text" class="time" name="time" />
+							</div>
+							
+							<div class="pure-control-group">
+								<label for="time">Day</label>
+								
+								<input type="date" class="form-control datePic" name="day"/>
+								<script>
+					                $(function() {
+					                    $('#basicExample').timepicker();
+					                 
+					                });
+					            </script>
+							</div>	
+							<input type="hidden" class="pure-input-2-3 message" name="trans" value='<%= user.transactions[i]._id%>'>
+							<button type="submit" class="pure-button" >Suggest</button>
+						</fieldset>			
+					</form>
+				</div>
+			</div>
+		</div>
+	<% } %>
 </div>
 
 
@@ -144,8 +114,8 @@
 <script type="text/javascript">
 	$(function(){
 		$('.tContent').hide();
-		$('#chat').on('click', function(){
-			$(".tContent").toggle();
+		$('.chat').on('click', function(){
+			$(this).closest('div').siblings().toggle();
 		});
 	})
 
