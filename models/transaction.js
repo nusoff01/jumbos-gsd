@@ -13,9 +13,10 @@ var transSchema = mongoose.Schema({
 	buyer     : { type : String },
 	listing   : { type : mongoose.Schema.Types.ObjectId, ref: 'Listing'},
 	status    : { type : String }, //possible values: "ongoing", "completed", "failed"
-	startTime : { type : Date },
-	transTime : { type : Date },   //prospective meetup time
+	startTime : { type : Date   },
+	transTime : { type : Date   }, //prospective meetup time
 	transLoc  : { type : String }, //prospective meetup location
+
 
 	transConv : [{
 		mContent: { type : String },

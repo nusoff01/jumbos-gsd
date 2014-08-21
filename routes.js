@@ -94,6 +94,15 @@ module.exports = function(app, passport) {
 	app.post('/transaction/postT', transaction.postTrans);
 	app.post('/transaction/addLT', transaction.addLocTime);
 	app.post('/transaction/addM',  transaction.addMessage);
+
+	app.post('/transaction/acceptLT', transaction.acceptSug);
+	// app.post('/transaction/rejectLT', transaction.rejectSug);
+
+//settings routes
+	// app.get('/settings', isLoggedIn, user.renderSettings);
+	// app.post('/settings/set', user.updateSettings);
+
+
 };
 
 // route middleware to make sure a user is logged in

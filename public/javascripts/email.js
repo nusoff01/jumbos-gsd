@@ -1,6 +1,11 @@
 // create a new instance of the Mandrill class with your API key
 var m = new mandrill.Mandrill('ovXi-s2-ZO06GrWdxGcfBg');
 
+
+var content = "Welcome to "
+
+
+
 // create a variable for the API call parameters
 var sender = "tehusoff@gmail.com";
 var name = ".";
@@ -18,15 +23,14 @@ function getContent(){
     return message;
 }
 
-getReceiver = new function(){
-    return 
-}
+
 
 function sendTheMail() {
 // Send the email!
     
-    sender = getSender();
+    sender = "tehusoff@gmail.com";
     content = getContent();
+    receiver = user.userName;
     params["message"]["from_email"] = sender;
     params["message"]["html"] = content;
     if(validateEmail(sender)){
@@ -77,7 +81,7 @@ var params = {
     "message": {
         "from_email":sender,
         "to":[{"email":"tehusoff@gmail.com"}],
-        "subject": "Message from nickusoff.com",
+        "subject": "Message from p2ptext",
         "html": "<p>Hello Catherine...</p>",
         "autotext": true,
         "track_opens": true,

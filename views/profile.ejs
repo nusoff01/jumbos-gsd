@@ -82,9 +82,14 @@
 			        			<div class="chat-log">
 			        			<% if(user.transactions[i].transConv){
 			        				for(j = 0; j < user.transactions[i].transConv.length; j++){ 
-			        					conv = user.transactions[i].transConv[j]%>
-			        				<h3 class='<%= conv.mType%>'><%= conv.mContent %></h3>
-			        				<% }} %>
+			        					conv = user.transactions[i].transConv[j] %> 
+			        				<h3 class='<%= conv.mType%>'><%= conv.mContent %>	</h3>
+			        				<% if(conv.mType == "meetupM"){ %>
+			        					<form class="acceptMeet">
+			        						<input type="hidden" class="pure-input-2-3 message" name="trans" value='<%= user.transactions[i]._id%>'>
+			        						<button class="pure-button">Accept</button>
+			        					</form>
+			        				<% }}} %>
 			        				
 			        			</div>
 					        	<form class="pure-form" action="/transaction/addM" method="post">
@@ -117,9 +122,8 @@
 											<input type="date" class="form-control datePic" name="day"/>
 
 											<script>
-								                $(function() {
+												$(document).ready(function() {
 								                    $('#basicExample').timepicker();
-								                 
 								                });
 								            </script>
 										</div>	
@@ -148,8 +152,8 @@
 </body>
 
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<link href="/javascripts/vendor/jquery-ui/css/custom-theme/jquery-ui-1.9.2.css" rel="stylesheet">
+	<script type="text/javascript" src="/javascripts/index.js"></script>
 	<link rel="stylesheet" href="/stylesheets/style.css"/>
 
 
