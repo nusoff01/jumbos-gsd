@@ -81,8 +81,9 @@
 			        		<div class="interaction">
 			        			<div class="chat-log">
 			        			<% if(user.transactions[i].transConv){
-			        				for(j = 0; j < user.transactions[i].transConv.length; j++){ %>
-			        				<h3><%= user.transactions[i].transConv[j].mContent %></h3>
+			        				for(j = 0; j < user.transactions[i].transConv.length; j++){ 
+			        					conv = user.transactions[i].transConv[j]%>
+			        				<h3 class='<%= conv.mType%>'><%= conv.mContent %></h3>
 			        				<% }} %>
 			        				
 			        			</div>

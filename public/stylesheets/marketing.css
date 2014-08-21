@@ -55,8 +55,19 @@ body {
     color: white;
 }
 
-.chat-log h3 {
-    color:white;
+.userM{
+    color: white;
+}
+
+.errorM{
+    color: red;
+}
+
+.meetupM{
+    color: green;
+}
+
+.chat-log {
     text-align: left;
 }
 
