@@ -1,6 +1,37 @@
 /*
 New CSS
 */
+@media screen and (max-width:600px) {
+    body {
+        padding: 0px !important;
+        font-size:13px !important;
+    }
+
+    .scroll-table-out {
+        overflow-x: scroll;
+        max-width: 320px;
+    }
+}
+
+.transaction {
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    margin: 5px auto;
+}
+
+.title, .type {
+    display: inline-block;
+    margin: 5px auto;
+}
+
+.paddL {
+    padding-left: 10px !important;
+}
+
+.paddR {
+    padding-right: 10px !important;
+}
+
 .form-content {
     margin-top: 30px;
 }
