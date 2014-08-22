@@ -13,27 +13,51 @@ New CSS
     }
 }
 
+body {
+    padding: 0px !important;
+}
+
 .headerBox{
     border: 1px solid #ffffff;
     margin: 0px auto;
-    margin-top: 15px;
+    margin-top: 5px;
+    background-color: rgba(255,255,255, .3)
 }
 
 .headerBox h1, h2{
     margin: 5px;
+    color:black;
 }
 
 .transaction {
     border: 1px solid #ffffff;
     margin: 0px auto;
     padding-bottom: 5px;
-    background-color: #3D5C99;
+    background-color: rgba(20,20,61,.6);
 }
 
+.alerts {
+    border: 1px solid #ffffff;
+    margin: 0px auto;
+    padding: 5px;
+     background-color: rgba(20,20,61,.6);
+    height: 100%;
+}
+
+
+.pure-u-1 {
+    padding: 5px;
+    padding-bottom: 0px;
+}
+
+
+
 .pure-table{
-    background-color: #14143D;
+     background-color: rgba(20,20,61,.6);
     
 }
+
+.
 
 .title, .type {
     display: inline-block;
@@ -52,7 +76,8 @@ New CSS
     margin-top: 30px;
 }
 .profile {
-    margin-top: 85px;
+    margin-top: 0px;
+    padding: 5px;
 }
 .alert {
   color: #a94442;
@@ -69,6 +94,8 @@ New CSS
 .books ul li{
     display: inline;
 }
+
+
 /*
 End of new content
 */
@@ -88,7 +115,9 @@ body {
     color: white;
     font-size: 13px;
     text-align: center;
-    background: #1f8dd6;
+    /*background: #1f8dd6;*/
+    background-image: url('/imgs/blackorchid.png');
+    background-repeat: repeat;
 }
 
 .chat-log{
@@ -213,7 +242,17 @@ a {
 
 .pure-table {
     margin: 0 auto;
+}
 
+
+.pure-table thead  {
+    background-color: rgba(0, 255, 255, .3);   
+}
+th {
+    text-align: center;
+}
+tr {
+    text-align: left;
 }
 /*
 .pure-form input[type] {
@@ -250,12 +289,14 @@ a {
  */
 
 .home-menu {
+    margin: 0px auto;
     padding: 0.5em;
     text-align: center;
     box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
 }
 .home-menu.pure-menu-open {
-    background: #2d3e50;
+    background: rgba(45,62,80, .7);
+    position: relative;
 }
 .pure-menu.pure-menu-open.pure-menu-fixed {
     /* Fixed menus normally have a border at the bottom. */
