@@ -13,6 +13,16 @@ New CSS
     }
 }
 
+.headerBox{
+    border: 1px solid #ffffff;
+    margin: 0px auto;
+    margin-top: 15px;
+}
+
+.headerBox h1, h2{
+    margin: 5px;
+}
+
 .transaction {
     border: 1px solid #ffffff;
     margin: 0px auto;
@@ -22,6 +32,7 @@ New CSS
 
 .pure-table{
     background-color: #14143D;
+    
 }
 
 .title, .type {

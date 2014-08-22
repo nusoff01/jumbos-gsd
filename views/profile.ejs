@@ -1,131 +1,138 @@
 <%- include head.ejs %>
 <div class="profile">
-	<% console.log("beginning of page"); %>
-	<% if(message){ %>
-		<h3 class="alert"><%= message %></h3>
-	<% } %> 
-	<h1>My Listings</h1>
+	<div class="pure-g"><div class="pure-u-1 pure-u-md-2-3">
+		<% console.log("beginning of page"); %>
+		<% if(message){ %>
+			<h3 class="alert"><%= message %></h3>
+		<% } %> 
+		<div class="headerBox">
+			<h1>My Listings</h1>
+		</div>
 
-	<div class="scroll-table-out pure-u-5-5">
-		<table class="scroll-table pure-table pure-table-horizontal">
-	    	<thead>
-	        	<tr>
-	            	<th>Name</th>
-	            	<th>Price</th>
-	            	<th>Edition</th>
-	            	<th>Condition</th>
-	            	<th></th>
-	        	</tr>
-	    	</thead>
+		<div class="scroll-table-out pure-u-5-5">
+			<table class="scroll-table pure-table pure-table-horizontal">
+		    	<thead>
+		        	<tr>
+		            	<th>Name</th>
+		            	<th>Price</th>
+		            	<th>Edition</th>
+		            	<th>Condition</th>
+		            	<th></th>
+		        	</tr>
+		    	</thead>
 
-    		<tbody>
-			<% for(var i=0; i<user.inventory.length; i++) { 
-				if(user.inventory[i].status = "available"){   %>
-	        	<tr>
-	        		<td>
-	        			<%= user.inventory[i].book.name%>
-	        		</td>
-	        		<td>
-	        			$<%= user.inventory[i].price%>
-	        		</td>
-	        		<td>
-	        			<%= user.inventory[i].edition%>
-	        		</td>
-	        		<td>
-	        			<%= user.inventory[i].condition%>
-	        		</td>
-	        		<td>
-	        			<form action="/listing/delete" method="post">
-		            		<input type="hidden" name="id" value="<%= user.inventory[i]._id %>" />
-		            		<button type="submit" class="alert pure-button"><i class="fa fa-trash-o fa-lg"></i> Delete </button>
-		            	</form>
-	        		</td>
-	        	</tr>
-	    	<% }} %>
-	    	</tbody>
-		</table>
-	</div>
-	<h2>Transactions</h2>
-	<% for(var i=0; i < user.transactions.length; i++) { %>
-		<div class="transaction">
-			<div>
-				<h3 class="title">
-					<% 
-						isBuyer = user.transactions[i].buyer;
-						role = "Selling";
-						if(isBuyer == user.userName) role = "Buying";
-					%>
-					<%= role %> <%= user.transactions[i].listing.book.name %>
-					for $<%= user.transactions[i].listing.price %>
-				</h3>
-				<br/>
-				<button class="pure-button chat" >Chat w/ <%= user.transactions[i].listing.seller%></button>
-			</div>
-			<div class="tContent">
-				<div class="interaction">
-			        <div class="chat-log">
-			        	<% if(user.transactions[i].transConv){
-			        		for(j = 0; j < user.transactions[i].transConv.length; j++){ 
-			        			conv = user.transactions[i].transConv[j]%>
-			        		<h3 class='<%= conv.mType%>'><%= conv.mContent %></h3>
+	    		<tbody>
+				<% for(var i=0; i<user.inventory.length; i++) { 
+					if(user.inventory[i].status = "available"){   %>
+		        	<tr>
+		        		<td>
+		        			<%= user.inventory[i].book.name%>
+		        		</td>
+		        		<td>
+		        			$<%= user.inventory[i].price%>
+		        		</td>
+		        		<td>
+		        			<%= user.inventory[i].edition%>
+		        		</td>
+		        		<td>
+		        			<%= user.inventory[i].condition%>
+		        		</td>
+		        		<td>
+		        			<form action="/listing/delete" method="post">
+			            		<input type="hidden" name="id" value="<%= user.inventory[i]._id %>" />
+			            		<button type="submit" class="alert pure-button"><i class="fa fa-trash-o fa-lg"></i> Delete </button>
+			            	</form>
+		        		</td>
+		        	</tr>
+		    	<% }} %>
+		    	</tbody>
+			</table>
+		</div>
+		<div class="headerBox">
+			<h1>Transactions</h1>
+		</div>
+		<% for(var i=0; i < user.transactions.length; i++) { %>
+			<div class="transaction">
+				<div>
+					<h3 class="title">
+						<% 
+							isBuyer = user.transactions[i].buyer;
+							role = "Selling";
+							if(isBuyer == user.userName) role = "Buying";
+						%>
+						<%= role %> <%= user.transactions[i].listing.book.name %>
+						for $<%= user.transactions[i].listing.price %>
+					</h3>
+					<br/>
+					<button class="pure-button chat" >Chat w/ <%= user.transactions[i].listing.seller%></button>
+				</div>
+				<div class="tContent">
+					<div class="interaction">
+				        <div class="chat-log">
+				        	<% if(user.transactions[i].transConv){
+				        		for(j = 0; j < user.transactions[i].transConv.length; j++){ 
+				        			conv = user.transactions[i].transConv[j]%>
+				        		<h3 class='<%= conv.mType%>'><%= conv.mContent %></h3>
 
-			        		<% if(conv.mType == "meetupM"){ %>
-				        		<form class="acceptMeet">
-				        			<input type="hidden" class="pure-input-2-3 message" name="trans" value='<%= user.transactions[i]._id%>'>
-				        			<button class="pure-button">Accept</button>
-				        		</form>
-				        	<% } %>
+				        		<% if(conv.mType == "meetupM"){ %>
+					        		<form class="acceptMeet">
+					        			<input type="hidden" class="pure-input-2-3 message" name="trans" value='<%= user.transactions[i]._id%>'>
+					        			<button class="pure-button">Accept</button>
+					        		</form>
+					        	<% } %>
 
-			        	<% }} %>
+				        	<% }} %>
 
-		
+			
 
 
 
-			        </div>
-					<form class="pure-form" action="/transaction/addM" method="post">
-						<fieldset>
-							<input type="text" class="pure-input-2-3 message" name="message">
-							<input type="hidden" class="pure-input-2-3 message" name="trans" value='<%= user.transactions[i]._id%>'>
-							<button type="submit" class="pure-button">Send</button>
-						</fieldset>
-					</form>
+				        </div>
+						<form class="pure-form" action="/transaction/addM" method="post">
+							<fieldset>
+								<input type="text" class="pure-input-2-3 message" name="message">
+								<input type="hidden" class="pure-input-2-3 message" name="trans" value='<%= user.transactions[i]._id%>'>
+								<button type="submit" class="pure-button">Send</button>
+							</fieldset>
+						</form>
 
-					<button type="submit" class="pure-button message">Set meetup</button>
+						<button type="submit" class="pure-button message">Set meetup</button>
+									
+
+
+						<form class="pure-form pure-form-aligned" action="/transaction/addLT" method="post">
+							<fieldset class="pure-from-fieldset">
+								<div class="pure-control-group">
+									<label for="name">Location</label>
+									<input type="text" class="form-control" name="location"/>
+								</div>
 								
-
-
-					<form class="pure-form pure-form-aligned" action="/transaction/addLT" method="post">
-						<fieldset class="pure-from-fieldset">
-							<div class="pure-control-group">
-								<label for="name">Location</label>
-								<input type="text" class="form-control" name="location"/>
-							</div>
-							
-							<div class="pure-control-group">
-								<label for="price">Time</label>
-								<input id="basicExample" type="text" class="time" name="time" />
-							</div>
-							
-							<div class="pure-control-group">
-								<label for="time">Day</label>
+								<div class="pure-control-group">
+									<label for="price">Time</label>
+									<input id="basicExample" type="text" class="time" name="time" />
+								</div>
 								
-								<input type="date" class="form-control datePic" name="day"/>
-								<script>
-					                $(function() {
-					                    $('#basicExample').timepicker();
-					                 
-					                });
-					            </script>
-							</div>	
-							<input type="hidden" class="pure-input-2-3 message" name="trans" value='<%= user.transactions[i]._id%>'>
-							<button type="submit" class="pure-button" >Suggest</button>
-						</fieldset>			
-					</form>
+								<div class="pure-control-group">
+									<label for="time">Day</label>
+									
+									<input type="date" class="form-control datePic" name="day"/>
+									<script>
+						                $(function() {
+						                    $('#basicExample').timepicker();
+						                 
+						                });
+						            </script>
+								</div>	
+								<input type="hidden" class="pure-input-2-3 message" name="trans" value='<%= user.transactions[i]._id%>'>
+								<button type="submit" class="pure-button" >Suggest</button>
+							</fieldset>			
+						</form>
+					</div>
 				</div>
 			</div>
-		</div>
-	<% } %>
+		<% } %>
+	</div>
+	<div class="pure-u-1 pure-u-md-1-3">Aa</div></div>
 </div>
 
 
