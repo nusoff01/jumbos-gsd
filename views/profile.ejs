@@ -1,5 +1,6 @@
 <%- include head.ejs %>
 <div class="profile">
+	<% console.log("beginning of page"); %>
 	<% if(message){ %>
 		<h3 class="alert"><%= message %></h3>
 	<% } %> 
@@ -44,101 +45,20 @@
 	    	</tbody>
 		</table>
 	</div>
-<!-- <<<<<<< HEAD
-	<div >
-		<h2>Transactions</h2>
-		<table class="pure-table " >
-			<thead>
-				<th>Book Title</th>
-				<th>Role</th>
-				<th>Price</th>
-				<th>Seller</th>
-				<th>Status</th>
-			</thead>
-		    <% console.log('Trans number: ' + user.transactions.length) %>
-		    <tbody>
-		    	<% for(var i=0; i < user.transactions.length; i++) { %>
-			    	<tr>
-			    		<td><%= user.transactions[i].listing.book.name%></td>
-			    		<td>
-			    			<% if(user.transactions[i].buyer == user.userName){ %>
-			    				BUYER
-			    			<% } else { %>
-			    				SELLER
-			    			<% } %>
-
-			    		</td>
-			    		<td>$<%= user.transactions[i].listing.price%></td>
-			        	<td>
-			        		<%= user.transactions[i].listing.seller%> 
-			        	</td>
-			        	<td>
-			        		<%= user.transactions[i].status%>
-			        	</td>
-			        </tr>
-			       
-			        <tr class="tContent">
-			        	<td  colspan="100%">
-			        		<div class="interaction">
-			        			<div class="chat-log">
-			        			<% if(user.transactions[i].transConv){
-			        				for(j = 0; j < user.transactions[i].transConv.length; j++){ 
-			        					conv = user.transactions[i].transConv[j] %> 
-			        				<h3 class='<%= conv.mType%>'><%= conv.mContent %>	</h3>
-			        				<% if(conv.mType == "meetupM"){ %>
-			        					<form class="acceptMeet">
-			        						<input type="hidden" class="pure-input-2-3 message" name="trans" value='<%= user.transactions[i]._id%>'>
-			        						<button class="pure-button">Accept</button>
-			        					</form>
-			        				<% }}} %>
-			        				
-			        			</div>
-					        	<form class="pure-form" action="/transaction/addM" method="post">
-					        		<fieldset>
-					        			<input type="text" class="pure-input-2-3 message" name="message">
-					        			<input type="hidden" class="pure-input-2-3 message" name="trans" value='<%= user.transactions[i]._id%>'>
-					        			<button type="submit" class="pure-button">Send</button>
-					        		</fieldset>
-								</form>
-
-								<button type="submit" class="pure-button message">Set meetup</button>
-								
-
-
-								<form class="pure-form pure-form-aligned" action="/transaction/addLT" method="post">
-									<fieldset class="pure-from-fieldset">
-										<div class="pure-control-group">
-											<label for="name">Location</label>
-											<input type="text" class="form-control" name="location"/>
-										</div>
-										
-										<div class="pure-control-group">
-											<label for="price">Time</label>
-											<input id="basicExample" type="text" class="time" name="time" />
-										</div>
-										
-										<div class="pure-control-group">
-											<label for="time">Day</label>
-											
-											<input type="date" class="form-control datePic" name="day"/>
-
-											<script>
-												$(document).ready(function() {
-								                    $('#basicExample').timepicker();
-								                });
-								            </script>
-										</div>	
-										<input type="hidden" class="pure-input-2-3 message" name="trans" value='<%= user.transactions[i]._id%>'>
-										<button type="submit" class="pure-button" >Suggest</button>
-									</fieldset>			
-								</form>
-======= -->
 	<h2>Transactions</h2>
 	<% for(var i=0; i < user.transactions.length; i++) { %>
 		<div class="transaction">
 			<div>
-				<h3 class="title"><%= user.transactions[i].listing.book.name%></h3>
-				<p class="price">$<%= user.transactions[i].listing.price%></p>
+				<h3 class="title">
+					<% 
+						isBuyer = user.transactions[i].buyer;
+						role = "Selling";
+						if(isBuyer == user.userName) role = "Buying";
+					%>
+					<%= role %> <%= user.transactions[i].listing.book.name %>
+					for $<%= user.transactions[i].listing.price %>
+				</h3>
+				<br/>
 				<button class="pure-button chat" >Chat w/ <%= user.transactions[i].listing.seller%></button>
 			</div>
 			<div class="tContent">
@@ -148,14 +68,17 @@
 			        		for(j = 0; j < user.transactions[i].transConv.length; j++){ 
 			        			conv = user.transactions[i].transConv[j]%>
 			        		<h3 class='<%= conv.mType%>'><%= conv.mContent %></h3>
+
+			        		<% if(conv.mType == "meetupM"){ %>
+				        		<form class="acceptMeet">
+				        			<input type="hidden" class="pure-input-2-3 message" name="trans" value='<%= user.transactions[i]._id%>'>
+				        			<button class="pure-button">Accept</button>
+				        		</form>
+				        	<% } %>
+
 			        	<% }} %>
 
-			        	<% if(conv.mType == "meetupM"){ %>
-			        		<form class="acceptMeet">
-			        			<input type="hidden" class="pure-input-2-3 message" name="trans" value='<%= user.transactions[i]._id%>'>
-			        			<button class="pure-button">Accept</button>
-			        		</form>
-			        	<% }}} %>
+		
 
 
 
@@ -177,7 +100,6 @@
 							<div class="pure-control-group">
 								<label for="name">Location</label>
 								<input type="text" class="form-control" name="location"/>
->>>>>>> 37a3eb7e6480521a62e642c5ddc60f0f22aea37a
 							</div>
 							
 							<div class="pure-control-group">
@@ -211,7 +133,7 @@
 
 <script type="text/javascript" src="/javascripts/vendor/jquery-ui/js/jquery-1.8.3.js" ></script>
 <script type="text/javascript" src="/javascripts/vendor/jquery-ui/js/jquery-ui-1.9.2.min.js"></script>
-<script type="text/javascript">
+ <script type="text/javascript">
 	$(function(){
 		$('.tContent').hide();
 		$('.chat').on('click', function(){
@@ -219,7 +141,7 @@
 		});
 	})
 
-</script>
+ </script>
 
 
 

@@ -1,7 +1,7 @@
 /*
 New CSS
 */
-@media screen and (max-width:600px) {
+@media screen and (max-width:550px) {
     body {
         padding: 0px !important;
         font-size:13px !important;
@@ -9,14 +9,19 @@ New CSS
 
     .scroll-table-out {
         overflow-x: scroll;
-        max-width: 320px;
+        background-color: #3D007A;
     }
 }
 
 .transaction {
     border: 1px solid #ffffff;
-    border-radius: 5px;
-    margin: 5px auto;
+    margin: 0px auto;
+    padding-bottom: 5px;
+    background-color: #3D5C99;
+}
+
+.pure-table{
+    background-color: #14143D;
 }
 
 .title, .type {
@@ -79,8 +84,7 @@ body {
     width:100%;
     padding: 10px;
     border: 1px solid white;
-    border-radius: 5px;
-    margin:10px;
+    
     min-height:200px;
     background-color:#2d3e50;
     color: white;
@@ -132,7 +136,7 @@ h4,
 h5,
 h6,
 label {
-    color: #443045;
+    color: white;
 }
 
 a {
