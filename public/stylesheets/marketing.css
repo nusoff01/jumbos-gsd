@@ -1,6 +1,11 @@
 /*
 New CSS
 */
+
+html, body{
+    height:100%;
+}
+
 @media screen and (max-width:550px) {
     body {
         padding: 0px !important;
@@ -9,7 +14,7 @@ New CSS
 
     .scroll-table-out {
         overflow-x: scroll;
-        background-color: #3D007A;
+        /*background-color: #3D007A;*/
     }
 }
 
@@ -21,28 +26,52 @@ body {
     border: 1px solid #ffffff;
     margin: 0px auto;
     margin-top: 5px;
-    background-color: rgba(255,255,255, .3)
+    background-color: black;
+    
 }
 
 .headerBox h1, h2{
     margin: 5px;
-    color:black;
+    color: white;
+    
 }
 
 .transaction {
     border: 1px solid #ffffff;
     margin: 0px auto;
     padding-bottom: 5px;
-    background-color: rgba(20,20,61,.6);
+    background-color: rgba(20,20,61,.2);
 }
 
 .alerts {
     border: 1px solid #ffffff;
     margin: 0px auto;
     padding: 5px;
-     background-color: rgba(20,20,61,.6);
-    height: 100%;
+    background-color: rgba(20,20,61,.2);
+    height:100%;
 }
+
+#alerts-header{
+    background-color: rgba(180,20,20, .5);
+}
+
+#listings-header{
+    background-color: rgba(20,180,20, .5);
+}
+
+#trans-header{
+    background-color: rgba(20,20,180, .5);
+}
+
+.alerts-container{
+    
+}
+
+.pure-g{
+    height:100%;
+}
+
+
 
 
 .pure-u-1 {
@@ -50,18 +79,22 @@ body {
     padding-bottom: 0px;
 }
 
-
-
-.pure-table{
-     background-color: rgba(20,20,61,.6);
+.pure-u-md-1-3 {
     
 }
 
-.
+
+
+.pure-table{
+     background-color: rgba(20,20,61,.2);
+    
+}
+
 
 .title, .type {
     display: inline-block;
     margin: 5px auto;
+    padding: 0px;
 }
 
 .paddL {
