@@ -1,7 +1,7 @@
 <%- include head.ejs %>
 <div id="home-box">
 	<h1 class="splash-head">Hello, <%= user.userName %></h1>
-	<h2>You have 3 unread alerts <button class="pure-button">View</button></h2>
+	
 </div>
     <div id="main-content">
 	<div class="pure-g">
@@ -9,9 +9,7 @@
 				<div class="headerBox" id="alerts-header">
 					<h1>Alerts</h1> <hr class="header-hr" id="alerts-hr"/>
 				</div>
-				<div class="alerts">
-					<h3>This is an alert!</h3>
-				</div>
+				<h3 class="splash-subhead">This is an alert!</h3>
 		</div>
 		<div class="pure-u-1 pure-u-md-2-3">
 			<% console.log("beginning of page"); %>
@@ -21,9 +19,9 @@
 			<div class="headerBox" id="listings-header">
 				<h1>My Listings</h1><hr class="header-hr" id="listings-hr"/>
 			</div>
-
-			<div class="scroll-table-out pure-u-5-5 listings" >
 			<% if(user.inventory.length > 0){ %>
+			<div class="scroll-table-out pure-u-5-5 listings" >
+			
 				<table class="scroll-table pure-table ">
 			    	<thead>
 			        	<tr>
@@ -61,8 +59,9 @@
 			    	<% }} %>
 			    	</tbody>
 				</table>
-			<% } %>
+			
 			</div>
+			<% } %>
 			<div class="headerBox" id="trans-header">
 				<h1>Transactions</h1><hr class="header-hr" id="transactions-hr"/>
 			</div>

@@ -70,9 +70,6 @@ body {
     margin: 0px auto;
     padding: 5px;
     
-    
-    min-height: 150px;
-    
     width:100%;
     overflow-y: hidden;
 }
@@ -460,9 +457,16 @@ tr {
 
 /* This is the subheading that appears on the blue section */
 .splash-subhead {
-    color: white;
+    border: 3px solid white;
+    padding: .5em;
+    font-weight: bold;
+    margin: 5px;
+    border-radius: 5px;
+    line-height: 1em;
+    color: red;
     letter-spacing: 0.05em;
-    opacity: 0.8;
+    opacity: 1;
+    background-color: white;
 }
 
 /*
