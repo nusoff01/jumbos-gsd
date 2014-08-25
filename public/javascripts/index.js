@@ -28,24 +28,80 @@ $(function() {
 		console.log("pressed");
 	});
 
+
+	//Page: profile, Section: transaction
+	//this event occurs when the accept button is pressed when 
+	//a user wants to finalize a meetup. 
+
 	$('form.acceptMeet').submit(function (e) {
+		
         e.preventDefault();
         var fd = new FormData($(this)[0]);
         tID = $(this)[0].childNodes[1].value;
 
-        console.log("fd: " + fd);
+        data = JSON.stringify({trans : tID});
+        console.log(data);
         $.ajax({
+        	type: 'POST',
             url: '/transaction/acceptLT',
-            data : {trans : tID},
+            data : data,
             processData: false,
-            contentType: false,
-            type: 'POST',
-            params: {trans : tID},
-            success: function(data){
-                console.log(data);
+            contentType: 'application/json',					
+            success: function(data) {
+            	// add a message to the transaction page, emmit an alert to 
+            	// the other person in the transaction
+                console.log('success');
+                console.log(JSON.stringify(data));
             }
         });
 	});
+
+
+	//Page: profile, Section: transaction
+	//this event occurs when the send 
+
+	$('form.sendM').submit(function (e) {
+		e.preventDefault();
+
+		mContent = $(this)[0].childNodes[1].childNodes[1].value;
+		mTrans = $(this)[0].childNodes[1].childNodes[3].value;
+		console.log(mTrans);
+		data = JSON.stringify({content: mContent, transID: mTrans});
+		$.ajax({
+			type: 'POST',
+			url: '/transaction/addM',
+			data: data,
+			processData: false, 
+			dataType: 'text',
+			contentType: 'application/json',
+			success: function(data) {
+				console.log('success');
+				//$(mTrans).hide().fadeIn('fast');
+				var text = data;
+				var node = document.createTextNode(text);
+				console.log(text);
+				var h3 = document.createElement("h3");
+				h3.appendChild(node);
+				var chatLog = document.getElementById(mTrans);
+				chatLog.appendChild(h3);
+
+				//$("home-box").append( "<h3>Hello</h3>" );
+				//$(this).parentNode().hide();
+			}
+		});
+	});
+
+
+	//Page: add listing
+	//occurs when a person presses submit to add a listing
+	$('form.addL').submit(function (e) {
+		e.preventDefault();
+	});
+
+	
+
+
+
 });
 
 buy = function(listing){

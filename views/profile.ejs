@@ -66,7 +66,7 @@
 			<div class="headerBox" id="trans-header">
 				<h1>Transactions</h1><hr class="header-hr" id="transactions-hr"/>
 			</div>
-			<div class="transactions">
+			<div class="transactions" id="transactions">
 			<% for(var i=0; i < user.transactions.length; i++) { %>
 				<div class="transaction">
 					<div>
@@ -80,11 +80,13 @@
 							for $<%= user.transactions[i].listing.price %>
 						</h3>
 						<br/>
-						<button class="pure-button chat" >Chat w/ <%= user.transactions[i].listing.seller%></button>
+						<button class="pure-button chat" >
+							Chat with <%= user.transactions[i].listing.seller%>
+						</button>
 					</div>
 					<div class="tContent">
 						<div class="interaction">
-					        <div class="chat-log">
+					        <div class="chat-log" id='<%= user.transactions[i]._id%>'>
 					        	<% if(user.transactions[i].transConv){
 					        		for(j = 0; j < user.transactions[i].transConv.length; j++){ 
 					        			conv = user.transactions[i].transConv[j]%>
@@ -104,11 +106,12 @@
 
 
 					        </div>
-							<form class="pure-form" action="/transaction/addM" method="post">
+							<!-- <form class="pure-form sendM" action="/transaction/addM" method="post"> -->
+							<form class="pure-form sendM">
 								<fieldset>
 									<input type="text" class="pure-input-2-3 message" name="message">
 									<input type="hidden" class="pure-input-2-3 message" name="trans" value='<%= user.transactions[i]._id%>'>
-									<button type="submit" class="pure-button">Send</button>
+									<button class="pure-button">Send</button>
 								</fieldset>
 							</form>
 
