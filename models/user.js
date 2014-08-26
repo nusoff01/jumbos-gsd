@@ -14,7 +14,12 @@ var userSchema = mongoose.Schema({
 	},
 	userName     : { type : String },
 	inventory    : [{ type : mongoose.Schema.Types.ObjectId, ref: 'Listing'}],
-	transactions : [{ type : mongoose.Schema.Types.ObjectId, ref: 'Transaction'}]
+	transactions : [{ type : mongoose.Schema.Types.ObjectId, ref: 'Transaction'}],
+	alerts       : [{
+		type    : { type : String }, //sysAlert, mesAlert, buyAlert, comAlert, canAlert
+		message : { type : String },
+		link    : { type : String }  //"no link" if none
+	}]
 
 });
 

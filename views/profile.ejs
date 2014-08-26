@@ -4,18 +4,20 @@
 	
 </div>
     <div id="main-content">
+    <% if(message){ %>
+		<h3 class="alert"><%= message %></h3>
+	<% } %> 
 	<div class="pure-g">
 		<div class="pure-u-1 pure-u-md-1-3 alerts-container">
 				<div class="headerBox" id="alerts-header">
 					<h1>Alerts</h1> <hr class="header-hr" id="alerts-hr"/>
 				</div>
-				<h3 class="splash-subhead">This is an alert!</h3>
+				<h3 class="splash-subhead">This is an alert! 
+
+				<button class="pure-button" ><i class="fa fa-trash-o fa-lg"></i></button></h3>
+				
 		</div>
 		<div class="pure-u-1 pure-u-md-2-3">
-			<% console.log("beginning of page"); %>
-			<% if(message){ %>
-				<h3 class="alert"><%= message %></h3>
-			<% } %> 
 			<div class="headerBox" id="listings-header">
 				<h1>My Listings</h1><hr class="header-hr" id="listings-hr"/>
 			</div>
@@ -69,7 +71,7 @@
 			<% for(var i=0; i < user.transactions.length; i++) { %>
 				<div class="transaction">
 					<div>
-						<h3 class="title">
+						<h3 class="splash-subhead trans-head">
 							<% 
 								isBuyer = user.transactions[i].buyer;
 								role = "Selling";
@@ -77,7 +79,6 @@
 							%>
 							<%= role %> <%= user.transactions[i].listing.book.name %>
 							for $<%= user.transactions[i].listing.price %>
-						</h3>
 						<br/>
 						<button class="pure-button chat" >
 							Chat with <%= user.transactions[i].listing.seller%>
