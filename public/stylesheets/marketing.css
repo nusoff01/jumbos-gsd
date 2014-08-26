@@ -121,6 +121,7 @@ body {
 
 .listings{
     background-color: rgba(0,255,0,.1);
+    padding: 5px;
     /*padding-bottom:30px;*/
     /*min-height:120px;*/
 }
@@ -129,6 +130,10 @@ body {
     /*padding-bottom: 30px;*/
     /*min-height:120px;*/
     background-color: rgba(0,0,255,.1);
+}
+
+.interaction{
+    padding: 5px;
 }
 
 .pure-u-1 {
@@ -215,10 +220,10 @@ body {
 .chat-log{
     width:100%;
     padding: 10px;
-    border: 1px solid white;
-    
+    border: 3px solid white;
+    border-radius: 5px;
     min-height:200px;
-    background-color:#2d3e50;
+    background-color:black;
     color: white;
 }
 
@@ -327,13 +332,18 @@ a {
 }
 
 .form-container {
-    border: 1px solid white;
+    border: 1px sol id white;
     border-radius: 10px;
     margin: 10px auto;
 }
 
 .pure-table {
     margin: 0 auto;
+    border: 3px solid white;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-collapse: separate;
+    border-spacing: 0;
 }
 
 
@@ -343,6 +353,7 @@ a {
 }
 th {
     text-align: center;
+    color: white;
 }
 tr {
     text-align: left;

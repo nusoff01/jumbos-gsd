@@ -109,7 +109,7 @@ buy = function(listing){
 }
 
 $('#container h3').click(function(e) {
-
+	console.log("this one");
     //Close all <div> but the <div> right after the clicked <a>
     $(e.target).next('div').siblings('div').slideUp('fast');
 });

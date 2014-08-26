@@ -24,7 +24,7 @@
 			<% if(user.inventory.length > 0){ %>
 			<div class="scroll-table-out pure-u-5-5 listings" >
 			
-				<table class="scroll-table pure-table ">
+				<table class="scroll-table pure-table pure-table-horizontal">
 			    	<thead>
 			        	<tr>
 			            	<th>Name</th>
@@ -83,6 +83,7 @@
 						<button class="pure-button chat" >
 							Chat with <%= user.transactions[i].listing.seller%>
 						</button>
+						</h3>
 					</div>
 					<div class="tContent">
 						<div class="interaction">
@@ -165,6 +166,8 @@
 		$('.tContent').hide();
 		$('.chat').on('click', function(){
 			$(this).closest('div').siblings().toggle();
+			$(window).scrollTo($(this).closest('button'));
+			console.log($(this).closest('button'));
 		});
 	})
 
