@@ -81,7 +81,17 @@
 							for $<%= user.transactions[i].listing.price %>
 						<br/>
 						<button class="pure-button chat" >
-							Chat with <%= user.transactions[i].listing.seller%>
+							Chat with
+								<%
+								console.log("Buyer: " + isBuyer);
+								console.log("Seller: " + user.transactions[i].seller)
+								console.log("user: " + user.userName);
+								if (role == "Buying"){
+									%> 
+							<%= user.transactions[i].seller%>
+							 <% }else{ %> 
+							 <%= user.transactions[i].buyer%>
+							 <% } %>
 						</button>
 						</h3>
 					</div>
@@ -166,7 +176,7 @@
 		$('.tContent').hide();
 		$('.chat').on('click', function(){
 			$(this).closest('div').siblings().toggle();
-			$(window).scrollTo($(this).closest('button'));
+			
 			console.log($(this).closest('button'));
 		});
 	})

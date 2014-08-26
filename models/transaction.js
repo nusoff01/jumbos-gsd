@@ -16,15 +16,14 @@ var transSchema = mongoose.Schema({
 	startTime : { type : Date   },
 	transTime : { type : Date   }, //prospective meetup time
 	transLoc  : { type : String }, //prospective meetup location
-
+	seller    : { type : String }, //had to add this to make rendering the profile page easier
 
 	transConv : [{
 		mContent: { type : String },
 		mSender:  { type : String },
 		mTime:    { type : Date   }, 
 		mType:    { type : String }  //options: "userM", "errorM", "meetupM"
-	}],   
-	seller    : { type : String } //had to add this to make rendering the profile page easier
+	}]
 });
 
 module.exports = mongoose.model('Transaction', transSchema);
