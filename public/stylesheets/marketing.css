@@ -38,6 +38,12 @@ html, body{
     }
 }
 
+/**** Alert section, profile ****/
+.alert-delete{
+    padding: 0px auto;
+}
+
+
 body {
     padding: 0px !important;
 }
@@ -308,6 +314,11 @@ a {
     text-align: center;
 }
 
+.pure-form legend{
+    color: white;
+    opacity: 1;
+}
+
 
 
 /*
@@ -332,7 +343,7 @@ a {
 }
 
 .form-container {
-    border: 1px sol id white;
+    border: 1px solid white;
     border-radius: 10px;
     margin: 10px auto;
 }
@@ -375,7 +386,7 @@ tr {
 .pure-button {
     background-color: #443045;
     color: white;
-    padding: 0.5em 2em;
+    padding: 0.5em 1em;
     border-radius: 5px;
 }
 

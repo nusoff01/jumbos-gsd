@@ -12,9 +12,15 @@
 				<div class="headerBox" id="alerts-header">
 					<h1>Alerts</h1> <hr class="header-hr" id="alerts-hr"/>
 				</div>
-				<h3 class="splash-subhead">This is an alert! 
-
-				<button class="pure-button" ><i class="fa fa-trash-o fa-lg"></i></button></h3>
+				<% console.log("num alerts: " + user.alerts.length); %>
+				<% for(i = 0; i < user.alerts.length; i++){ 
+					alert = user.alerts[i]; %>
+					<h3 class="splash-subhead">
+						<%= alert.message %>
+						<button class="pure-button alert-delete" ><i class="fa fa-trash-o fa-lg"></i></button>
+						<button class="pure-button alert-goto" ><i class="fa fa-arrow-circle-right fa-lg"></i></button>
+					</h3>
+				<% } %>
 				
 		</div>
 		<div class="pure-u-1 pure-u-md-2-3">
@@ -69,6 +75,11 @@
 			</div>
 			<div class="transactions" id="transactions">
 			<% for(var i=0; i < user.transactions.length; i++) { %>
+				<%  transID = user.transactions[i]._id;
+					transIDSend = "s" + transID;
+					transIDChat = "c" + transID;
+				 %>
+
 				<div class="transaction">
 					<div>
 						<h3 class="splash-subhead trans-head">
@@ -80,7 +91,7 @@
 							<%= role %> <%= user.transactions[i].listing.book.name %>
 							for $<%= user.transactions[i].listing.price %>
 						<br/>
-						<button class="pure-button chat" >
+						<button class="pure-button chat" onclick="toggleChat('<%= transIDChat %>', '<%= transIDSend%>')">
 							Chat with
 								<%
 								console.log("Buyer: " + isBuyer);
@@ -95,7 +106,7 @@
 						</button>
 						</h3>
 					</div>
-					<div class="tContent">
+					<div class="tContent" id="<%= transIDChat%>">
 						<div class="interaction">
 					        <div class="chat-log" id='<%= user.transactions[i]._id%>'>
 					        	<% if(user.transactions[i].transConv){
@@ -119,7 +130,7 @@
 					        </div>
 							<!-- <form class="pure-form sendM" action="/transaction/addM" method="post"> -->
 							<form class="pure-form sendM">
-								<fieldset>
+								<fieldset id="<%= transIDSend%>">
 									<input type="text" class="pure-input-2-3 message" name="message">
 									<input type="hidden" class="pure-input-2-3 message" name="trans" value='<%= user.transactions[i]._id%>'>
 									<button class="pure-button">Send</button>
@@ -130,7 +141,7 @@
 										
 
 
-							<form class="pure-form pure-form-aligned" action="/transaction/addLT" method="post">
+							<form class="pure-form pure-form-aligned setLT" action="/transaction/addLT" method="post">
 								<fieldset class="pure-from-fieldset">
 									<div class="pure-control-group">
 										<label for="name">Location</label>
@@ -174,11 +185,7 @@
  <script type="text/javascript">
 	$(function(){
 		$('.tContent').hide();
-		$('.chat').on('click', function(){
-			$(this).closest('div').siblings().toggle();
-			
-			console.log($(this).closest('button'));
-		});
+		$('.setLT').hide();
 	})
 
  </script>

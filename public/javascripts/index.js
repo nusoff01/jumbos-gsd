@@ -98,9 +98,9 @@ $(function() {
 		e.preventDefault();
 	});
 
-	
-
-
+	$('button.alert-delete').on('click', function(){
+		$(this).closest('h3').remove();
+	});
 
 });
 
@@ -124,6 +124,30 @@ $('#container h3').click(function(e) {
 //         }
 // });
 // }
+
+//click on the chat button for a transaction on the profile page
+toggleChat = function(divID, chatID){
+	//console.log(id);
+	divTag = "#" + divID;
+	chatTag = "#" + chatID;
+	console.log(chatTag);
+
+	$(divTag).toggle();
+	console.log($(divTag).is(":visible"));
+	if($(divTag).is(":visible") ){
+		$('html, body').animate({
+	        scrollTop: $(chatTag).offset().top
+	    }, 1000);
+	}
+}
+
+// $('.chat').on('click', function(){
+// 			$(this).closest('div').siblings().toggle();
+// 			div = $(this).closest('div').next('div');
+// 			$(this).closest('div').next('div').scrollTop($(this).closest('div').next('div').height());
+// 			//div.animate({ scrollTop: div.height()}, 1000);
+// 			console.log($(this).closest('div').next('div').height());
+// 		});
 
 
 
