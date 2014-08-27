@@ -31,48 +31,6 @@
 			</div>
 			<div class="scroll-table-out pure-u-5-5 listings" >
 				<% if(user.inventory.length > 0){ %>
-				<!-- <div class="table-wrapper">
-  					<div class="table-scroll">
-						<table class="pure-table pure-table-horizontal scroll-table">
-					    	<thead>
-					        	<tr>
-					            	<th>Name</th>
-					            	<th>Price</th>
-					            	<th>Edition</th>
-					            	<th>Condition</th>
-					            	<th></th>
-					        	</tr>
-					    	</thead>
-
-				    		<tbody>
-							<% for(var i=0; i<user.inventory.length; i++) { 
-								if(user.inventory[i].status = "available"){   %>
-					        	<tr>
-					        		<td>
-					        			<%= user.inventory[i].book.name%>
-					        		</td>
-					        		<td>
-					        			$<%= user.inventory[i].price%>
-					        		</td>
-					        		<td>
-					        			<%= user.inventory[i].edition%>
-					        		</td>
-					        		<td>
-					        			<%= user.inventory[i].condition%>
-					        		</td>
-					        		<td>
-					        			<form action="/listing/delete" method="post">
-						            		<input type="hidden" name="id" value="<%= user.inventory[i]._id %>" />
-						            		<button type="submit" class="alert pure-button"><i class="fa fa-trash-o fa-lg"></i> Delete </button>
-						            	</form>
-					        		</td>
-					        	</tr>
-					    	<% }} %>
-					    	</tbody>
-						</table>
-					</div>
-				</div> -->
-
 					<% for(var i=0; i<user.inventory.length; i++) { 
 						if(user.inventory[i].status = "available"){   
 						l = user.inventory[i]; %>	
@@ -82,7 +40,7 @@
 							</div>
 							<div class="pure-u-2-3 l-main">
 								<h2><%= l.book.name %></h2>
-								<hr/>
+								
 								<div class="pure-g listing-grid">
 									<div class="pure-u-1-3">
 										<p>v.<%= l.edition %></p>

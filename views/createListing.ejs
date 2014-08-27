@@ -1,15 +1,17 @@
 <%- include head.ejs %>
 <div class="profile">
-	<% if (message) { %>
-		<div class="alert alert-danger">
-			<%= message %>
-			<% if (message.link.exists){ %>
-					<a  href='<%= message.link.path %>' > <%= message.link.text %></a> 
-			<% } %>
-		</div>
-	<% } %>
+	
 	<div class="pure-u">
-		<h2>Publish Book to Market</h2>
+		<h1>Create a Listing</h1>
+		<% if (message) { %>
+			<div class="alert alert-danger">
+				<%= message %>
+				<% if (message.link.exists){ %>
+						<a  href='<%= message.link.path %>' target="_blank"> <%= message.link.text %></a> 
+				<% } %>
+			</div>
+		<% } %>
+
 		<div class="form-container">
 			<form class="pure-form pure-form-aligned" action="/listing/new" method="post">
 				<fieldset class="pure-from-fieldset paddL paddR">
@@ -52,5 +54,10 @@
 
 	$("#subject").autocomplete({source: subjects});
 	});
+
+	$(function() {
+		$("#name").autocomplete({source: <%- JSON.stringify(titles) %>});
+	});
+
 </script>
 </html>
