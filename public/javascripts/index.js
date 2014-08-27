@@ -33,6 +33,26 @@ $(function() {
 	//this event occurs when the accept button is pressed when 
 	//a user wants to finalize a meetup. 
 
+
+	$('div.del-listing').on('click', function(){
+		var id = $(this)[0].childNodes[1].childNodes[1].value;
+		data = JSON.stringify({id : id});
+		div = $(this)[0].parentNode;
+		$.ajax({
+			type: 'POST',
+			url: '/listing/delete',
+			data: data,
+			processData: false,
+			contentType: 'application/json',
+			success: function(data){
+				console.log(JSON.stringify(data));
+				div.parentNode.removeChild(div);
+				var mes = document.getElementById("alert-message");
+				mes.value = "listing deleted";
+			}
+		})
+	});
+
 	$('form.acceptMeet').submit(function (e) {
 		
         e.preventDefault();
@@ -40,7 +60,6 @@ $(function() {
         tID = $(this)[0].childNodes[1].value;
 
         data = JSON.stringify({trans : tID});
-        console.log(data);
         $.ajax({
         	type: 'POST',
             url: '/transaction/acceptLT',
@@ -64,8 +83,9 @@ $(function() {
 		e.preventDefault();
 
 		mContent = $(this)[0].childNodes[1].childNodes[1].value;
+		$(this)[0].childNodes[1].childNodes[1].value = "";
 		mTrans = $(this)[0].childNodes[1].childNodes[3].value;
-		console.log(mTrans);
+		
 		data = JSON.stringify({content: mContent, transID: mTrans});
 		$.ajax({
 			type: 'POST',
@@ -75,11 +95,9 @@ $(function() {
 			dataType: 'text',
 			contentType: 'application/json',
 			success: function(data) {
-				console.log('success');
-				//$(mTrans).hide().fadeIn('fast');
+				$(mTrans).hide().fadeIn('fast');
 				var text = data;
 				var node = document.createTextNode(text);
-				console.log(text);
 				var h3 = document.createElement("h3");
 				h3.appendChild(node);
 				var chatLog = document.getElementById(mTrans);
