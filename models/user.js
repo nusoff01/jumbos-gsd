@@ -16,9 +16,10 @@ var userSchema = mongoose.Schema({
 	inventory    : [{ type : mongoose.Schema.Types.ObjectId, ref: 'Listing'}],
 	transactions : [{ type : mongoose.Schema.Types.ObjectId, ref: 'Transaction'}],
 	alerts       : [{
-		type    : { type : String }, //sysAlert, mesAlert, buyAlert, comAlert, canAlert
-		message : { type : String },
-		link    : { type : String }  //"no link" if none
+		type     : { type : String },  //sysAlert, mesAlert, buyAlert, comAlert, canAlert
+		message  : { type : String },
+		link     : { type : String },  //"no link" if none
+		active   : { type : Boolean}   //If it should be displayec to user, true.
 	}]
 
 });

@@ -27,49 +27,86 @@
 			<div class="headerBox" id="listings-header">
 				<h1>My Listings</h1><hr class="header-hr" id="listings-hr"/>
 			</div>
-			<% if(user.inventory.length > 0){ %>
 			<div class="scroll-table-out pure-u-5-5 listings" >
-			
-				<table class="scroll-table pure-table pure-table-horizontal">
-			    	<thead>
-			        	<tr>
-			            	<th>Name</th>
-			            	<th>Price</th>
-			            	<th>Edition</th>
-			            	<th>Condition</th>
-			            	<th></th>
-			        	</tr>
-			    	</thead>
+				<% if(user.inventory.length > 0){ %>
+				<!-- <div class="table-wrapper">
+  					<div class="table-scroll">
+						<table class="pure-table pure-table-horizontal scroll-table">
+					    	<thead>
+					        	<tr>
+					            	<th>Name</th>
+					            	<th>Price</th>
+					            	<th>Edition</th>
+					            	<th>Condition</th>
+					            	<th></th>
+					        	</tr>
+					    	</thead>
 
-		    		<tbody>
+				    		<tbody>
+							<% for(var i=0; i<user.inventory.length; i++) { 
+								if(user.inventory[i].status = "available"){   %>
+					        	<tr>
+					        		<td>
+					        			<%= user.inventory[i].book.name%>
+					        		</td>
+					        		<td>
+					        			$<%= user.inventory[i].price%>
+					        		</td>
+					        		<td>
+					        			<%= user.inventory[i].edition%>
+					        		</td>
+					        		<td>
+					        			<%= user.inventory[i].condition%>
+					        		</td>
+					        		<td>
+					        			<form action="/listing/delete" method="post">
+						            		<input type="hidden" name="id" value="<%= user.inventory[i]._id %>" />
+						            		<button type="submit" class="alert pure-button"><i class="fa fa-trash-o fa-lg"></i> Delete </button>
+						            	</form>
+					        		</td>
+					        	</tr>
+					    	<% }} %>
+					    	</tbody>
+						</table>
+					</div>
+				</div> -->
+
 					<% for(var i=0; i<user.inventory.length; i++) { 
-						if(user.inventory[i].status = "available"){   %>
-			        	<tr>
-			        		<td>
-			        			<%= user.inventory[i].book.name%>
-			        		</td>
-			        		<td>
-			        			$<%= user.inventory[i].price%>
-			        		</td>
-			        		<td>
-			        			<%= user.inventory[i].edition%>
-			        		</td>
-			        		<td>
-			        			<%= user.inventory[i].condition%>
-			        		</td>
-			        		<td>
-			        			<form action="/listing/delete" method="post">
-				            		<input type="hidden" name="id" value="<%= user.inventory[i]._id %>" />
-				            		<button type="submit" class="alert pure-button"><i class="fa fa-trash-o fa-lg"></i> Delete </button>
-				            	</form>
-			        		</td>
-			        	</tr>
-			    	<% }} %>
-			    	</tbody>
-				</table>
+						if(user.inventory[i].status = "available"){   
+						l = user.inventory[i]; %>	
+						<div class="pure-g l-complete">
+							<div class="pure-u-1-6 l-price">
+								<p>$<%= l.price %></p>
+							</div>
+							<div class="pure-u-2-3 l-main">
+								<h2><%= l.book.name %></h2>
+								<hr/>
+								<div class="pure-g listing-grid">
+									<div class="pure-u-1-3">
+										<p>v.<%= l.edition %></p>
+									</div>
+									<div class="pure-u-1-3">
+										<p><%= l.condition %></p>
+									</div>
+									<div class="pure-u-1-3">
+										<p class="clickable">more <i class="fa fa-plus-square"></i></p>
+									</div>
+								</div>
+							</div>
+							<div class="pure-u-1-6 l-button">
+								<p>
+									<i class="fa fa-trash-o fa-lg"></i>
+								</p>
+							</div>
+						</div>
+						<% } %>
+					<% } %>
+				<% } %>
+				<div class="section-footer">
+					<a href="/listing/new"><button class="pure-button button-large" id="listing-button"><i class="fa fa-plus-square fa-lg"></i> Add a Listing </button></a>
+				</div>
 			
 			</div>
-			<% } %>
 			<div class="headerBox" id="trans-header">
 				<h1>Transactions</h1><hr class="header-hr" id="transactions-hr"/>
 			</div>
@@ -90,7 +127,7 @@
 							%>
 							<%= role %> <%= user.transactions[i].listing.book.name %>
 							for $<%= user.transactions[i].listing.price %>
-						<br/>
+						<br/><br/>
 						<button class="pure-button chat" onclick="toggleChat('<%= transIDChat %>', '<%= transIDSend%>')">
 							Chat with
 								<%
@@ -137,7 +174,7 @@
 								</fieldset>
 							</form>
 
-							<button type="submit" class="pure-button message">Set meetup</button>
+							<!-- <button type="submit" class="pure-button message">Set meetup</button> -->
 										
 
 
@@ -171,7 +208,12 @@
 						</div>
 					</div>
 				</div>
-			<% } %></div>
+			<% } %>
+			<div class="section-footer">
+				<a href="/listing/search"><button class="pure-button button-large" id="search-button"><i class="fa fa-plus-square fa-lg"></i> Buy a Book </button></a>
+			</div>
+			</div>
+
 		</div>
 	</div>
 	</div>
