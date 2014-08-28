@@ -40,7 +40,11 @@
 	<hr/>
 	<% if(listings){ %>
 		<% for(var i=0; i<listings.length; i++) { %>
-			<% if(listings[i].seller != user.userName){ %>
+			<% if(listings[i].seller != user.userName){ 
+
+			l = listings[i];
+			toggleID = "t" + l._id; 
+			listingIDDrop = "d" + l._id%>
 
 			<div class="pure-g l-complete">
 				<div class="pure-u-1-6 l-price">
@@ -57,7 +61,7 @@
 							<p><%= listings[i].condition %></p>
 						</div>
 						<div class="pure-u-1-3">
-							<p class="clickable">more &#9660;</p>
+							<p class="clickable" onclick="togglelDrop('<%= listingIDDrop%>', '<%=toggleID %>')" id="<%=toggleID%>">more &#9660;</p>
 						</div>
 					</div>
 				</div>
@@ -67,6 +71,11 @@
 						<p>Buy</p>
 					</form>
 				</div>
+			</div>
+			<div class="l-dropdown" id="<%= listingIDDrop%>">
+				<h3>Lisiting posted on <%= l.datePosted %> by <%= l.seller %></h3>
+				<hr/>
+				<p>Notes from seller: <%= l.moreInfo%></p>
 			</div>
 
 

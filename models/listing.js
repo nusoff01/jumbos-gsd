@@ -8,11 +8,13 @@ var mongoose = require('mongoose');
 
 var listingSchema = mongoose.Schema({
 	book       : { type : mongoose.Schema.Types.ObjectId, ref: 'Book'},
-	price      : { type : Number},
-	seller     : { type : String},
+	datePosted : { type : String }, // MM/DD of when listing was posted
+	price      : { type : Number },
+	seller     : { type : String },
 	edition    : { type : Number },
 	condition  : { type : String },
-	status     : { type : String }
+	status     : { type : String },
+	moreInfo   : { type : String }
 	// status has 4 possible values: "available", "pending", "sold", "cancelled"
 }, {collection:'listings'});
 

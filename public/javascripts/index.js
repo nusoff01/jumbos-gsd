@@ -3,6 +3,9 @@ $(function() {
 	// Initial hide of signup
 	$("#signup").hide();
 	$("#login-butn").hide();
+	$('.tContent').hide();
+	$('.setLT').hide();
+	$('.l-dropdown').hide();
 
 	// Show signup page hide everything else
 	$("#signup-butn").on('click', function(){
@@ -194,6 +197,18 @@ toggleChat = function(divID, chatID){
 		$('html, body').animate({
 	        scrollTop: $(chatTag).offset().top
 	    }, 1000);
+	}
+}
+
+//click on the "more" button for a listing
+togglelDrop = function(divID, toggleID){
+	var divTag = "#" + divID;
+	var tTag = "#" + toggleID;
+	$(divTag).toggle();
+	if($(divTag).is(":visible")){
+		$(tTag).html("less &#x25B2;")
+	} else {
+		$(tTag).html("more &#9660;")
 	}
 }
 

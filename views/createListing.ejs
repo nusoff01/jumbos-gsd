@@ -21,15 +21,20 @@
 					</div>
 					
 					<div class="pure-control-group">
-						<label for="price">Price</label>
+						<label for="price">Price ($)</label>
 						<input id="price" type="number" class="form-control" name="price"/>
 					</div>
 					
 					<div class="pure-control-group">
 						<label for="edition">Edition</label>
-						<input id="edition" type="number" name="edition"/>
+						<input id="edition" type="number" name="edition" placeholder="(optional)"/>
 					</div>	
 					
+					<div class="pure-control-group">
+						<label for="edition">Anything else?</label>
+						<input id="extraInfo" type="text" name="extraInfo" placeholder="(optional)"/>
+					</div>	
+
 					<div class="pure-control-group">
 						<label for="condition">Condition</label>
 						<select class="form-control" name="condition" id="condition">
@@ -39,6 +44,8 @@
 							<option>Acceptable</option>
 						</select>
 					</div>
+					
+
 					<button type="submit" class="pure-button">Create</button>
 				</fieldset>			
 			</form>
