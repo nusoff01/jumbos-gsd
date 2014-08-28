@@ -53,6 +53,8 @@ module.exports = function(app, passport) {
 
 	app.get('/profile', isLoggedIn, user.renderProfile);
 
+	app.post('/user/deleteAlert', isLoggedIn, user.deleteAlert);
+
 	// =====================================
 	// LOGOUT ==============================
 	// =====================================
@@ -97,6 +99,9 @@ module.exports = function(app, passport) {
 
 	app.post('/transaction/acceptLT', transaction.acceptSug);
 	// app.post('/transaction/rejectLT', transaction.rejectSug);
+
+
+
 
 //settings routes
 	// app.get('/settings', isLoggedIn, user.renderSettings);

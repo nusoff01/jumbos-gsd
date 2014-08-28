@@ -15,14 +15,25 @@
 				</div>
 				<% console.log("num alerts: " + user.alerts.length); %>
 				<% for(i = 0; i < user.alerts.length; i++){ 
-					alert = user.alerts[i]; %>
+					alert = user.alerts[i]; 
+					console.log(alert);
+					if(alert.active){ %>
 					<h3 class="splash-subhead">
 						<%= alert.message %>
 						<br/>
 						<br/>
-						<button class="pure-button alert-delete" ><i class="fa fa-trash-o fa-lg"></i></button>
-						<button class="pure-button alert-goto" ><i class="fa fa-arrow-circle-right fa-lg"></i></button>
+						<button class="pure-button del-alert" >
+							<input type="hidden" value="<%= i %>" />
+							<i class="fa fa-trash-o fa-lg"></i>
+						</button>
+
+						<button class="pure-button goto-alert" >
+							<input type="hidden" value="<%= alert.link %>"/>
+							<input type="hidden" value="<%= i %>" />
+							<i class="fa fa-arrow-circle-right fa-lg"></i>
+						</button>
 					</h3>
+					<% } %>
 				<% } %>
 				
 		</div>
@@ -133,13 +144,11 @@
 									<input type="hidden" class="pure-input-2-3 message" name="trans" value='<%= user.transactions[i]._id%>'>
 									<button class="pure-button">Send</button>
 								</fieldset>
-								
+
 							</form>
 
 							<!-- <button type="submit" class="pure-button message">Set meetup</button> -->
 										
-
-
 							<form class="pure-form pure-form-aligned setLT" action="/transaction/addLT" method="post">
 								<fieldset class="pure-from-fieldset">
 									<div class="pure-control-group">

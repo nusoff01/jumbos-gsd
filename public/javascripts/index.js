@@ -34,6 +34,24 @@ $(function() {
 	//a user wants to finalize a meetup. 
 
 
+	//user deleted an alert
+
+	$('button.del-alert').on('click', function(){
+		$(this).closest('h3').remove();
+		var id = $(this)[0].childNodes[1].value;
+		deleteAlert(id);
+		console.log(id);
+	});
+
+	$('button.goto-alert').on('click', function(){
+		var id = $(this)[0].childNodes[1].value;
+		goToTrans(id);
+		console.log(id);
+	});
+
+
+	//user deleted their own listing
+
 	$('div.del-listing').on('click', function(){
 		var id = $(this)[0].childNodes[1].childNodes[1].value;
 		data = JSON.stringify({id : id});
@@ -50,8 +68,28 @@ $(function() {
 				var mes = document.getElementById("alert-message");
 				mes.value = "listing deleted";
 			}
-		})
+		});
 	});
+
+	//buyinf a 
+
+	// $('div.l-button').on('click', function(){
+	// 	var id = $(this)[0].childNodes[1].value;
+	// 	console.log(id);
+	// 	data = JSON.stringify({listing : id});
+	// 	$.ajax({
+	// 		type: 'POST',
+	// 		url: '/transaction/postT',
+	// 		data: data,
+	// 		processData: false,
+	// 		contentType: 'application/json',
+	// 		success: function(data){
+	// 			link = JSON.stringify(data);
+	// 			window.location = link;
+	// 		}
+
+	// 	});
+	// });
 
 	$('form.acceptMeet').submit(function (e) {
 		
@@ -110,15 +148,14 @@ $(function() {
 	});
 
 
+
 	//Page: add listing
 	//occurs when a person presses submit to add a listing
 	$('form.addL').submit(function (e) {
 		e.preventDefault();
 	});
 
-	$('button.alert-delete').on('click', function(){
-		$(this).closest('h3').remove();
-	});
+	
 
 });
 
@@ -144,6 +181,7 @@ $('#container h3').click(function(e) {
 // }
 
 //click on the chat button for a transaction on the profile page
+
 toggleChat = function(divID, chatID){
 	//console.log(id);
 	divTag = "#" + divID;
@@ -158,6 +196,39 @@ toggleChat = function(divID, chatID){
 	    }, 1000);
 	}
 }
+
+//click on the goto button for an alert
+
+goToTrans = function(id){
+	divTag = "#c" + id;
+	chatTag = "#s" + id;
+	$(divTag).show();
+	$('html, body').animate({
+	    scrollTop: $(chatTag).offset().top
+	}, 1000);
+}
+
+//delete an alert given an index
+
+deleteAlert = function(index){
+	console.log("deleteAlert called");
+	data = JSON.stringify({index: index});
+		$.ajax({
+			type: 'POST',
+			url: '/user/deleteAlert',
+			data: data,
+			processData: false, 
+			dataType: 'text',
+			contentType: 'application/json',
+			success: function(response) {
+				if(response == "OK"){
+					console.log("success");
+				}
+			}
+		});
+}
+
+
 
 // $('.chat').on('click', function(){
 // 			$(this).closest('div').siblings().toggle();
