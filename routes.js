@@ -100,6 +100,10 @@ module.exports = function(app, passport) {
 	app.post('/transaction/acceptLT', transaction.acceptSug);
 	// app.post('/transaction/rejectLT', transaction.rejectSug);
 
+	app.post('/courses/addCourses', course.postCourses);
+	app.get('/courses/addCourses', course.getCourses);
+		
+
 
 
 

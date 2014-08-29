@@ -1,24 +1,38 @@
 <%- include head.ejs %>
-  <div class="pure-u">
-  	<h1>Create a textbook</h1>
+    
+    <div class="profile">
+        <div class="pure-u">
+          	<h1>Create a textbook</h1>
+            <% if(message){ %>
+                <div class="alert alert-danger">
+                    <%= message %>
+                </div>
+            <% } %>
 
-  	<form action="/book/new" class="pure-form pure-form-aligned" method="post">
-  		<div>
-  			<label>book title</label>
-  			<input type="text" class="form-control" name="name"/>
-  		</div>
-  		<div>
-  			<label>Course Department</label>
-  			<input type="text" class="form-control" name="department"/>
-  		</div>
-  		<div>
-  			<label>Course Number</label>
-  			<input type="number" class="form-control" name="number"/>
-  		</div>
-  		<button type="submit">Create</button>
-  	</form>
-  </body>
-  </html>
+            <div class="form-container">
+              	<form action="/book/new" class="pure-form pure-form-aligned" method="post">
+                    <fieldset class="pure-from-fieldset paddL paddR">
+                  		<div class="pure-control-group">
+                  			<label>book title</label>
+                  			<input type="text" class="form-control" name="name"/>
+                  		</div>
+                  		<div class="pure-control-group">
+                  			<label>Course Department</label>
+                  			<input type="text" class="form-control" name="department"/>
+                  		</div>
+                  		<div class="pure-control-group">
+                  			<label>Course Number</label>
+                  			<input type="number" class="form-control" name="number"/>
+                  		</div>
+                  		<button type="submit" class="pure-button">Create</button>
+                    </fieldset>
+              	</form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
 
 
 
