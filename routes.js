@@ -51,9 +51,9 @@ module.exports = function(app, passport) {
 	// we will use route middleware to verify this (the isLoggedIn function)
 	var user = require('./lib/user.js');
 
-	app.get('/profile', isLoggedIn, user.renderProfile);
+	app.get('/profile', user.renderProfile);
 
-	app.post('/user/deleteAlert', isLoggedIn, user.deleteAlert);
+	app.post('/user/deleteAlert', user.deleteAlert);
 
 	// =====================================
 	// LOGOUT ==============================
@@ -68,8 +68,8 @@ module.exports = function(app, passport) {
 	
 	app.get('/listing/list', isLoggedIn, listing.getAllListings);
 
-	app.post('/listing/new', isLoggedIn, listing.postNewListing);
-	app.get('/listing/new', isLoggedIn, listing.getNewListing);
+	app.post('/listing/new', listing.postNewListing);
+	app.get('/listing/new', listing.getNewListing);
 
 	//query listings by title
 	//app.get('/listing/title/:q', listing.findListings);
