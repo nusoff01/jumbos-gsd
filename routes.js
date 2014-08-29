@@ -51,9 +51,9 @@ module.exports = function(app, passport) {
 	// we will use route middleware to verify this (the isLoggedIn function)
 	var user = require('./lib/user.js');
 
-	app.get('/profile', user.renderProfile);
+	app.get('/profile', isLoggedIn, user.renderProfile);
 
-	app.post('/user/deleteAlert', user.deleteAlert);
+	app.post('/user/deleteAlert', isLoggedIn, user.deleteAlert);
 
 	// =====================================
 	// LOGOUT ==============================
@@ -68,8 +68,8 @@ module.exports = function(app, passport) {
 	
 	app.get('/listing/list', isLoggedIn, listing.getAllListings);
 
-	app.post('/listing/new', listing.postNewListing);
-	app.get('/listing/new', listing.getNewListing);
+	app.post('/listing/new', isLoggedIn, listing.postNewListing);
+	app.get('/listing/new', isLoggedIn, listing.getNewListing);
 
 	//query listings by title
 	//app.get('/listing/title/:q', listing.findListings);
@@ -77,9 +77,9 @@ module.exports = function(app, passport) {
 	app.post('/listing/delete', listing.deleteListing);
 
 
-	app.get('/listing/search', listing.findListings);
-	app.get('/listing/search/title', listing.findListingsTitle);
-	app.get('/listing/search/course', listing.findListingsCourse);
+	app.get('/listing/search', isLoggedIn, listing.findListings);
+	app.get('/listing/search/title', isLoggedIn, listing.findListingsTitle);
+	app.get('/listing/search/course', isLoggedIn, listing.findListingsCourse);
 
 //Book procceses
 	var book = require('./lib/book.js');
