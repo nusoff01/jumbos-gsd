@@ -1,3 +1,3 @@
 module.exports = {
-	'url' : 'mongodb://localhost/tuftsText'
+	'url' : process.env.MONGOLAB_URI 
 };
