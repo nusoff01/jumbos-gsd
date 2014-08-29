@@ -16,8 +16,7 @@ var listing      = require('./lib/listing.js');
 
 //config
 
-mongoose.connect(process.env.MONGOLAB_URI ||
-                 process.env.MONGOHQ_URL  ||
+mongoose.connect( process.env.MONGOHQ_URL  ||
                  'mongodb://localhost/tuftsText');
 // mongoose.connect(process.env.MONGOLAB_URI);
 require('./config/passport')(passport);
