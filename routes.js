@@ -77,9 +77,9 @@ module.exports = function(app, passport) {
 	app.post('/listing/delete', listing.deleteListing);
 
 
-	app.get('/listing/search', isLoggedIn, listing.findListings);
-	app.get('/listing/search/title', isLoggedIn, listing.findListingsTitle);
-	app.get('/listing/search/course', isLoggedIn, listing.findListingsCourse);
+	app.get('/listing/search', listing.findListings);
+	app.get('/listing/search/title', listing.findListingsTitle);
+	app.get('/listing/search/course', listing.findListingsCourse);
 
 //Book procceses
 	var book = require('./lib/book.js');
