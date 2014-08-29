@@ -1,104 +1,101 @@
-2014-08-29T21:30:53.269050+00:00 app[web.1]: [90mGET /404 [33m404 [90m1ms[0m
-2014-08-29T21:38:42+00:00 heroku[slug-compiler]: Slug compilation started
-2014-08-29T21:39:04+00:00 heroku[slug-compiler]: Slug compilation finished
-2014-08-29T21:39:04.525620+00:00 heroku[api]: Deploy eef59a8 by tehusoff@gmail.com
-2014-08-29T21:39:04.525699+00:00 heroku[api]: Release v46 created by tehusoff@gmail.com
-2014-08-29T21:39:04.622732+00:00 heroku[web.1]: State changed from up to starting
-2014-08-29T21:39:04.711811+00:00 heroku[web.2]: State changed from up to starting
-2014-08-29T21:39:06.352398+00:00 heroku[web.1]: Starting process with command `node server.js`
-2014-08-29T21:39:07.186511+00:00 heroku[web.2]: Starting process with command `node server.js`
-2014-08-29T21:39:06.994802+00:00 heroku[web.1]: Stopping all processes with SIGTERM
-2014-08-29T21:39:07.379200+00:00 app[web.1]: Fri, 29 Aug 2014 21:39:07 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at server.js:33:9
-2014-08-29T21:39:07.378584+00:00 app[web.1]: Fri, 29 Aug 2014 21:39:07 GMT express-session deprecated undefined resave option; provide resave option at server.js:33:9
-2014-08-29T21:39:07.392220+00:00 app[web.1]: Using port 44649
-2014-08-29T21:39:07.594722+00:00 heroku[web.1]: State changed from starting to up
-2014-08-29T21:39:08.455610+00:00 heroku[router]: at=info method=GET path="/" host=www.p2ptext.com request_id=4daff790-eb4b-4e70-b9ba-0758e6ea084b fwd="198.0.156.51" dyno=web.1 connect=1ms service=35ms status=200 bytes=668
-2014-08-29T21:39:08.311861+00:00 heroku[web.1]: Process exited with status 143
-2014-08-29T21:39:08.463416+00:00 app[web.1]: [90mGET / [32m200 [90m38ms - 5.15kb[0m
-2014-08-29T21:39:08.645447+00:00 app[web.1]: [90mGET /javascripts/vendor/angular/angular.min.js [32m200 [90m5ms - 78.4kb[0m
-2014-08-29T21:39:08.642146+00:00 app[web.1]: [90mGET /stylesheets/signupValidation.css [32m200 [90m6ms - 1.25kb[0m
-2014-08-29T21:39:07.763920+00:00 heroku[web.2]: Stopping all processes with SIGTERM
-2014-08-29T21:39:08.645074+00:00 heroku[router]: at=info method=GET path="/javascripts/index.js" host=www.p2ptext.com request_id=d0edf1c9-754e-4162-9d79-a739fadb7f31 fwd="198.0.156.51" dyno=web.1 connect=1ms service=6ms status=200 bytes=735
-2014-08-29T21:39:08.637825+00:00 heroku[router]: at=info method=GET path="/stylesheets/marketing.css" host=www.p2ptext.com request_id=a641b9ba-ca11-4a7e-8294-d0b587242574 fwd="198.0.156.51" dyno=web.1 connect=1ms service=9ms status=200 bytes=756
-2014-08-29T21:39:08.646437+00:00 heroku[router]: at=info method=GET path="/javascripts/vendor/angular/angular.min.js" host=www.p2ptext.com request_id=5cbf095f-1580-4dbe-ac69-1cab0bf4291d fwd="198.0.156.51" dyno=web.1 connect=1ms service=9ms status=200 bytes=757
-2014-08-29T21:39:08.654493+00:00 heroku[router]: at=info method=GET path="/javascripts/vendor/jquery-ui/js/jquery-1.8.3.js" host=www.p2ptext.com request_id=c28bfc6e-0197-43a9-a9a8-c30af2a2cc35 fwd="198.0.156.51" dyno=web.1 connect=3ms service=
-15ms status=200 bytes=764
-2014-08-29T21:39:08.641138+00:00 heroku[router]: at=info method=GET path="/stylesheets/signupValidation.css" host=www.p2ptext.com request_id=aa540192-0ce9-4548-a84a-2d00fdedb60a fwd="198.0.156.51" dyno=web.1 connect=1ms service=8ms status=200 bytes=762
-2014-08-29T21:39:08.638712+00:00 app[web.1]: [90mGET /stylesheets/marketing.css [32m200 [90m9ms - 11.9kb[0m
-2014-08-29T21:39:08.644317+00:00 app[web.1]: [90mGET /javascripts/index.js [32m200 [90m4ms - 5.84kb[0m
-2014-08-29T21:39:08.720472+00:00 app[web.1]: [90mGET /imgs/dark_geometric.png [32m200 [90m3ms - 817b[0m
-2014-08-29T21:39:08.654209+00:00 app[web.1]: [90mGET /javascripts/vendor/jquery-ui/js/jquery-1.8.3.js [32m200 [90m13ms - 259.82kb[0m
-2014-08-29T21:39:08.772785+00:00 heroku[router]: at=info method=GET path="/javascripts/matchDirective.js" host=www.p2ptext.com request_id=20ababfa-3a80-4d0e-8017-ab11742c18ca fwd="198.0.156.51" dyno=web.1 connect=5ms service=3ms status=200 bytes=743
-2014-08-29T21:39:08.660947+00:00 app[web.2]: Fri, 29 Aug 2014 21:39:08 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at server.js:33:9
-2014-08-29T21:39:08.660388+00:00 app[web.2]: Fri, 29 Aug 2014 21:39:08 GMT express-session deprecated undefined resave option; provide resave option at server.js:33:9
-2014-08-29T21:39:08.673513+00:00 app[web.2]: Using port 25733
-2014-08-29T21:39:08.763136+00:00 app[web.1]: [90mGET /javascripts/matchDirective.js [32m200 [90m2ms - 765b[0m
-2014-08-29T21:39:09.007201+00:00 app[web.1]: [90mGET / [32m200 [90m7ms - 5.15kb[0m
-2014-08-29T21:39:08.720727+00:00 heroku[router]: at=info method=GET path="/imgs/dark_geometric.png" host=www.p2ptext.com request_id=4f2cb158-a046-4431-899c-e07fe22212d8 fwd="198.0.156.51" dyno=web.1 connect=1ms service=6ms status=200 bytes=754
-2014-08-29T21:39:09.009352+00:00 heroku[router]: at=info method=GET path="/" host=www.p2ptext.com request_id=47df463f-2760-49dc-bf5b-18eda62ca225 fwd="198.0.156.51" dyno=web.1 connect=1ms service=9ms status=200 bytes=697
-2014-08-29T21:39:08.936710+00:00 heroku[web.2]: State changed from starting to up
-2014-08-29T21:39:09.182535+00:00 heroku[web.2]: Process exited with status 143
-2014-08-29T21:39:15.122350+00:00 heroku[router]: at=info method=POST path="/login" host=www.p2ptext.com request_id=467e1674-9707-45b8-9825-2589fd31f0ca fwd="198.0.156.51" dyno=web.2 connect=1ms service=167ms status=302 bytes=878
-2014-08-29T21:39:15.204256+00:00 heroku[router]: at=info method=GET path="/profile" host=www.p2ptext.com request_id=a2fb14a4-b51f-4fa8-a736-e2885cda4c8b fwd="198.0.156.51" dyno=web.2 connect=1ms service=50ms status=200 bytes=732
-2014-08-29T21:39:15.320644+00:00 app[web.2]: [90mGET /javascripts/jquery.timepicker.js [32m200 [90m20ms - 26.03kb[0m
-2014-08-29T21:39:15.160881+00:00 app[web.2]: deserialized
-2014-08-29T21:39:15.1
-14184+00:00 app[web.2]: serialized
-2014-08-29T21:39:15.203473+00:00 app[web.2]: num alerts: 0
-2014-08-29T21:39:15.301303+00:00 app[web.2]: deserialized
-2014-08-29T21:39:15.303828+00:00 app[web.2]: deserialized
-2014-08-29T21:39:15.329715+00:00 app[web.2]: deserialized
-2014-08-29T21:39:15.354425+00:00 app[web.2]: deserialized
-2014-08-29T21:39:15.317429+00:00 heroku[router]: at=info method=GET path="/stylesheets/jquery.timepicker.css" host=www.p2ptext.com request_id=e9f741e6-44ed-429d-9fbb-2a5dcd075c1d fwd="198.0.156.51" dyno=web.2 connect=0ms service=21ms status=200 bytes=796
-2014-08-29T21:39:15.294821+00:00 heroku[router]: at=info method=GET path="/javascripts/vendor/jquery-ui/css/custom-theme/jquery-ui-1.9.2.css" host=www.p2ptext.com request_id=1b98017b-66d2-4910-ba7f-cda601a94dd5 fwd="198.0.156.51" dyno=web.1 connect=1ms service=4ms status=200 bytes=829
-2014-08-29T21:39:15.123636+00:00 app[web.2]: [90mPOST /login [36m302 [90m157ms - 72b[0m
-2014-08-29T21:39:15.178821+00:00 app[web.2]: message: 
-2014-08-29T21:39:15.205572+00:00 app[web.2]: [90mGET /profile [32m200 [90m46ms - 4.16kb[0m
-2014-08-29T21:39:15.303086+00:00 app[web.2]: deserialized
-2014-08-29T21:39:15.318710+00:00 app[web.2]: [90mGET /stylesheets/jquery.timepicker.css [32m200 [90m19ms - 1.55kb[0m
-2014-08-29T21:39:15.322466+00:00 app[web.2]: [90mGET /stylesheets/bootstrap-datepicker.css [32m200 [90m20ms - 17.53kb[0m
-2014-08-29T21:39:15.340328+00:00 app[web.2]: [90mGET /stylesheets/style.css [32m200 [90m11ms - 471b[0m
-2014-08-29T21:39:15.371001+00:00 app[web.2]: [90mGET /stylesheets/marketing.css [36m304 [90m17ms[0m
-2014-08-29T21:39:15.346846+00:00 heroku[router]: at=info method=GET path="/stylesheets/style.css" host=www.p2ptext.com request_id=c1f8ded2-ce95-4d47-8024-34861b731e91 fwd="198.0.156.51" dyno=web.2 connect=7ms service=18ms status=200 bytes=784
-2014-08-29T21:39:15.303561+00:00 heroku[router]: at=info method=GET path="/javascripts/bootstrap-datepicker.js" host=www.p2ptext.com request_id=1eb7d311-c5f7-4df1-81f6-0fc50ad90afc fwd="198.0.156.51" dyno=web.1 connect=1ms service=5ms status=200 bytes=784
-2014-08-29T21:39:15.361777+00:00 app[web.1]: [90mGET /stylesheets/jquery.datetimepicker.css [32m200 [90m1ms - 9.72kb[0m
-2014-08-29T21:39:15.295435+00:00 app[web.1]: [90mGET /javascripts/vendor/jquery-ui/css/custom-theme/jquery-ui-1.9.2.css [32m200 [90m2ms - 31.67kb[0m
-2014-08-29T21:39:15.399573+00:00 app[web.1]: [90mGET /javascripts/jquery.ellipsis.js [32m200 [90m3ms - 3.45kb[0m
-2014-08-29T21:39:15.300611+00:00 app[web.1]: [90mGET /javascripts/bootstrap-datepicker.js [32m200 [90m2ms - 45.72kb[0m
-2014-08-29T21:39:15.393577+00:00 app[web.1]: [90mGET /javascripts/vendor/jquery-ui/js/jquery-ui-1.9.2.min.js [32m200 [90m9ms - 231.19kb[0m
-2014-08-29T21:39:15.531989+00:00 app[web.1]: [90mGET /imgs/dark_geometric.png [36m304 [90m1ms[0m
-2014-08-29T21:39:15.317238+00:00 heroku[router]: at=info method=GET path="/javascripts/jquery.timepicker.js" host=www.p2ptext.com request_id=44a725d2-497d-4f34-a37d-2fd1898333d2 fwd="198.0.156.51" dyno=web.2 connect=1ms service=23ms status=200 bytes=781
-2014-08-29T21:39:15.324289+00:00 heroku[router]: at=info method=GET path="/stylesheets/bootstrap-datepicker.css" host=www.p2ptext.com request_id=b95c0dac-df7a-4ccc-9269-0caf17850811 fwd="198.0.156.51" dyno=web.2 connect=5ms service=22ms status=200 bytes=800
-2014-08-29T21:39:15.391584+00:00 heroku[router]: at=info method=GET path="/javascripts/vendor/jquery-ui/js/jquery-ui-1.9.2.min.js" host=www.p2ptext.com request_id=5c4fd57a-747f-4f26-94ee-586223d2d748 fwd="198.0.156.51" dyno=web.1 connect=1ms service=9ms status=200 bytes=804
-2014-08-29T21:39:15.406713+00:00 heroku[router]: at=info method=GET path="/javascripts/index.js" host=www.p2ptext.com request_id=931b8495-8276-4f72-a826-5bb49031a66c fwd="198.0.156.51" dyno=web.2 connect=1ms service=8ms status=304 bytes=768
-2014-08-29T21:39:15.371239+00:00 heroku[router]: at=info method=GET path="/stylesheets/marketing.css" host=www.p2ptext.com request_id=8b9fcdb6-c055-42c0-a027-71959518b2dc fwd="198.0.156.51" dyno=web.2 connect=1ms service=19ms status=304 bytes=789
-2014-08-29T21:39:15.361332+00:00 heroku[router]: at=info method=GET path="/stylesheets/jquery.datetimepicker.css" host=www.p2ptext.com request_id=a443a7d8-efe2-489d-95a5-6f26dfd0d7b2 fwd="198.0.156.51" dyno=web.1 connect=0ms service=3ms status=200 bytes=800
-2014-08-29T21:39:15.408890+00:00 heroku[router]: at=info method=GET path="/javascripts/jquery.datetimepicker.js" host=www.p2ptext.com request_id=04382206-24d5-4456-8b18-9daeb0b94223 fwd="198.0.156.51" dyno=web.2 connect=1ms service=12ms status=200 bytes=785
-2014-08-29T21:39:15.385733+00:00 app[web.2]: deserialized
-2014-08-29T21:39:15.400384+00:00 app[web.2]: deserialized
-2014-08-29T21:39:15.405114+00:00 app[web.2]: [90mGET /javascripts/index.js [36m304 [90m5ms[0m
-2014-08-29T21:39:15.398632+00:00 app[web.2]: [90mGET /javascripts/vendor/jquery-ui/js/jquery-1.8.3.js [36m304 [90m18ms[0m
-2014-08-29T21:39:15.401756+00:00 app[web.2]: deserialized
-2014-08-29T21:39:15.407792+00:00 app[web.2]: [90mGET /javascripts/jquery.datetimepicker.js [32m200 [90m8ms - 61.21kb[0m
-2014-08-29T21:39:15.403343+00:00 heroku[router]: at=info method=GET path="/javascripts/jquery.ellipsis.js" host=www.p2ptext.com request_id=64ae7f9c-e3ae-48b7-b8fd-21ea75207a10 fwd="198.0.156.51" dyno=web.1 connect=0ms service=5ms status=200 bytes=778
-2014-08-29T21:39:15.397238+00:00 heroku[router]: at=info method=GET path="/javascripts/vendor/jquery-ui/js/jquery-1.8.3.js" host=www.p2ptext.com request_id=4bfb3145-ece9-41e5-981f-3a12a784533c fwd="198.0.156.51" dyno=web.2 connect=1ms service=20ms status=304 bytes=797
-2014-08-29T21:39:15.532175+00:00 heroku[router]: at=info method=GET path="/imgs/dark_geometric.png" host=www.p2ptext.com request_id=77235448-09df-454c-a695-0033b050f1ea fwd="198.0.156.51" dyno=web.1 connect=0ms service=3ms status=304 bytes=789
-2014-08-29T21:39:18.000476+00:00 heroku[router]: at=info method=GET path="/listing/new" host=www.p2ptext.com request_id=a85b45ca-e941-438c-80a7-87c03f3febb9 fwd="198.0.156.51" dyno=web.2 connect=1ms service=7ms status=302 bytes=719
-2014-08-29T21:39:18.035988+00:00 heroku[router]: at=info method=GET path="/" host=www.p2ptext.com request_id=de1e017c-f62f-4cf1-a6b3-14edd0f181cb fwd="198.0.156.51" dyno=web.1 connect=1ms service=3ms status=304 bytes=740
-2014-08-29T21:39:18.153093+00:00 heroku[router]: at=info method=GET path="/javascripts/index.js" host=www.p2ptext.com request_id=86fbcfef-fbb9-4646-b350-8f4591a38037 fwd="198.0.156.51" dyno=web.1 connect=1ms service=6ms status=304 bytes=735
-2014-08-29T21:39:18.001908+00:00 app[web.2]: [90mGET /listing/new [36m302 [90m2ms - 58b[0m
-2014-08-29T21:39:18.146448+00:00 app[web.2]: [90mGET /javascripts/vendor/jquery-ui/js/jquery-1.8.3.js [36m304 [90m1ms[0m
-2014-08-29T21:39:18.151222+00:00 heroku[router]: at=info method=GET path="/javascripts/matchDirective.js" host=www.p2ptext.com request_id=c39a97ac-03e8-4a6d-b942-3cd51751bdd2 fwd="198.0.156.51" dyno=web.1 connect=1ms service=2ms status=304 bytes=743
-2014-08-29T21:39:18.037667+00:00 app[web.1]: [90mGET / [36m304 [90m2ms[0m
-2014-08-29T21:39:18.149455+00:00 app[
-web.1]: [90mGET /javascripts/index.js [36m304 [90m2ms[0m
-2014-08-29T21:39:18.223495+00:00 app[web.1]: [90mGET /imgs/dark_geometric.png [36m304 [90m1ms[0m
-2014-08-29T21:39:18.148110+00:00 heroku[router]: at=info method=GET path="/javascripts/vendor/jquery-ui/js/jquery-1.8.3.js" host=www.p2ptext.com request_id=edc5be9b-a434-4f5b-bcfc-4c9466ba095e fwd="198.0.156.51" dyno=web.2 connect=1ms service=2ms status=304 bytes=764
-2014-08-29T21:39:18.144606+00:00 heroku[router]: at=info method=GET path="/stylesheets/marketing.css" host=www.p2ptext.com request_id=20036e71-2b79-4296-a93c-b963dcd74ad0 fwd="198.0.156.51" dyno=web.2 connect=1ms service=5ms status=304 bytes=756
-2014-08-29T21:39:18.142970+00:00 app[web.2]: [90mGET /stylesheets/marketing.css [36m304 [90m1ms[0m
-2014-08-29T21:39:18.241410+00:00 app[web.2]: [90mGET /javascripts/vendor/angular/angular.min.js [36m304 [90m2ms[0m
-2014-08-29T21:39:18.144980+00:00 app[web.1]: [90mGET /stylesheets/signupValidation.css [36m304 [90m1ms[0m
-2014-08-29T21:39:18.150645+00:00 app[web.1]: [90mGET /javascripts/matchDirective.js [36m304 [90m1ms[0m
-2014-08-29T21:39:18.143181+00:00 heroku[router]: at=info method=GET path="/stylesheets/signupValidation.css" host=www.p2ptext.com request_id=afe1dc70-fb04-48cd-b575-5328e45ea2fb fwd="198.0.156.51" dyno=web.1 connect=1ms service=2ms status=304 bytes=762
-2014-08-29T21:39:18.223540+00:00 heroku[router]: at=info method=GET path="/imgs/dark_geometric.png" host=www.p2ptext.com request_id=a64283cc-749e-4d6d-872e-4d1187137ac3 fwd="198.0.156.51" dyno=web.1 connect=1ms service=2ms status=304 bytes=762
-2014-08-29T21:39:18.257370+00:00 heroku[router]: at=info method=GET path="/javascripts/vendor/angular/angular.min.js" host=www.p2ptext.com request_id=5e0bdcb8-3d2b-4ef3-9f9b-01db021654f4 fwd="198.0.156.51" dyno=web.2 connect=79ms service=17ms status=304 bytes=758
+2014-08-29T21:46:46.886826+00:00 app[web.2]: [90mGET /stylesheets/marketing.css [36m304 [90m1ms[0m
+2014-08-29T21:46:46.925345+00:00 app[web.2]: [90mGET /javascripts/index.js [36m304 [90m2ms[0m
+2014-08-29T21:46:46.848175+00:00 heroku[router]: at=info method=GET path="/javascripts/vendor/jquery-ui/css/custom-theme/jquery-ui-1.9.2.css" host=www.p2ptext.com request_id=7071c052-da30-411d-a366-a4db70ec2fb7 fwd="198.0.156.51" dyno=web.1 connect=1ms service=11ms status=200 bytes=833
+2014-08-29T21:46:46.848116+00:00 app[web.2]: [90mGET /javascripts/jquery.timepicker.js [32m200 [90m2ms - 26.03kb[0m
+2014-08-29T21:46:46.916817+00:00 app[web.2]: [90mGET /javascripts/vendor/jquery-ui/js/jquery-1.8.3.js [36m304 [90m1ms[0m
+2014-08-29T21:46:46.923979+00:00 heroku[router]: at=info method=GET path="/javascripts/vendor/jquery-ui/js/jquery-1.8.3.js" host=www.p2ptext.com request_id=b85c9699-9a2c-4980-8609-296d0c5af486 fwd="198.0.156.51" dyno=web.2 connect=1ms service=7ms status=304 bytes=801
+2014-08-29T21:46:46.857635+00:00 heroku[router]: at=info method=GET path="/stylesheets/jquery.timepicker.css" host=www.p2ptext.com request_id=2a6d2a0e-0952-4a40-9dcd-66eefaaf6349 fwd="198.0.156.51" dyno=web.1 connect=1ms service=16ms status=200 bytes=800
+2014-08-29T21:46:46.846392+00:00 heroku[router]: at=info method=GET path="/javascripts/bootstrap-datepicker.js" host=www.p2ptext.com request_id=e425d04e-61c9-4fea-8c90-77a0b8b0e530 fwd="198.0.156.51" dyno=web.2 connect=1ms service=4ms status=200 bytes=788
+2014-08-29T21:46:46.899124+00:00 heroku[router]: at=info method=GET path="/stylesheets/jquery.datetimepicker.css" host=www.p2ptext.com request_id=1c53abcf-bcab-4caa-94c6-404c26bbcf07 fwd="198.0.156.51" dyno=web.1 connect=2ms service=6ms status=200 bytes=804
+2014-08-29T21:46:46.949451+00:00 heroku[router]: at=info method=GET path="/javascripts/vendor/jquery-ui/js/jquery-ui-1.9.2.min.js" host=www.p2ptext.com request_id=c247cae6-1cf3-4b17-a8d1-84bbe6d2f58a fwd="198.0.156.51" dyno=web.1 connect=1ms service=36ms status=200 bytes=808
+2014-08-29T21:46:46.945991+00:00 heroku[router]: at=info method=GET path="/javascripts/jquery.datetimepicker.js" host=www.p2ptext.com request_id=bcf31409-370e-41d4-b3e1-ccda9a40a68a fwd="198.0.156.51" dyno=web.1 connect=1ms service=12ms status=200 bytes=789
+2014-08-29T21:46:46.888399+00:00 heroku[router]: at=info method=GET path="/stylesheets/marketing.css" host=www.p2ptext.com request_id=c02aede4-310a-4de0-9203-a0e45950170e fwd="198.0.156.51" dyno=web.2 connect=1ms service=3ms status=304 bytes=793
+2014-08-29T21:46:46.927478+00:00 heroku[router]: at=info method=GET path="/javascripts/index.js" host=www.p2ptext.com request_id=fd493145-143d-4124-8210-79ee758879c4 fwd="198.0.156.51" dyno=web.2 connect=1ms service=3ms status=304 bytes=772
+2014-08-29T21:46:46.940935+00:00 app[web.1]: [90mGET /javascripts/jquery.datetimepicker.js [32m200 [90m7ms - 61.21kb[0m
+2014-08-29T21:46:46.934984+00:00 app[web.1]: deserialized
+2014-08-29T21:46:46.921258+00:00 app[web.1]: deserialized
+2014-08-29T21:46:47.027487+00:00 app[web.1]: [90mGET /imgs/dark_geometric.png [36m304 [90m2ms[0m
+2014-08-29T21:46:46.931018+00:00 app[web.1]: deserialized
+2014-08-29T21:46:46.940029+00:00 app[web.1]: [90mGET /javascripts/jquery.ellipsis.js [32m200 [90m9ms - 3.45kb[0m
+2014-08-29T21:46:46.946381+00:00 app[web.1]: [90mGET /javascripts/vendor/jquery-ui/js/jquery-ui-1.9.2.min.js [32m200 [90m26ms - 231.19kb[0m
+2014-08-29T21:46:47.029024+00:00 heroku[router]: at=info method=GET path="/imgs/dark_geometric.png" host=www.p2ptext.com request_id=a8ef78e5-b1d1-4bfc-8a3d-bd5a353a4577 fwd="198.0.156.51" dyno=web.1 connect=3ms service=3ms status=304 bytes=789
+2014-08-29T21:46:48.863782+00:00 heroku[router]: at=info method=GET path="/listing/new" host=www.p2ptext.com request_id=509461f8-b2b9-4fb5-9ff2-a4d481c8a73e fwd="198.0.156.51" dyno=web.2 connect=2ms service=5ms status=302 bytes=721
+2014-08-29T21:46:48.912102+00:00 heroku[router]: at=info method=GET path="/" host=www.p2ptext.com request_id=ea990b78-c2ad-4a54-97ca-a134798c8ee3 fwd="198.0.156.51" dyno=web.1 connect=2ms service=12ms status=304 bytes=738
+2014-08-29T21:46:48.863706+00:00 app[web.2]: [90mGET /listing/new [36m302 [90m4ms - 58b[0m
+2014-08-29T21:46:49.030331+00:00 app[web.2]: [90mGET /javascripts/vendor/angular/angular.min.js [36m304 [90m1ms[0m
+2014-08-29T21:46:48.910945+00:00 app[web.1]: [90mGET / [36m304 [90m10ms[0m
+2014-08-29T21:46:49.087633+00:00 app[web.1]: [90mGET /imgs/dark_geometric.png [36m304 [90m1ms[0m
+2014-08-29T21:46:49.029888+00:00 app[web.1]: [90mGET /javascripts/index.js [36m304 [90m3ms[0m
+2014-08-29T21:46:49.032977+00:00 heroku[router]: at=info method=GET path="/javascripts/index.js" host=www.p2ptext.com request_id=f53da7e3-6ce4-4259-adea-79032f75cf6a fwd="198.0.156.51" dyno=web.1 connect=1ms service=6ms status=304 bytes=737
+2014-08-29T21:46:49.037279+00:00 heroku[router]: at=info method=GET path="/javascripts/vendor/jquery-ui/js/jquery-1.8.3.js" host=www.p2ptext.com request_id=8fec3c6c-81f2-4c85-8a76-c0b0a6e817de fwd="198.0.156.51" dyno=web.1 connect=1ms service=9ms status=304 bytes=766
+2014-08-29T21:46:49.034929+00:00 heroku[router]: at=info method=GET path="/javascripts/vendor/angular/angular.min.js" host=www.p2ptext.com request_id=15a8e57a-04a6-4bd2-a68c-aabd405746b3 fwd="198.0.156.51" dyno=web.2 connect=2ms service=5ms status=304 bytes=759
+2014-08-29T21:46:49.050842+00:00 heroku[router]: at=info method=GET path="/javascripts/matchDirective.js" host=www.p2ptext.com request_id=3893aa08-7393-49c0-ae2e-187947db6444 fwd="198.0.156.51" dyno=web.2 connect=4ms service=6ms status=304 bytes=745
+2014-08-29T21:46:49.095727+00:00 heroku[router]: at=info method=GET path="/imgs/dark_geometric.png" host=www.p2ptext.com request_id=ea166cde-65a1-470f-a350-9f650be0064d fwd="198.0.156.51" dyno=web.1 connect=6ms service=6ms status=304 bytes=756
+2014-08-29T21:46:49.024262+00:00 app[web.2]: [90mGET /stylesheets/signupValidation.css [36m304 [90m2ms[0m
+2014-08-29T21:46:49.042822+00:00 app[web.2]: [90mGET /javascripts/matchDirective.js [36m304 [90m1ms[0m
+2014-08-29T21:46:49.029097+00:00 heroku[router]: at=info method=GET path="/stylesheets/signupValidation.css" host=www.p2ptext.com request_id=2005c9af-32e3-4a37-9d5d-2fb73c5f2956 fwd="198.0.156.51" dyno=web.2 connect=1ms service=7ms status=304 bytes=764
+2014-08-29T21:46:49.028531+00:00 app[web.1]: [90mGET /stylesheets/marketing.css [36m304 [90m4ms[0m
+2014-08-29T21:46:49.030281+00:00 app[web.1]: [90mGET /javascripts/vendor/jquery-ui/js/jquery-1.8.3.js [36m304 [90m3ms[0m
+2014-08-29T21:46:49.030264+00:00 heroku[router]: at=info method=GET path="/stylesheets/marketing.css" host=www.p2ptext.com request_id=72a551e5-b4d7-47b5-a6a7-7a82332a4588 fwd="198.0.156.51" dyno=web.1 connect=3ms service=6ms status=304 bytes=758
+2014-08-29T21:47:00.548016+00:00 app[web.1]: serialized
+2014-08-29T21:47:00.610758+00:00 app[web.1]: deserialized
+2014-08-29T21:47:00.623356+00:00 app[web.1]: num alerts: 0
+2014-08-29T21:47:00.742759+00:00 app[web.1]: deserialized
+2014-08-29T21:47:00.746247+00:00 app[web.1]: [90mGET /javascripts/bootstrap-datepicker.js [36m304 [90m6ms[0m
+2014-08-29T21:47:00.783509+00:00 app[web.1]: deserialized
+2014-08-29T21:47:00.786081+00:00 app[web.1]: deserialized
+2014-08-29T21:47:00.790357+00:00 app[web.1]: [90mGET /stylesheets/marketing.css [36m304 [90m6ms[0m
+2014-08-29T21:47:00.549229+00:00 app[web.1]: [90mPOST /login [36m302 [90m98ms - 72b[0m
+2014-08-29T21:47:00.743915+00:00 app[web.1]: deserialized
+2014-08-29T21:47:00.747869+00:00 app[web.1]: [90mGET /stylesheets/bootstrap-datepicker.css [36m304 [90m4ms[0m
+2014-08-29T21:47:00.624035+00:00 app[web.1]: [90mGET /profile [36m304 [90m13ms[0m
+2014-08-29T21:47:00.617650+00:00 app[web.1]: message: 
+2014-08-29T21:47:00.787340+00:00 app[web.1]: [90mGET /javascripts/vendor/jquery-ui/js/jquery-1.8.3.js [36m304 [90m5ms[0m
+2014-08-29T21:47:00.790904+00:00 app[web.1]: [90mGET /javascripts/vendor/jquery-ui/js/jquery-ui-1.9.2.min.js [36m304 [90m5ms[0m
+2014-08-29T21:47:00.785466+00:00 app[web.1]: deserialized
+2014-08-29T21:47:00.564978+00:00 heroku[router]: at=info method=POST path="/login" host=www.p2ptext.com request_id=28389224-5df3-4fc7-ae26-d5eba608c39a fwd="198.0.156.51" dyno=web.1 connect=6ms service=103ms status=302 bytes=882
+2014-08-29T21:47:00.629716+00:00 heroku[router]: at=info method=GET path="/profile" host=www.p2ptext.com request_id=ab80dca6-d968-4aa7-a316-7452b72ffec9 fwd="198.0.156.51" dyno=web.1 connect=4ms service=16ms status=304 bytes=766
+2014-08-29T21:47:00.747475+00:00 heroku[router]: at=info method=GET path="/stylesheets/style.css" host=www.p2ptext.com request_id=45936929-488d-4e29-af54-8bb75dc410dd fwd="198.0.156.51" dyno=web.2 connect=1ms service=16ms status=304 bytes=787
+2014-08-29T21:47:00.749805+00:00 heroku[router]: at=info method=GET path="/stylesheets/bootstrap-datepicker.css" host=www.p2ptext.com request_id=a45b51ca-7f08-403f-ab8d-bbefd05061c2 fwd="198.0.156.51" dyno=web.1 connect=1ms service=8ms status=304 bytes=804
+2014-08-29T21:47:00.791987+00:00 heroku[router]: at=info method=GET path="/javascripts/index.js" host=www.p2ptext.com request_id=502a19ba-4a0f-4c42-acab-660f1441b25e fwd="198.0.156.51" dyno=web.2 connect=3ms service=5ms status=304 bytes=772
+2014-08-29T21:47:00.754292+00:00 heroku[router]: at=info method=GET path="/stylesheets/jquery.timepicker.css" host=www.p2ptext.com request_id=a9a99d32-9743-47ae-b9a6-7722b37707f6 fwd="198.0.156.51" dyno=web.2 connect=1ms service=11ms status=304 bytes=800
+2014-08-29T21:47:00.791207+00:00 heroku[router]: at=info method=GET path="/javascripts/vendor/jquery-ui/js/jquery-1.8.3.js" host=www.p2ptext.com request_id=4e27475e-311f-44d8-95d2-f185beff6ee9 fwd="198.0.156.51" dyno=web.1 connect=2ms service=7ms status=304 bytes=801
+2014-08-29T21:47:00.831902+00:00 heroku[router]: at=info method=GET path="/javascripts/jquery.ellipsis.js" host=www.p2ptext.com request_id=2adb6cae-e3f4-40c8-b106-14fceecaf2bf fwd="198.0.156.51" dyno=web.1 connect=1ms service=6ms status=304 bytes=782
+2014-08-29T21:47:00.750855+00:00 heroku[router]: at=info method=GET path="/javascripts/jquery.timepicker.js" host=www.p2ptext.com request_id=14c328d6-210c-4df0-b3d2-3e1db272b356 fwd="198.0.156.51" dyno=web.2 connect=1ms service=11ms status=304 bytes=785
+2014-08-29T21:47:00.794115+00:00 heroku[router]: at=info method=GET path="/javascripts/vendor/jquery-ui/js/jquery-ui-1.9.2.min.js" host=www.p2ptext.com request_id=36c234b3-ec54-4996-a82b-89f073aba594 fwd="198.0.156.51" dyno=web.1 connect=1ms service=9ms status=304 bytes=808
+2014-08-29T21:47:00.748995+00:00 app[web.2]: [90mGET /stylesheets/jquery.timepicker.css [36m304 [90m2ms[0m
+2014-08-29T21:47:00.790215+00:00 app[web.2]: [90mGET /stylesheets/jquery.datetimepicker.css [36m304 [90m5ms[0m
+2014-08-29T21:47:00.972914+00:00 app[web.2]: [90mGET /stylesheets/jquery.datetimepicker.css [36m304 [90m1ms[0m
+2014-08-29T21:47:00.802596+00:00 app[web.2]: [90mGET /javascripts/vendor/jquery-ui/css/custom-theme/jquery-ui-1.9.2.css [36m304 [90m2ms[0m
+2014-08-29T21:47:00.746358+00:00 app[web.2]: [90mGET /stylesheets/style.css [36m304 [90m3ms[0m
+2014-08-29T21:47:00.749329+00:00 app[web.2]: [90mGET /javascripts/jquery.timepicker.js [36m304 [90m3ms[0m
+2014-08-29T21:47:00.790439+00:00 app[web.2]: [90mGET /javascripts/index.js [36m304 [90m2ms[0m
+2014-08-29T21:47:00.828057+00:00 app[web.2]: [90mGET /javascripts/jquery.datetimepicker.js [36m304 [90m1ms[0m
+2014-08-29T21:47:00.747780+00:00 heroku[router]: at=info method=GET path="/javascripts/bootstrap-datepicker.js" host=www.p2ptext.com request_id=c200249d-b2a6-4b28-b8bf-355c36d9c87c fwd="198.0.156.51" dyno=web.1 connect=1ms service=9ms status=304 bytes=788
+2014-08-29T21:47:00.791624+00:00 heroku[router]: at=info method=GET path="/stylesheets/jquery.datetimepicker.css" host=www.p2ptext.com request_id=de6f3c7a-6bf9-4e5f-8098-6da28916eafb fwd="198.0.156.51" dyno=web.2 connect=1ms service=10ms status=304 bytes=804
+2014-08-29T21:47:00.793228+00:00 heroku[router]: at=info method=GET path="/stylesheets/marketing.css" host=www.p2ptext.com request_id=b1d13dc0-2fcf-4391-93b6-71b149c8a2a1 fwd="198.0.156.51" dyno=web.1 connect=2ms service=8ms status=304 bytes=793
+2014-08-29T21:47:00.828510+00:00 heroku[router]: at=info method=GET path="/javascripts/jquery.datetimepicker.js" host=www.p2ptext.com request_id=66aabb18-d192-4b66-adc2-74b49d889b92 fwd="198.0.156.51" dyno=web.2 connect=1ms service=6ms status=304 bytes=789
+2014-08-29T21:47:00.821776+00:00 heroku[router]: at=info method=GET path="/javascripts/vendor/jquery-ui/css/custom-theme/jquery-ui-1.9.2.css" host=www.p2ptext.com request_id=7905ad4c-8ef1-494b-ae80-0f0378bf7d1e fwd="198.0.156.51" dyno=web.2 connect=13ms service=9ms status=304 bytes=834
+2014-08-29T21:47:00.828742+00:00 app[web.1]: [90mGET /javascripts/jquery.ellipsis.js [36m304 [90m5ms[0m
+2014-08-29T21:47:00.824384+00:00 app[web.1]: deserialized
+2014-08-29T21:47:00.911300+00:00 app[web.1]: [90mGET /imgs/dark_geometric.png [36m304 [90m3ms[0m
+2014-08-29T21:47:00.915773+00:00 heroku[router]: at=info method=GET path="/imgs/dark_geometric.png" host=www.p2ptext.com request_id=6747bb2f-f64a-4cb0-a10c-bef56b443411 fwd="198.0.156.51" dyno=web.1 connect=1ms service=4ms status=304 bytes=791
+2014-08-29T21:47:00.975118+00:00 heroku[router]: at=info method=GET path="/stylesheets/jquery.datetimepicker.css" host=www.p2ptext.com request_id=bb2d9a65-ec5a-493b-b0ad-3ed4d10f7ef8 fwd="198.0.156.51" dyno=web.2 connect=10ms service=8ms status=304 bytes=803
+2014-08-29T21:47:04.786885+00:00 heroku[router]: at=info method=GET path="/listing/new" host=www.p2ptext.com request_id=a799c57b-8ade-4193-bd5b-607c7769c2c4 fwd="198.0.156.51" dyno=web.2 connect=2ms service=12ms status=302 bytes=725
+2014-08-29T21:47:04.785251+00:00 app[web.2]: [90mGET /listing/new [36m302 [90m9ms - 58b[0m
+2014-08-29T21:47:04.958729+00:00 app[web.2]: [90mGET /javascripts/matchDirective.js [36m304 [90m5ms[0m
+2014-08-29T21:47:04.955848+00:00 app[web.2]: [90mGET /javascripts/index.js [36m304 [90m8ms[0m
+2014-08-29T21:47:05.026156+00:00 app[web.2]: [90mGET /imgs/dark_geometric.png [36m304 [90m16ms[0m
+2014-08-29T21:47:04.951085+00:00 heroku[router]: at=info method=GET path="/javascripts/vendor/angular/angular.min.js" host=www.p2ptext.com request_id=4014806a-84f2-4cb6-b8bf-549bd171309a fwd="198.0.156.51" dyno=web.1 connect=2ms service=6ms status=304 bytes=765
+2014-08-29T21:47:04.829072+00:00 app[web.2]: [90mGET / [36m304 [90m4ms[0m
+2014-08-29T21:47:04.956379+00:00 app[web.2]: [90mGET /stylesheets/marketing.css [36m304 [90m8ms[0m
+2014-08-29T21:47:04.972508+00:00 app[web.2]: [90mGET /javascripts/vendor/jquery-ui/js/jquery-1.8.3.js [36m304 [90m2ms[0m
+2014-08-29T21:47:04.946528+00:00 heroku[router]: at=info method=GET path="/stylesheets/signupValidation.css" host=www.p2ptext.com request_id=d38b3f4a-90e9-4648-ab0b-11d9c967d60c fwd="198.0.156.51" dyno=web.1 connect=1ms service=7ms status=304 bytes=770
+2014-08-29T21:47:04.834231+00:00 heroku[router]: at=info method=GET path="/" host=www.p2ptext.com request_id=03371cec-1302-4de9-b78d-f88a00ca1932 fwd="198.0.156.51" dyno=web.2 connect=2ms service=12ms status=304 bytes=744
+2014-08-29T21:47:04.958902+00:00 heroku[router]: at=info method=GET path="/stylesheets/marketing.css" host=www.p2ptext.com request_id=a0669269-4d13-40df-b806-a87d846a8178 fwd="198.0.156.51" dyno=web.2 connect=10ms service=13ms status=304 bytes=765
+2014-08-29T21:47:04.989282+00:00 heroku[router]: at=info method=GET path="/javascripts/vendor/jquery-ui/js/jquery-1.8.3.js" host=www.p2ptext.com request_id=200dae50-ba22-4faf-b26e-28548c76ec63 fwd="198.0.156.51" dyno=web.2 connect=6ms service=20ms status=304 bytes=772
+2014-08-29T21:47:05.027490+00:00 heroku[router]: at=info method=GET path="/imgs/dark_geometric.png" host=www.p2ptext.com request_id=104453fc-5599-42e0-819d-7227fb6389b1 fwd="198.0.156.51" dyno=web.2 connect=1ms service=17ms status=304 bytes=754
+2014-08-29T21:47:04.942725+00:00 app[web.1]: [90mGET /stylesheets/signupValidation.css [36m304 [90m1ms[0m
+2014-08-29T21:47:04.948376+00:00 app[web.1]: [90mGET /javascripts/vendor/angular/angular.min.js [36m304 [90m1ms[0m
+2014-08-29T21:47:04.956646+00:00 heroku[router]: at=info method=GET path="/javascripts/matchDirective.js" host=www.p2ptext.com request_id=154e905a-cc1f-4f45-9e8f-2b40e39bcbd5 fwd="198.0.156.51" dyno=web.2 connect=2ms service=9ms status=304 bytes=751
+2014-08-29T21:47:04.957991+00:00 heroku[router]: at=info method=GET path="/javascripts/index.js" host=www.p2ptext.com request_id=c81eefe8-2780-493c-b35a-6e1e68bff447 fwd="198.0.156.51" dyno=web.2 connect=5ms service=13ms status=304 bytes=743
