@@ -9,7 +9,7 @@ module.exports = function(passport) {
 	//serialize and unserialize users per each session
 	passport.serializeUser(function(user, done){
 		console.log("serialized");
-		done(null, user.id);
+		done(null, user._id);
 	});
 
 	passport.deserializeUser(function(id, done){

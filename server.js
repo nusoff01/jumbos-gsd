@@ -10,6 +10,7 @@ var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
+var MongoStore = require('connect-mongo');
 
 var configDB     = require('./config/database.js');
 var listing      = require('./lib/listing.js');
@@ -36,6 +37,8 @@ app.use(session({secret: 'thisisasessionsecret',
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
+
+
 
 //create global variable message
 app.set('message', '');
