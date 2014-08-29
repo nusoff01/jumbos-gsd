@@ -48,38 +48,28 @@
 						l = user.inventory[i];
 						toggleID = "t" + l._id; 
 						listingIDDrop = "d" + l._id%>
-						<div> 
+						<div class="listing">
 							<div class="pure-g l-complete">
-								<div class="pure-u-1-6 l-price">
-									<p>$<%= l.price %></p>
+								<div class="pure-u-4-5 l-main">
+									<h2 class="book-title"><%= l.book.name %> alksdjnlfkamklsdf</h2>
+									<hr/> 
+									<p>v.<%= l.edition %> &middot; <%= l.condition %> &middot; <span class="clickable" onclick="togglelDrop('<%= listingIDDrop%>', '<%=toggleID %>')" id="<%=toggleID%>">more &#9660;</p>
 								</div>
-								<div class="pure-u-2-3 l-main">
-									<h2><%= l.book.name %></h2>
+								<div class="pure-u-1-5 l-button trash">
 									
-									<div class="pure-g listing-grid">
-										<div class="pure-u-1-5">
-											<p>v.<%= l.edition %></p>
-										</div>
-										<div class="pure-u-2-5">
-											<p><%= l.condition %></p>
-										</div>
-										<div class="pure-u-2-5">
-											<p class="clickable" onclick="togglelDrop('<%= listingIDDrop%>', '<%=toggleID %>')" id="<%=toggleID%>">more &#9660;</p>
-										</div>
-									</div>
-								</div>
-								<div class="pure-u-1-6 l-button del-listing">
-									<p>
 										<input type="hidden" name="id" value='<%= l._id%>'>
-										<i class="fa fa-trash-o fa-lg"></i>
-									</p>
+										<button class="pure-button "><i class="fa fa-trash-o fa-lg"></i></button>
+									
 								</div>
+								
+							
+								
 							</div>
 							<div class="l-dropdown" id="<%= listingIDDrop%>">
-								<h3>Lisiting posted on <%= l.datePosted %> by <%= l.seller %></h3>
-								<hr/>
-								<p>Notes from seller: <%= l.moreInfo%></p>
-							</div>
+									<h3>Lisiting posted on <%= l.datePosted %> by <%= l.seller %></h3>
+									<hr/>
+									<p>Notes from seller: <%= l.moreInfo%></p>
+								</div>
 						</div>
 						<% } %>
 					<% } %>
@@ -218,7 +208,9 @@
   	<link rel="stylesheet" type="text/css" href="/stylesheets/jquery.timepicker.css" />
 
   	<script type="text/javascript" src="/javascripts/bootstrap-datepicker.js"></script>
+  	<script type="text/javascript" src="/javascripts/jquery.ellipsis.js"></script>
   	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap-datepicker.css" />
+  	
 
 
 

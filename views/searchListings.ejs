@@ -47,28 +47,16 @@
 			listingIDDrop = "d" + l._id%>
 
 			<div class="pure-g l-complete">
-				<div class="pure-u-1-6 l-price">
-					<p>$<%= listings[i].price %></p>
+				
+				<div class="pure-u-4-5 l-main">
+					<h2 class="book-title"><%= l.book.name %> alksdjnlfkamklsdf</h2>
+					<hr/> 
+					<p>v.<%= l.edition %> &middot; <%= l.condition %> &middot; <span class="clickable" onclick="togglelDrop('<%= listingIDDrop%>', '<%=toggleID %>')" id="<%=toggleID%>">more &#9660;</p>
 				</div>
-				<div class="pure-u-2-3 l-main">
-					<h2><%= listings[i].book.name %></h2>
-					<hr/>
-					<div class="pure-g listing-grid">
-						<div class="pure-u-1-5">
-							<p>v.<%= listings[i].edition %></p>
-						</div>
-						<div class="pure-u-2-5">
-							<p><%= listings[i].condition %></p>
-						</div>
-						<div class="pure-u-2-5">
-							<p class="clickable" onclick="togglelDrop('<%= listingIDDrop%>', '<%=toggleID %>')" id="<%=toggleID%>">more &#9660;</p>
-						</div>
-					</div>
-				</div>
-				<div class="pure-u-1-6 l-button" onclick="javascript:this.childNodes[1].submit()">
+				<div class="pure-u-1-5 l-button" onclick="javascript:this.childNodes[1].submit()">
 					<form action="/transaction/postT" method="post">
 						<input type="hidden" name="listing" value="<%= listings[i]._id%>" />
-						<p>Buy</p>
+						<button class="pure-button ">Buy</button>
 					</form>
 				</div>
 			</div>
