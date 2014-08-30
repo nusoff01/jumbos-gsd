@@ -50,7 +50,7 @@
 								<div class="pure-u-4-5 l-main">
 									<h2 class="book-title"><%= l.book.name %> </h2>
 									<hr/> 
-									<p>v.<%= l.edition %> &middot; <%= l.condition %> &middot; <span class="clickable" onclick="togglelDrop('<%= listingIDDrop%>', '<%=toggleID %>')" id="<%=toggleID%>">more &#9660;</p>
+									<p>$<%=l.price %> &middot;<%if(l.edition){%>v.<%= l.edition %> &middot;<%}%> <%= l.condition %> &middot; <span class="clickable" onclick="togglelDrop('<%= listingIDDrop%>', '<%=toggleID %>')" id="<%=toggleID%>">more &#9660;</p>
 								</div>
 								<div class="pure-u-1-5 l-button trash del-listing">
 									
