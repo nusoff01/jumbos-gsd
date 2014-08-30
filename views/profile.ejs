@@ -52,11 +52,10 @@
 									<hr/> 
 									<p>v.<%= l.edition %> &middot; <%= l.condition %> &middot; <span class="clickable" onclick="togglelDrop('<%= listingIDDrop%>', '<%=toggleID %>')" id="<%=toggleID%>">more &#9660;</p>
 								</div>
-								<div class="pure-u-1-5 l-button trash">
+								<div class="pure-u-1-5 l-button trash del-listing">
 									
-										<input type="hidden" name="id" value='<%= l._id%>'>
-										<button class="pure-button "><i class="fa fa-trash-o fa-lg"></i></button>
-									
+										<input type="hidden" name="id" value='<%= l._id%>'/>
+										<button class="pure-button"><i class="fa fa-trash-o fa-lg"></i></button>
 								</div>
 								
 							

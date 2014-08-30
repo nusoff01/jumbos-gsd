@@ -204,16 +204,29 @@ body {
     margin-top:0px;
     margin-bottom:5px;
 }
+
+@media(min-width: 48em){
+    .l-button button{
+        
+    }
+}
 @media(min-width: 48em){
     .l-complete p{
         font-size: 1.4em;
         line-height: 1.4em;
+    }
+    .l-button button{
+        
     }
 }
 @media(min-width: 72em){
     .l-complete p{
         font-size: 1.8em;
         line-height: 1.8em;
+    }
+    .l-button button{
+        
+        height:100%;
     }
 }
 
@@ -243,8 +256,14 @@ body {
 .l-button button{
     padding-left: 2px;
     padding-right: 2px;
-    width:90%;
+    width:95%;
     background-color:green;
+   
+    
+}
+
+.l-button{
+    width:18%;
 }
 
 .l-main{

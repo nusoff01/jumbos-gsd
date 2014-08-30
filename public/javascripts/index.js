@@ -56,7 +56,9 @@ $(function() {
 	//user deleted their own listing
 
 	$('div.del-listing').on('click', function(){
-		var id = $(this)[0].childNodes[1].childNodes[1].value;
+		console.log("clicked");
+		var id = $(this)[0].childNodes[1].value;
+		console.log(id);
 		data = JSON.stringify({id : id});
 		div = $(this)[0].parentNode;
 		$.ajax({
