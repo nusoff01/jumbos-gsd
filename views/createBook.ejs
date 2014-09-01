@@ -12,6 +12,7 @@
         <div class="form-container">
         	<form action="/book/new" class="pure-form pure-form-aligned" method="post">
               <fieldset class="pure-from-fieldset paddL paddR">
+                    <input type="hidden" value="1"/>
             		<div class="pure-control-group">
             			<label>book title</label>
             			<input type="text" class="form-control" name="name"/>
@@ -19,18 +20,11 @@
                     <div></div>
 
 
-                <div class="pure-button add-course-book"><i class="fa fa-plus-square fa-lg"></i> Add a Course</div>
+                <div class="pure-button add-course-book" id="plus-course"><i class="fa fa-plus-square fa-lg"></i> Add a Course</div>
                 <hr/>
-            		<div class="pure-control-group">
-            			<label>Course Department</label>
-            			<input type="text" class="form-control" name="department"/>
-            		</div>
-            		<div class="pure-control-group">
-            			<label>Course Number</label>
-            			<input type="number" class="form-control" name="number"/>
-            		</div>
-            		<button type="submit" class="pure-button">Create</button>
+            		
                 </fieldset>
+                <button type="submit" class="pure-button" >Create</button>
         	</form>
         </div>
     </div>    
