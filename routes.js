@@ -97,6 +97,7 @@ module.exports = function(app, passport) {
 	app.post('/transaction/postT', transaction.postTrans);
 	app.post('/transaction/addLT', transaction.addLocTime);
 	app.post('/transaction/addM',  transaction.addMessage);
+	app.post('/transaction/delT', transaction.deleteTrans);
 
 	app.post('/transaction/acceptLT', transaction.acceptSug);
 	// app.post('/transaction/rejectLT', transaction.rejectSug);

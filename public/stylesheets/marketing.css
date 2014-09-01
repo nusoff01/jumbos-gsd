@@ -345,6 +345,14 @@ body {
     padding: 5px;
 }
 
+
+/* modifying pure-u to expand width*/
+.cList {
+    width:100%;
+    margin:10px auto;
+}
+
+
 .pure-u-1 {
     /*   border: 1px solid #ffffff;*/
     padding-bottom: 0px;
@@ -640,6 +648,9 @@ tr {
     border-bottom: none;
     /* I need a higher z-index here because of the scroll-over effect. */
     z-index: 4;
+}
+.pure-menu.pure-menu-open{
+    
 }
 
 .home-menu .pure-menu-heading {

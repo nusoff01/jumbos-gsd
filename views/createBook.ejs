@@ -1,37 +1,41 @@
 <%- include head.ejs %>
     
     <div class="profile">
-        <div class="pure-u">
-          	<h1>Create a textbook</h1>
-            <% if(message){ %>
-                <div class="alert alert-danger">
-                    <%= message %>
-                </div>
-            <% } %>
-
-            <div class="form-container">
-              	<form action="/book/new" class="pure-form pure-form-aligned" method="post">
-                    <fieldset class="pure-from-fieldset paddL paddR">
-                  		<div class="pure-control-group">
-                  			<label>book title</label>
-                  			<input type="text" class="form-control" name="name"/>
-                  		</div>
-                  		<div class="pure-control-group">
-                  			<label>Course Department</label>
-                  			<input type="text" class="form-control" name="department"/>
-                  		</div>
-                  		<div class="pure-control-group">
-                  			<label>Course Number</label>
-                  			<input type="number" class="form-control" name="number"/>
-                  		</div>
-                  		<button type="submit" class="pure-button">Create</button>
-                    </fieldset>
-              	</form>
+        
+    	<h1>Create a textbook</h1>
+        <% if(message){ %>
+            <div class="alert alert-danger">
+              <%= message %>
             </div>
+        <% } %>
+
+        <div class="form-container">
+        	<form action="/book/new" class="pure-form pure-form-aligned" method="post">
+              <fieldset class="pure-from-fieldset paddL paddR">
+            		<div class="pure-control-group">
+            			<label>book title</label>
+            			<input type="text" class="form-control" name="name"/>
+            		</div>
+                    <div></div>
+
+
+                <div class="pure-button add-course-book"><i class="fa fa-plus-square fa-lg"></i> Add a Course</div>
+                <hr/>
+            		<div class="pure-control-group">
+            			<label>Course Department</label>
+            			<input type="text" class="form-control" name="department"/>
+            		</div>
+            		<div class="pure-control-group">
+            			<label>Course Number</label>
+            			<input type="number" class="form-control" name="number"/>
+            		</div>
+            		<button type="submit" class="pure-button">Create</button>
+                </fieldset>
+        	</form>
         </div>
-    </div>
-    
-</body>
+    </div>    
+  </body>
+  <script type="text/javascript" src="/javascripts/index.js"></script>
 </html>
 
 

@@ -10,7 +10,7 @@ var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
-var MongoStore = require('connect-mongo');
+var MongoStore   = require('connect-mongo')(session);
 
 var configDB     = require('./config/database.js');
 var listing      = require('./lib/listing.js');
@@ -32,9 +32,12 @@ app.use(bodyParser()); //info from html forms
 
 app.set('view engine', 'ejs'); //ejs for templating
 
-app.use(session({secret: 'thisisasessionsecret', 
-                 saveUninitialized: true,
-                 resave: true}));
+app.use(session({
+	secret: 'thisisasessionsecret', 
+    store: new MongoStore({
+    	db: mongoose.connections[0].db
+    })
+}));
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session

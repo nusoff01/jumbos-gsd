@@ -152,6 +152,34 @@ $(function() {
 		});
 	});
 
+	$('form.deleteT').submit(function (e){
+		e.preventDefault();
+
+		tID = $(this)[0].childNodes[1].value;
+		data = JSON.stringify({tID: tID});
+		console.log($(this).parentNode.parentNode);
+		// $.ajax({
+		// 	type: 'POST',
+		// 	url: '/transaction/delT',
+		// 	data: data,
+		// 	processData: false,
+		// 	dataType: 'text',
+		// 	contentType: 'application/json',
+		// 	success: function(data){
+		// 		if(data == "OK"){
+		// 			console.log("listing deleted");
+		// 		} else {
+		// 			console.log("something went wrong");
+		// 		}
+		// 	}
+		// });
+	});
+
+	$('div.add-course-book').on('click', function(){
+		console.log("clicked");
+		console.log($(this)[0].parentNode);
+	})
+
 
 
 	//Page: add listing

@@ -50,12 +50,12 @@
 								<div class="pure-u-4-5 l-main">
 									<h2 class="book-title"><%= l.book.name %> </h2>
 									<hr/> 
-									<p>$<%=l.price %> &middot;<%if(l.edition){%>v.<%= l.edition %> &middot;<%}%> <%= l.condition %> &middot; <span class="clickable" onclick="togglelDrop('<%= listingIDDrop%>', '<%=toggleID %>')" id="<%=toggleID%>">more &#9660;</p>
+									<p>Price: $<%=l.price %> | <span class="clickable" onclick="togglelDrop('<%= listingIDDrop%>', '<%=toggleID %>')" id="<%=toggleID%>">more &#9660;</p>
 								</div>
 								<div class="pure-u-1-5 l-button trash del-listing">
 									
-										<input type="hidden" name="id" value='<%= l._id%>'/>
-										<button class="pure-button"><i class="fa fa-trash-o fa-lg"></i></button>
+									<input type="hidden" name="id" value='<%= l._id%>'/>
+									<button class="pure-button"><i class="fa fa-trash-o fa-lg"></i></button>
 								</div>
 								
 							
@@ -64,7 +64,16 @@
 							<div class="l-dropdown" id="<%= listingIDDrop%>">
 									<h3>Lisiting posted on <%= l.datePosted %> by <%= l.seller %></h3>
 									<hr/>
-									<p>Notes from seller: <%= l.moreInfo%></p>
+									<p> 
+										Edition: 
+										<% if(l.edition){ %>
+										<%= l.edition %>
+										<% } else {%>
+										<%= "no info" %>
+										<% } %>
+									</p>
+									<p> Condition: <%= l.condition%></p>
+									<p> Notes from seller: <%= l.moreInfo%></p>
 								</div>
 						</div>
 						<% } %>
@@ -80,30 +89,33 @@
 			</div>
 			<div class="transactions" id="transactions">
 			<% for(var i=0; i < user.transactions.length; i++) { %>
-				<%  transID = user.transactions[i]._id;
+				<%  t = user.transactions[i];
+					transID = t._id;
 					transIDSend = "s" + transID;
 					transIDChat = "c" + transID;
+					console.log("status: " + t.status);
+					if(t.status == "pending"){
 				 %>
 
 				<div class="transaction">
 					<div>
 						<h3 class="splash-subhead trans-head">
 							<% 
-								isBuyer = user.transactions[i].buyer;
+								isBuyer = t.buyer;
 								role = "Selling";
 								if(isBuyer == user.userName) role = "Buying";
 							%>
-							<%= role %> <%= user.transactions[i].listing.book.name %>
-							for $<%= user.transactions[i].listing.price %>
+							<%= role %> <%= t.listing.book.name %>
+							for $<%= t.listing.price %>
 						<br/><br/>
 						<button class="pure-button chat" onclick="toggleChat('<%= transIDChat %>', '<%= transIDSend%>')">
 							Chat with
 								<%
 								if (role == "Buying"){
 									%> 
-							<%= user.transactions[i].seller%>
+							<%= t.seller%>
 							 <% }else{ %> 
-							 <%= user.transactions[i].buyer%>
+							 <%= t.buyer%>
 							 <% } %>
 						</button>
 						</h3>
@@ -111,9 +123,9 @@
 					<div class="tContent" id="<%= transIDChat%>">
 						<div class="interaction">
 					        <div class="chat-log" id='<%= user.transactions[i]._id%>'>
-					        	<% if(user.transactions[i].transConv){
-					        		for(j = 0; j < user.transactions[i].transConv.length; j++){ 
-					        			conv = user.transactions[i].transConv[j]%>
+					        	<% if(t.transConv){
+					        		for(j = 0; j < t.transConv.length; j++){ 
+					        			conv = t.transConv[j]%>
 					        		<h3 class='<%= conv.mType%>'><%= conv.mContent %></h3>
 
 					        		<% if(conv.mType == "meetupM"){ %>
@@ -134,10 +146,14 @@
 							<form class="pure-form pure-form-inline sendM">
 								<fieldset id="<%= transIDSend%>">
 									<input type="text" class="pure-input-2-3 message" name="message">
-									<input type="hidden" class="pure-input-2-3 message" name="trans" value='<%= user.transactions[i]._id%>'>
+									<input type="hidden" class="pure-input-2-3 message" name="trans" value='<%= transID%>'>
 									<button class="pure-button">Send</button>
 								</fieldset>
 
+							</form>
+							<form class="deleteT">
+								<input type="hidden" name="tID" value="<%= transID %>"/>
+								<button class="pure-button">Cancel transaction</button>
 							</form>
 
 							<!-- <button type="submit" class="pure-button message">Set meetup</button> -->
@@ -172,6 +188,7 @@
 						</div>
 					</div>
 				</div>
+				<% } %>
 			<% } %>
 			<div class="section-footer">
 				<a href="/listing/search"><button class="pure-button button-large" id="search-button"><i class="fa fa-plus-square fa-lg"></i> Buy a Book </button></a>
