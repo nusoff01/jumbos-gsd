@@ -76,16 +76,15 @@
 					$(this).parent().append("<p id='addBook'>Title doesnt exist! <a href='/book/new' target='_blank'> [add book]</a></p>");
 					$("button[type=submit]").attr("disabled", "disabled");
 				}
-			} else { // if the form is correct, remove the notification and enable button
-				for (var i = books.length - 1; i >= 0; i--) {
-					if (books[i] == $(this).val()) {
-						found = true;
-						$("#addBook").remove();
-						$("button[type=submit]").removeAttr("disabled");
-					};
-				};
 			}
-
+			// if the form is correct, remove the notification and enable button
+			for (var i = books.length - 1; i >= 0; i--) {
+				if (books[i] == $(this).val()) {
+					found = true;
+					$("#addBook").remove();
+					$("button[type=submit]").removeAttr("disabled");
+				};
+			};
 		});
 	});
 
