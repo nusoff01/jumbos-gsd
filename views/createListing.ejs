@@ -84,7 +84,7 @@
 					};
 				};
 				if(!found) {
-					$(this).parent().append("<p id='addBook'>Title doesnt exist! <a href='/book/new' target='_blank'> [add book]</a></p>");
+					$(this).parent().append("<p id='addBook'>Title doesnt exist! <a href='/book/new'> [add book]</a></p>");
 					$(this).parent().parent()[0].childNodes[13].innerHTML = "";
 					$("#plus-course").hide();
 					$("button[type=submit]").attr("disabled", "disabled");

@@ -35,6 +35,13 @@ html, body{
     color: red;
 }
 
+.finishT button{
+    width:90%;
+    background-color:white;
+    color: green;
+    margin-top: 5px;
+}
+
 .scroll-table{
     overflow: scroll;
     max-width: 100%;
