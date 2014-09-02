@@ -442,6 +442,11 @@ body {
     display: inline;
 }
 
+.book-title{
+    overflow-x:auto;
+    overflow-y:hidden;
+    /*word-wrap: break-word;*/
+}
 
 .button-large{
     font-size: 140%;
