@@ -57,13 +57,36 @@
 <script type="text/javascript" src="../javascripts/vendor/jquery-ui/js/jquery-ui-1.9.2.min.js"></script>
 <script type="text/javascript">
 	$(function() {
-	var subjects = ["ACL <All College Listing>", "AFR <Africana Studies>", "AMR <American Studies>", "ANTH <Anthropology>", "ANW <Africa In the New World>", "ARB <Arabic>", "ARCH <Archeology>", "AST <Astronomy>"];
+		$("button[type=submit]").attr("disabled", "disabled");
 
-	$("#subject").autocomplete({source: subjects});
-	});
+		var books = <%- JSON.stringify(titles) %>;
+		$("#name").autocomplete({source: books});
 
-	$(function() {
-		$("#name").autocomplete({source: <%- JSON.stringify(titles) %>});
+		$("#name").focusout(function(){
+			var found = false;
+			//if the notification is not found add it and disable button
+			if($("#addBook").length == 0) {
+				for (var i = books.length - 1; i >= 0; i--) {
+					if (books[i] == $(this).val()) {
+						found = true;
+					};
+				};
+
+				if(!found) {
+					$(this).parent().append("<p id='addBook'>Title doesnt exist! <a href='/book/new' target='_blank'> [add book]</a></p>");
+					$("button[type=submit]").attr("disabled", "disabled");
+				}
+			} else { // if the form is correct, remove the notification and enable button
+				for (var i = books.length - 1; i >= 0; i--) {
+					if (books[i] == $(this).val()) {
+						found = true;
+						$("#addBook").remove();
+						$("button[type=submit]").removeAttr("disabled");
+					};
+				};
+			}
+
+		});
 	});
 
 </script>
