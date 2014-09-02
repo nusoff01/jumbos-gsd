@@ -180,18 +180,18 @@ $(function() {
 
 	$('#plus-course').on('click', function(){
 		console.log("clicked");
-		var courseNum = ++($(this)[0].parentNode.childNodes[1].value);
-		console.log($(this)[0].parentNode.childNodes[1].value);
+		var courseNum = ++($(this)[0].parentNode.parentNode.childNodes[1].value);
+		console.log($(this)[0].parentNode.parentNode.childNodes[1].value);
 		
-		var appendage = "<h2>Course " + courseNum + "</h2>\
+		var appendage = "<div class='form-container'><h3>[Add Course]</h3>\
 					<div class='pure-control-group'><label>Course Department</label>\
             			<input type='text' class='form-control' name='department" + courseNum + "'/>\
             		</div>\
             		<div class='pure-control-group'>\
             			<label>Course Number</label>\
             			<input type='number' class='form-control' name='number" + courseNum + "'/>\
-            		</div>";
-        $(this).parent().append(appendage);
+            		</div></div>";
+        $(this).parent().prepend(appendage);
 	})
 
 
@@ -291,20 +291,27 @@ deleteAlert = function(index){
 }
 
 findCoursesByT = function(title){
+	console.log("function call");
 	data = JSON.stringify({title: title});
+	retString = ""
 		$.ajax({
 			type: 'POST',
 			url: '/book/findCourses',
 			data: data,
 			processData: false, 
 			dataType: 'text',
+			async: false,
 			contentType: 'application/json',
 			success: function(response) {
-				return response;
+				console.log(response);
+				retString += response;
+				
 			}
 		});
+		return retString;
 }
-addCouseByT = function(bookTitle, dept, num){
+addCouseByT = function(bookTitle, dept, num){y
+	data = JSON.stringify()
 
 }
 

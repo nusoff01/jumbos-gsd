@@ -15,6 +15,7 @@
 		<div class="form-container">
 			<form class="pure-form pure-form-aligned" action="/listing/new" method="post">
 				<fieldset class="pure-from-fieldset paddL paddR">
+					<input type="hidden" value="0" class="numHideInp"/>
 					<div class="pure-control-group">
 						<label for="name">Book Title</label>
 						<input id="name" type="text" class="form-control" name="name"/>
@@ -45,8 +46,14 @@
 						</select>
 					</div>
 					
-
+					<div></div>
+					<div>
+					<input type="hidden" value="0" class="numHideInp"/>
+					<p class='pure-button' id='plus-course'>Add a course for this book</p>
+					</div>
+					<br/>
 					<button type="submit" class="pure-button">Create</button>
+					<br/>
 				</fieldset>			
 			</form>
 		</div>
@@ -57,6 +64,7 @@
 <script type="text/javascript" src="../javascripts/vendor/jquery-ui/js/jquery-ui-1.9.2.min.js"></script>
 <script type="text/javascript">
 	$(function() {
+		$("#plus-course").hide();
 		$("button[type=submit]").attr("disabled", "disabled");
 
 		var books = <%- JSON.stringify(titles) %>;
@@ -69,13 +77,21 @@
 				for (var i = books.length - 1; i >= 0; i--) {
 					if (books[i] == $(this).val()) {
 						found = true;
+						coursesByT = findCoursesByT($(this).val());
+						toAddString = "<p>Courses Associated with this book: " + coursesByT + "</p>";
+						console.log("It: " + coursesByT);
+						console.log($(this).parent().parent()[0].childNodes[11]);
+						$(this).parent().parent()[0].childNodes[11].innerHTML = ("<p>Courses Associated with this book: " + coursesByT);
+						$("#plus-course").show();
 					};
 				};
 
 				if(!found) {
 					$(this).parent().append("<p id='addBook'>Title doesnt exist! <a href='/book/new' target='_blank'> [add book]</a></p>");
+					$(this).parent().parent()[0].childNodes[11].innerHTML = "";
+					$("#plus-course").hide();
 					$("button[type=submit]").attr("disabled", "disabled");
-				}
+				}  
 			}
 			// if the form is correct, remove the notification and enable button
 			for (var i = books.length - 1; i >= 0; i--) {

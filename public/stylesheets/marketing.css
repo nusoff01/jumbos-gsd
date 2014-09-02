@@ -49,7 +49,18 @@ html, body{
     
 }
 
+#plus-course{
+    background-color:green;
+}
 
+#submit-button{
+    width:60%;
+    margin-bottom:10px;
+    font-size:120%;
+    font-weight:bold;
+    background-color: white;
+    color:green;
+}
 
 
 @media screen and (max-width:550px) {
