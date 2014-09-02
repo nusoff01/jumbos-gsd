@@ -1,7 +1,7 @@
 var io           = require('socket.io');
 var express      = require('express');
 var app          = express();
-var port         = Number(process.env.PORT || 5000);
+var port         = Number(process.env.PORT || 3000);
 var mongoose     = require('mongoose');
 var passport     = require('passport');
 var flash 	     = require('connect-flash');

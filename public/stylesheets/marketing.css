@@ -549,6 +549,10 @@ a {
     opacity: 1;
 }
 
+.pure-form hr{
+    width:80%;
+}
+
 
 
 /*
@@ -650,7 +654,7 @@ tr {
     z-index: 4;
 }
 .pure-menu.pure-menu-open{
-    
+
 }
 
 .home-menu .pure-menu-heading {
