@@ -4,7 +4,10 @@ module.exports = function(app, passport) {
 	// HOME PAGE (with login links) ========
 	// =====================================
 	app.get('/', function(req, res) {
-		res.render('index.ejs', { message: req.flash('loginMessage') }); // load the index.ejs file
+		if(req.user){
+			res.redirect('/profile');
+		}
+		res.render('index.ejs', { sMessage: req.flash('signupMessage'), lMessage: req.flash('loginMessage'), sOrL: req.flash('sOrL')}); // load the index.ejs file
 	});
 
 	// =====================================
@@ -14,7 +17,7 @@ module.exports = function(app, passport) {
 	app.get('/login', function(req, res) {
 
 		// render the page and pass in any flash data if it exists
-		res.render('login.ejs', { message: req.flash('loginMessage') }); 
+		res.render('login.ejs', { lMessage: req.flash('loginMessage') }); 
 	});
 
 	// process the login form
@@ -27,20 +30,20 @@ module.exports = function(app, passport) {
 	app.get('/signup', function(req, res) {
 
 		// render the page and pass in any flash data if it exists
-		res.render('signup.ejs', { message: req.flash('signupMessage') });
+		res.render('signup.ejs', { sMessage: req.flash('signupMessage'), lMessage: req.flash('loginMessage') });
 	});
 
 	// process the signup form
 	app.post('/signup', passport.authenticate('local-signup', {
 		successRedirect : '/profile',
-		failureRedirect : '/signup',
+		failureRedirect : '/',
 		failureFlash    : true
 	}));
 
 	//process the login form
 	app.post('/login', passport.authenticate('local-login', {
 		successRedirect : '/profile',
-		failureRedirect : '/',
+		failureRedirect : '/login',
 		failureFlash    : true
 	}));
 
@@ -99,6 +102,7 @@ module.exports = function(app, passport) {
 	app.post('/transaction/addLT', transaction.addLocTime);
 	app.post('/transaction/addM',  transaction.addMessage);
 	app.post('/transaction/delT', transaction.deleteTrans);
+	app.post('/transaction/finishT', transaction.completeTrans);
 
 	app.post('/transaction/acceptLT', transaction.acceptSug);
 	// app.post('/transaction/rejectLT', transaction.rejectSug);

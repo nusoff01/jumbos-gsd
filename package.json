@@ -1,6 +1,6 @@
 {
-  "name": "gojumbos",
-  "version": "0.0.1",
+  "name": "p2ptext",
+  "version": "0.1.0",
   "main": "server.js",
   "dependencies": {
     "bcrypt-nodejs": "latest",

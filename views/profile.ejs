@@ -42,7 +42,8 @@
 			<div class="scroll-table-out pure-u-5-5 listings" >
 				<% if(user.inventory.length > 0){ %>
 					<% for(var i=0; i<user.inventory.length; i++) { 
-						if(user.inventory[i].status = "available"){   
+						console.log(user.inventory[i].status)
+						if(user.inventory[i].status == "available"){   
 						l = user.inventory[i];
 						toggleID = "t" + l._id; 
 						listingIDDrop = "d" + l._id%>
@@ -63,19 +64,19 @@
 								
 							</div>
 							<div class="l-dropdown" id="<%= listingIDDrop%>">
-									<h3>Lisiting posted on <%= l.datePosted %> by <%= l.seller %></h3>
-									<hr/>
-									<p> 
-										Edition: 
-										<% if(l.edition){ %>
-										<%= l.edition %>
-										<% } else {%>
-										<%= "no info" %>
-										<% } %>
-									</p>
-									<p> Condition: <%= l.condition%></p>
-									<p> Notes from seller: <%= l.moreInfo%></p>
-								</div>
+								<h3>Lisiting posted on <%= l.datePosted %> by <%= l.seller %></h3>
+								<hr/>
+								<p> 
+									Edition: 
+									<% if(l.edition){ %>
+									<%= l.edition %>
+									<% } else {%>
+									<%= "no info" %>
+									<% } %>
+								</p>
+								<p> Condition: <%= l.condition%></p>
+								<p> Notes from seller: <%= l.moreInfo%></p>
+							</div>
 						</div>
 						<% } %>
 					<% } %>
@@ -154,7 +155,11 @@
 							</form>
 							<form class="deleteT">
 								<input type="hidden" name="tID" value="<%= transID %>"/>
-								<button class="pure-button">Delete interaction</button>
+								<button class="pure-button">Delete interaction - restore listing as "available"</button>
+							</form>
+							<form class="finishT">
+								<input type="hidden" name="tID" value="<%= transID %>"/>
+								<button class="pure-button">Delete interaction - book was sold!"</button>
 							</form>
 
 							<!-- <button type="submit" class="pure-button message">Set meetup</button> -->
@@ -214,7 +219,7 @@
 
 
 	<link href="/javascripts/vendor/jquery-ui/css/custom-theme/jquery-ui-1.9.2.css" rel="stylesheet">
-	<script type="text/javascript" src="/javascripts/index.js"></script>
+	<script type="text/javascript" src="/javascripts/index.min.js"></script>
 	<link rel="stylesheet" href="/stylesheets/style.css"/>
 
 

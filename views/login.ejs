@@ -1,27 +1,85 @@
+
+
+
+
+
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-	<title>Login</title>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="A layout example that shows off a responsive product landing page.">
+
+    <title>Peer to Peer Text Tufts</title>
+
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+	<link rel="stylesheet" href="/stylesheets/marketing.css">
+	
+	<!--[if lte IE 8]>
+    	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+	<![endif]-->
+
+	<!--[if gt IE 8]><!-->
+    	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
+	<!--<![endif]-->
+    
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/layouts/marketing-old-ie.css">
+    <![endif]-->
+    
+    <!--[if gt IE 8]><!-->
+    <!--<![endif]-->
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/signupValidation.css">
 </head>
-<body>
-	<h1>Login</h1>
-	<% if (message.length > 0) { %>
-		<div class="alert alert-danger"><%= message %></div>
-	<% } %>
-	<form action='/login' method="post">
-		<div class="form-group">
-			<label>Email</label>
-			<input type="text" class="form-control" name="email" />
+<body ng-app="myApp" class="index">
+
+
+
+	<div class="header"><div style="clear:both">
+	    <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
+	    	<a class="pure-menu-heading" href="">P2PText</a>
+	        <ul>
+	        	
+	        </ul>
+	        
+	    </div>
+	
+	
+
+	<div class="form-content">
+		<div class="content-head pure-u-3-5" >
+			<form class="pure-form pure-form-aligned" action="/login" method="post">
+				<fieldset>
+					<legend>Login</legend>
+						<% if (lMessage.length > 0) { %>
+							<p class="alert"><%= lMessage %></p>
+						<% } %>
+					<div class="pure-control-group">
+						<label>Email</label>
+						<input type="text" class="form-control" name="email" placeholder="Email"/>
+					</div>
+					<div class="pure-control-group">
+						<label>Password</label>
+						<input type="password" class="form-control" name="password" placeholder="Password"/>
+					</div>
+					<button type="submit" class="pure-button">Login</button>
+				</fieldset>
+			</form>
 		</div>
-		<div class="form-group">
-			<label>Password</label>
-			<input type="password" class="form-control" name="password"/>
-		</div>
-		<button type="submit">Login</button>
-	</form>
-	<hr/>
-	<p>
-		sign up <a href="/signup">here</a></p>
-	</p>
+
+
+		
+	</div>
 </body>
+
+<script type="text/javascript" src="/javascripts/vendor/jquery-ui/js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="/javascripts/index.js"></script>
+<script type="text/javascript" src="/javascripts/vendor/angular/angular.min.js"></script>
+<script type="text/javascript" src="/javascripts/matchDirective.js"></script>
+
+
+
+
+
 </html>

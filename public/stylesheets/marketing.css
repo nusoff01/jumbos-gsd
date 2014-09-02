@@ -731,7 +731,7 @@ tr {
 
 /* This is the main heading that appears on the blue section */
 .splash-head {
-    background: #1f8dd6;
+    background: rgba(0,0,255,.2);
     font-size: 30px;
     font-weight: bold;
     color: white;
@@ -850,14 +850,19 @@ tr {
     /* We decrease the width of the .splash, since we have more width
     to work with */
     .splash {
-        width: 50%;
+        width: 80%;
         height: 50%;
     }
 
     .splash-head {
         font-size: 200%;
+        
     }
 
+    .splash-special {
+        width:70%;
+        margin:auto;
+    }
 
     /* We remove the border-separator assigned to .l-box-lrg */
     .l-box-lrg {
@@ -866,6 +871,10 @@ tr {
 
 }
 
+.splash-special{
+    padding:10px;
+    line-height:150%;
+}
 /*
  * -- DESKTOP (AND UP) MEDIA QUERIES --
  * On desktops and other large devices, we want to over-ride some
@@ -874,7 +883,7 @@ tr {
 @media (min-width: 72em) {
     /* We increase the header font size even more */
     .splash-head {
-        font-size: 500%;
+        font-size: 300%;
     }
     h2 {
         font-size:2.8em;
@@ -882,7 +891,5 @@ tr {
     }
 }
 @media (max-width: 32em) {
-    p {
-
-    }
+    
 }

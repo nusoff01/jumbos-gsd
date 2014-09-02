@@ -79,13 +79,13 @@
 						found = true;
 						coursesByT = findCoursesByT($(this).val());
 						toAddString = "<p>Courses Associated with this book: " + coursesByT + "</p>";
-						$(this).parent().parent()[0].childNodes[11].innerHTML = ("<p>Courses Associated with this book: " + coursesByT);
+						$(this).parent().parent()[0].childNodes[13].innerHTML = ("<p>Courses Associated with this book: " + coursesByT);
 						$("#plus-course").show();
 					};
 				};
 				if(!found) {
 					$(this).parent().append("<p id='addBook'>Title doesnt exist! <a href='/book/new' target='_blank'> [add book]</a></p>");
-					$(this).parent().parent()[0].childNodes[11].innerHTML = "";
+					$(this).parent().parent()[0].childNodes[13].innerHTML = "";
 					$("#plus-course").hide();
 					$("button[type=submit]").attr("disabled", "disabled");
 				}  
@@ -102,5 +102,5 @@
 	});
 
 </script>
-<script type="text/javascript" src="/javascripts/index.js"></script>
+<script type="text/javascript" src="/javascripts/index.min.js"></script>
 </html>

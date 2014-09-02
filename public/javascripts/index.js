@@ -1,29 +1,19 @@
 $(function() {
 
 	// Initial hide of signup
-	$("#signup").hide();
-	$("#login-butn").hide();
+	$("#login").hide();
+	$("#signup-butn").hide();
 	$('.tContent').hide();
 	$('.setLT').hide();
 	$('.l-dropdown').hide();
 
 	// Show signup page hide everything else
-	$("#signup-butn").on('click', function(){
-		$(this).hide();
-		$("#login").hide();
-
-		$("#signup").show();
-		$("#login-butn").show();
-	});
+	$("#signup-butn").on('click', showSignUp);
+		
+	
 
 	// Show login page hide everything else
-	$("#login-butn").on('click', function(){
-		$(this).hide();
-		$("#signup").hide();
-		
-		$("#login").show();
-		$("#signup-butn").show();
-	});
+	$("#login-butn").on('click', showLogin);
 
 
 
@@ -172,6 +162,28 @@ $(function() {
 			}
 		});
 	});
+	$('form.finishT').submit(function (e){
+		e.preventDefault();
+
+		tID = $(this)[0].childNodes[1].value;
+		console.log(tID);
+		data = JSON.stringify({tID: tID});
+		// console.log($(this).parent().parent().parent());
+		$(this).parent().parent().parent().hide();
+		$.ajax({
+			type: 'POST',
+			url: '/transaction/finishT',
+			data: data,
+			processData: false,
+			dataType: 'text',
+			contentType: 'application/json',
+			success: function(data){
+				if(data == "OK"){
+					$(this).parent().parent().parent().hide();
+				} 
+			}
+		});
+	});
 
 	$('#plus-course').on('click', function(){
 
@@ -233,6 +245,21 @@ toggleChat = function(divID, chatID){
 	        scrollTop: $(chatTag).offset().top - 200
 	    }, 1000);
 	}
+}
+
+showSignUp = function(){
+		$("#login").hide();
+		$("#signup-butn").hide();
+		$("#signup").show();
+		$("#login-butn").show();
+	}
+
+showLogin = function(){
+	$("#login-butn").hide();
+	$("#signup").hide();
+	
+	$("#login").show();
+	$("#signup-butn").show();
 }
 
 //click on the "more" button for a listing
@@ -297,7 +324,10 @@ findCoursesByT = function(title){
 }
 addCouseByT = function(bookTitle, dept, num){y
 	data = JSON.stringify()
+}
 
+displayCorrect = function(sOrL){
+	console.log(sOrL);
 }
 
 
