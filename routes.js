@@ -86,6 +86,7 @@ module.exports = function(app, passport) {
 	var book = require('./lib/book.js');
 	app.post('/book/new', book.postNewBook);
 	app.get('/book/new', book.getNewBook);
+	app.post('/book/findCourses', book.findCourses);
 
 //course processes
 	var course = require('./lib/course.js'); 

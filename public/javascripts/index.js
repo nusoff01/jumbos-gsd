@@ -290,6 +290,24 @@ deleteAlert = function(index){
 		});
 }
 
+findCoursesByT = function(title){
+	data = JSON.stringify({title: title});
+		$.ajax({
+			type: 'POST',
+			url: '/book/findCourses',
+			data: data,
+			processData: false, 
+			dataType: 'text',
+			contentType: 'application/json',
+			success: function(response) {
+				return response;
+			}
+		});
+}
+addCouseByT = function(bookTitle, dept, num){
+
+}
+
 
 
 // $('.chat').on('click', function(){
