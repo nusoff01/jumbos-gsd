@@ -27,9 +27,9 @@ $(function() {
 
 
 
-	$("#buy-butn").on('click', function(){
-		console.log("pressed");
-	});
+	// $("#buy-butn").on('click', function(){
+	// 	console.log("pressed");
+	// });
 
 
 	//Page: profile, Section: transaction
@@ -43,7 +43,6 @@ $(function() {
 		$(this).closest('h3').remove();
 		var id = $(this)[0].childNodes[1].value;
 		deleteAlert(id);
-		console.log(id);
 	});
 
 	$('button.goto-alert').on('click', function(){
@@ -51,16 +50,14 @@ $(function() {
 		var id = $(this)[0].childNodes[1].value;
 		var del = $(this)[0].childNodes[3].value;
 		goToTrans(id, del);
-		console.log(del);
 	});
 
 
 	//user deleted their own listing
 
 	$('div.del-listing').on('click', function(){
-		console.log("clicked");
+		
 		var id = $(this)[0].childNodes[1].value;
-		console.log(id);
 		data = JSON.stringify({id : id});
 		div = $(this)[0].parentNode;
 		$.ajax({
@@ -70,7 +67,7 @@ $(function() {
 			processData: false,
 			contentType: 'application/json',
 			success: function(data){
-				console.log(JSON.stringify(data));
+				// console.log(JSON.stringify(data));
 				div.parentNode.removeChild(div);
 				var mes = document.getElementById("alert-message");
 				mes.value = "listing deleted";
@@ -98,27 +95,27 @@ $(function() {
 	// 	});
 	// });
 
-	$('form.acceptMeet').submit(function (e) {
+	// $('form.acceptMeet').submit(function (e) {
 		
-        e.preventDefault();
-        var fd = new FormData($(this)[0]);
-        tID = $(this)[0].childNodes[1].value;
+ //        e.preventDefault();
+ //        var fd = new FormData($(this)[0]);
+ //        tID = $(this)[0].childNodes[1].value;
 
-        data = JSON.stringify({trans : tID});
-        $.ajax({
-        	type: 'POST',
-            url: '/transaction/acceptLT',
-            data : data,
-            processData: false,
-            contentType: 'application/json',					
-            success: function(data) {
-            	// add a message to the transaction page, emmit an alert to 
-            	// the other person in the transaction
-                console.log('success');
-                console.log(JSON.stringify(data));
-            }
-        });
-	});
+ //        data = JSON.stringify({trans : tID});
+ //        $.ajax({
+ //        	type: 'POST',
+ //            url: '/transaction/acceptLT',
+ //            data : data,
+ //            processData: false,
+ //            contentType: 'application/json',					
+ //            success: function(data) {
+ //            	// add a message to the transaction page, emmit an alert to 
+ //            	// the other person in the transaction
+ //                console.log('success');
+ //                console.log(JSON.stringify(data));
+ //            }
+ //        });
+	// });
 
 
 	//Page: profile, Section: transaction
@@ -159,7 +156,7 @@ $(function() {
 
 		tID = $(this)[0].childNodes[1].value;
 		data = JSON.stringify({tID: tID});
-		console.log($(this).parent().parent().parent());
+		// console.log($(this).parent().parent().parent());
 		$(this).parent().parent().parent().hide();
 		$.ajax({
 			type: 'POST',
@@ -171,17 +168,14 @@ $(function() {
 			success: function(data){
 				if(data == "OK"){
 					$(this).parent().parent().parent().hide();
-				} else {
-					console.log("something went wrong");
-				}
+				} 
 			}
 		});
 	});
 
 	$('#plus-course').on('click', function(){
-		console.log("clicked");
+
 		var courseNum = ++($(this)[0].parentNode.parentNode.childNodes[1].value);
-		console.log($(this)[0].parentNode.parentNode.childNodes[1].value);
 		
 		var appendage = "<div class='form-container'><h3>[Add Course]</h3>\
 					<div class='pure-control-group'><label>Course Department</label>\
@@ -194,26 +188,21 @@ $(function() {
         $(this).parent().prepend(appendage);
 	})
 
-
-
-
-
 	//Page: add listing
 	//occurs when a person presses submit to add a listing
-	$('form.addL').submit(function (e) {
-		e.preventDefault();
-	});
+	// $('form.addL').submit(function (e) {
+	// 	e.preventDefault();
+	// });
 
 	
 
 });
 
-buy = function(listing){
-	console.log("listing id: " + listing._id);
-}
+// buy = function(listing){
+// 	console.log("listing id: " + listing._id);
+// }
 
 $('#container h3').click(function(e) {
-	console.log("this one");
     //Close all <div> but the <div> right after the clicked <a>
     $(e.target).next('div').siblings('div').slideUp('fast');
 });
@@ -235,10 +224,10 @@ toggleChat = function(divID, chatID){
 	//console.log(id);
 	divTag = "#" + divID;
 	chatTag = "#" + chatID;
-	console.log(chatTag);
+	// console.log(chatTag);
 
 	$(divTag).toggle();
-	console.log($(divTag).is(":visible"));
+	// console.log($(divTag).is(":visible"));
 	if($(divTag).is(":visible") ){
 		$('html, body').animate({
 	        scrollTop: $(chatTag).offset().top - 200
@@ -273,7 +262,6 @@ goToTrans = function(id, delID){
 //delete an alert given an index
 
 deleteAlert = function(index){
-	console.log("deleteAlert called");
 	data = JSON.stringify({index: index});
 		$.ajax({
 			type: 'POST',
@@ -284,7 +272,6 @@ deleteAlert = function(index){
 			contentType: 'application/json',
 			success: function(response) {
 				if(response == "OK"){
-					console.log("success");
 				}
 			}
 		});
@@ -303,9 +290,7 @@ findCoursesByT = function(title){
 			async: false,
 			contentType: 'application/json',
 			success: function(response) {
-				console.log(response);
 				retString += response;
-				
 			}
 		});
 		return retString;

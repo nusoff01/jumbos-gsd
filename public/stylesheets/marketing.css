@@ -408,7 +408,11 @@ body {
 }
 
 .form-content {
-    margin-top: 30px;
+    padding-top: 0px;
+    border:3px solid white;
+    border-radius: 6px;
+    width:80%;
+    margin:auto;
 }
 .profile {
     margin-top: 0px;
@@ -469,6 +473,9 @@ body {
     background-image: url('/imgs/dark_geometric.png');
     
     background-repeat: repeat;
+}
+.index{
+    background:black;
 }
 
 .chat-log{
@@ -701,15 +708,15 @@ tr {
  */
 
 .splash-container {
-    background: #1f8dd6;
+    background: black;
     z-index: 1;
     overflow: hidden;
     /* The following styles are required for the "scroll-over" effect */
     width: 100%;
-    height: 88%;
     top: 0;
     left: 0;
-    position: fixed !important;
+    padding-bottom: 20px;
+    
 }
 
 .splash {
@@ -717,14 +724,14 @@ tr {
     width: 80%;
     height: 50%;
     margin: auto;
-    position: absolute;
-    top: 100px; left: 0; bottom: 0; right: 0;
+    
     text-align: center;
     text-transform: uppercase;
 }
 
 /* This is the main heading that appears on the blue section */
 .splash-head {
+    background: #1f8dd6;
     font-size: 30px;
     font-weight: bold;
     color: white;
@@ -733,6 +740,7 @@ tr {
     font-weight: 100;
     border-radius: 5px;
     line-height: 1em;
+  
 }
 
 /* This is the subheading that appears on the blue section */
@@ -745,7 +753,6 @@ tr {
     line-height: 1em;
     letter-spacing: 0.05em;
     opacity: 1;
-  
 }
 
 /*
@@ -763,6 +770,10 @@ tr {
 
 }
 
+
+.header{
+    background-color:black;
+}
 /* This is the class used for the main content headers (<h2>) */
 .content-head {
     font-weight: 400;
@@ -844,7 +855,7 @@ tr {
     }
 
     .splash-head {
-        font-size: 400%;
+        font-size: 200%;
     }
 
 

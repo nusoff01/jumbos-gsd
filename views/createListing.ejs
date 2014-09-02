@@ -79,13 +79,10 @@
 						found = true;
 						coursesByT = findCoursesByT($(this).val());
 						toAddString = "<p>Courses Associated with this book: " + coursesByT + "</p>";
-						console.log("It: " + coursesByT);
-						console.log($(this).parent().parent()[0].childNodes[11]);
 						$(this).parent().parent()[0].childNodes[11].innerHTML = ("<p>Courses Associated with this book: " + coursesByT);
 						$("#plus-course").show();
 					};
 				};
-
 				if(!found) {
 					$(this).parent().append("<p id='addBook'>Title doesnt exist! <a href='/book/new' target='_blank'> [add book]</a></p>");
 					$(this).parent().parent()[0].childNodes[11].innerHTML = "";
