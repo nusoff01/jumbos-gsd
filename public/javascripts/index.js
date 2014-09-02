@@ -177,22 +177,21 @@ $(function() {
 
 	$('#plus-course').on('click', function(){
 		console.log("clicked");
-		var courseNum = $(this)[0].parentNode.childNodes[1].value++;
+		var courseNum = ++($(this)[0].parentNode.childNodes[1].value);
 		console.log($(this)[0].parentNode.childNodes[1].value);
 		
 		var appendage = "<h2>Course " + courseNum + "</h2>\
 					<div class='pure-control-group'><label>Course Department</label>\
-            			<input type='text' class='form-control' name='department'/>\
+            			<input type='text' class='form-control' name='department" + courseNum + "'/>\
             		</div>\
             		<div class='pure-control-group'>\
             			<label>Course Number</label>\
-            			<input type='number' class='form-control' name='number'/>\
+            			<input type='number' class='form-control' name='number" + courseNum + "'/>\
             		</div>";
         $(this).parent().append(appendage);
-
-
-
 	})
+
+
 
 
 
