@@ -47,9 +47,11 @@ $(function() {
 	});
 
 	$('button.goto-alert').on('click', function(){
+		$(this).closest('h3').remove();
 		var id = $(this)[0].childNodes[1].value;
-		goToTrans(id);
-		console.log(id);
+		var del = $(this)[0].childNodes[3].value;
+		goToTrans(id, del);
+		console.log(del);
 	});
 
 
@@ -239,7 +241,7 @@ toggleChat = function(divID, chatID){
 	console.log($(divTag).is(":visible"));
 	if($(divTag).is(":visible") ){
 		$('html, body').animate({
-	        scrollTop: $(chatTag).offset().top
+	        scrollTop: $(chatTag).offset().top - 200
 	    }, 1000);
 	}
 }
@@ -258,13 +260,14 @@ togglelDrop = function(divID, toggleID){
 
 //click on the goto button for an alert
 
-goToTrans = function(id){
+goToTrans = function(id, delID){
 	divTag = "#c" + id;
 	chatTag = "#s" + id;
 	$(divTag).show();
 	$('html, body').animate({
 	    scrollTop: $(chatTag).offset().top
 	}, 1000);
+	deleteAlert(delID);
 }
 
 //delete an alert given an index
