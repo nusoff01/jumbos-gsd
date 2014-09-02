@@ -860,7 +860,7 @@ tr {
     }
 
     .splash-special {
-        width:70%;
+       
         margin:auto;
     }
 
@@ -872,6 +872,7 @@ tr {
 }
 
 .splash-special{
+    border:none;
     padding:10px;
     line-height:150%;
 }
