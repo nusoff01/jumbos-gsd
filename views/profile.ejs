@@ -23,12 +23,13 @@
 							<input type="hidden" value="<%= i %>" />
 							<i class="fa fa-trash-o fa-lg"></i>
 						</button>
-
+						<% if(alert.link){ %>
 						<button class="pure-button goto-alert" >
 							<input type="hidden" value="<%= alert.link %>"/>
 							<input type="hidden" value="<%= i %>" />
 							<i class="fa fa-arrow-circle-right fa-lg"></i>
 						</button>
+						<% } %>
 					</h3>
 					<% } %>
 				<% } %>
@@ -85,7 +86,7 @@
 			
 			</div>
 			<div class="headerBox" id="trans-header">
-				<h1>Transactions</h1><hr class="header-hr" id="transactions-hr"/>
+				<h1>Interactions</h1><hr class="header-hr" id="transactions-hr"/>
 			</div>
 			<div class="transactions" id="transactions">
 			<% for(var i=0; i < user.transactions.length; i++) { %>
@@ -153,7 +154,7 @@
 							</form>
 							<form class="deleteT">
 								<input type="hidden" name="tID" value="<%= transID %>"/>
-								<button class="pure-button">Cancel transaction</button>
+								<button class="pure-button">Delete interaction</button>
 							</form>
 
 							<!-- <button type="submit" class="pure-button message">Set meetup</button> -->

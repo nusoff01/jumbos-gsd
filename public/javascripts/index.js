@@ -157,22 +157,23 @@ $(function() {
 
 		tID = $(this)[0].childNodes[1].value;
 		data = JSON.stringify({tID: tID});
-		console.log($(this).parentNode.parentNode);
-		// $.ajax({
-		// 	type: 'POST',
-		// 	url: '/transaction/delT',
-		// 	data: data,
-		// 	processData: false,
-		// 	dataType: 'text',
-		// 	contentType: 'application/json',
-		// 	success: function(data){
-		// 		if(data == "OK"){
-		// 			console.log("listing deleted");
-		// 		} else {
-		// 			console.log("something went wrong");
-		// 		}
-		// 	}
-		// });
+		console.log($(this).parent().parent().parent());
+		$(this).parent().parent().parent().hide();
+		$.ajax({
+			type: 'POST',
+			url: '/transaction/delT',
+			data: data,
+			processData: false,
+			dataType: 'text',
+			contentType: 'application/json',
+			success: function(data){
+				if(data == "OK"){
+					$(this).parent().parent().parent().hide();
+				} else {
+					console.log("something went wrong");
+				}
+			}
+		});
 	});
 
 	$('#plus-course').on('click', function(){

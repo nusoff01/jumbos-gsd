@@ -29,6 +29,12 @@ html, body{
     background-color: blue;
 }
 
+.deleteT button{
+    width:90%;
+    background-color:white;
+    color: red;
+}
+
 .scroll-table{
     overflow: scroll;
     max-width: 100%;
