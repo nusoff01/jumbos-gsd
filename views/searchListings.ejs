@@ -38,6 +38,7 @@
 		</div>	
 	</div>	
 	<hr/>
+	<div id="listings-results">
 	<% if(listings){ %>
 		<% for(var i=0; i<listings.length; i++) { %>
 			<% if(listings[i].seller != user.userName){ 
@@ -50,7 +51,7 @@
 				<div class="pure-u-4-5 l-main">
 					<h2 class="book-title"><%= l.book.name %></h2>
 					<hr/> 
-					<p>Price: $<%=l.price %> | <span class="clickable" onclick="togglelDrop('<%= listingIDDrop%>', '<%=toggleID %>')" id="<%=toggleID%>">more &#9660;</p>
+					<p>Price: $<%=l.price %> | <span class="clickable" onclick="togglelDrop('<%= listingIDDrop%>', '<%=toggleID %>')" id="<%=toggleID%>">more &#9660;</span></p>
 				</div>
 				<div class="pure-u-1-5 l-button" onclick="javascript:this.childNodes[1].submit()">
 					<form action="/transaction/postT" method="post">
@@ -58,13 +59,10 @@
 						<button class="pure-button ">$<%=l.price%></button>
 					</form>
 				</div>
-			</div>
-
-
-			
-			<div class="l-dropdown" id="<%= listingIDDrop%>">
+				<div class="l-dropdown" id="<%= listingIDDrop%>">
 				<h3>Lisiting posted on <%= l.datePosted %> by <%= l.seller %></h3>
 				<hr/>
+				<p> Title: <%=l.book.name%> </p>
 				<p> 
 					Edition: 
 					<% if(l.edition){ %>
@@ -76,11 +74,18 @@
 				<p> Condition: <%= l.condition%></p>
 				<p> Notes from seller: <%= l.moreInfo%></p>
 			</div>
+			</div>
 
+
+			
+			
 
 			<% } %>
 		<% } %>
-	<% } %>  
+	<% } else { %>
+	  <h3>Sorry, no listings found! Check back later.</h3>
+	  <% } %>
+	</div>
 
 	
 		

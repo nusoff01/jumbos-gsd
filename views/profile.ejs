@@ -50,33 +50,34 @@
 						<div class="listing">
 							<div class="pure-g l-complete">
 								<div class="pure-u-4-5 l-main">
-									<h2 class="book-title"><%= l.book.name %> </h2>
+									<h2 class="book-title-profile"><%= l.book.name %> </h2>
 									<hr/> 
-									<p>Price: $<%=l.price %> | <span class="clickable" onclick="togglelDrop('<%= listingIDDrop%>', '<%=toggleID %>')" id="<%=toggleID%>">more &#9660;</p>
+									<p class="book-main-profile">Price: $<%=l.price %> | <span class="clickable" onclick="togglelDrop('<%= listingIDDrop%>', '<%=toggleID %>')" id="<%=toggleID%>">more &#9660;</p>
 								</div>
 								<div class="pure-u-1-5 l-button trash del-listing">
 									
 									<input type="hidden" name="id" value='<%= l._id%>'/>
 									<button class="pure-button"><i class="fa fa-trash-o fa-lg"></i></button>
 								</div>
+								<div class="l-dropdown" id="<%= listingIDDrop%>">
+									<h3>Lisiting posted on <%= l.datePosted %> by <%= l.seller %></h3>
+									<hr/>
+									<p> Title: <%=l.book.name%> </p>
+									<p> 
+										Edition: 
+										<% if(l.edition){ %>
+										<%= l.edition %>
+										<% } else {%>
+										<%= "no info" %>
+										<% } %>
+									</p>
+									<p> Condition: <%= l.condition%></p>
+									<p> Notes from seller: <%= l.moreInfo%></p>
+								</div>
 								
+								
+							</div>
 							
-								
-							</div>
-							<div class="l-dropdown" id="<%= listingIDDrop%>">
-								<h3>Lisiting posted on <%= l.datePosted %> by <%= l.seller %></h3>
-								<hr/>
-								<p> 
-									Edition: 
-									<% if(l.edition){ %>
-									<%= l.edition %>
-									<% } else {%>
-									<%= "no info" %>
-									<% } %>
-								</p>
-								<p> Condition: <%= l.condition%></p>
-								<p> Notes from seller: <%= l.moreInfo%></p>
-							</div>
 						</div>
 						<% } %>
 					<% } %>
@@ -211,6 +212,19 @@
 
 <script type="text/javascript" src="/javascripts/vendor/jquery-ui/js/jquery-1.8.3.js" ></script>
 <script type="text/javascript" src="/javascripts/vendor/jquery-ui/js/jquery-ui-1.9.2.min.js"></script>
+<script type="text/javascript" src="/javascripts/vendor/jquery-ui/js/jquery.textfill.min.js"></script>
+
+<script>
+	function adjustHeights(elem) {
+	      var fontstep = 2;
+	      if (jQuery(elem).height()>jQuery(elem).parent().height() || jQuery(elem).width()>jQuery(elem).parent().width()) {
+	        jQuery(elem).css('font-size',((jQuery(elem).css('font-size').substr(0,2)-fontstep)) + 'px').css('line-height',((jQuery(elem).css('font-size').substr(0,2))) + 'px');
+	        adjustHeights(elem);
+	      }
+	    }
+	jQuery(document).ready(function(){ setTimeout(function(){ adjustHeights('.book-title'); }, 100); });
+
+</script>
  
 
 

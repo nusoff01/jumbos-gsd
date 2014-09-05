@@ -169,7 +169,10 @@ body {
 .pure-g{
     
 }
-
+#listings-results{
+    max-height:500px;
+    overflow-y: auto;
+}
 
 .listings{
     background-color: rgba(0,255,0,.1);
@@ -196,6 +199,9 @@ body {
 
 .l-dropdown h3{
     font-size: 1.2em;
+    line-height:1em;
+    margin-top:4px;
+    margin-bottom:2px;
 }
 
 .l-dropdown hr{
@@ -235,6 +241,9 @@ body {
     }
 }
 @media(min-width: 48em){
+    .l-main-profile p{
+        font-size:1.5vw;
+    }
     .l-complete p{
         font-size: 1.4em;
         line-height: 1.4em;
@@ -306,12 +315,12 @@ body {
 }
 
 .l-main p{
-    font-size:130%;
+    
     margin-top:5px;
 }
 .l-main hr{
     margin:0px auto;
-    margin-top: 5px;
+    
     background-color:green;
     border-color:green;
     color:green;
@@ -442,10 +451,17 @@ body {
     display: inline;
 }
 
-.book-title{
-    overflow-x:auto;
-    overflow-y:hidden;
+.book-title, .book-title-profile{
+   /* overflow-x:auto;
+    overflow-y:hidden;*/
+    font-size: 30px;
+    font-size: 3.5vw;
+    margin-top:2px;
+    margin-bottom:2px;
     /*word-wrap: break-word;*/
+}
+.book-main, .l-main{
+    font-size: 2.5vw;
 }
 
 .button-large{
@@ -831,6 +847,16 @@ tr {
     /* We increase the body font size */
     body {
         font-size: 16px;
+    }
+    .book-title-profile{
+       /* overflow-x:auto;
+        overflow-y:hidden;*/
+        font-size: 20px;
+        font-size: 2.5vw;
+        /*word-wrap: break-word;*/
+    }
+    .l-main p, .l-main-profile p{
+        font-size: 1.7vw;
     }
 
     .pure-u-md-2-3{

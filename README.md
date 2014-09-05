@@ -1,6 +1,5 @@
-mean-stack-skeleton
-===================
+RELEASE LOG
 
-NodeJS and MongoDB setup instructions:
+0.1.0 First release. 
 
-http://thecodebarbarian.com/2013/07/22/introduction-to-the-mean-stack-part-one-setting-up-your-tools/
+0.1.1 Fixed the issue of font size too large when displaying textbook names somewhat. When going to the buy page, now every textbook is listed
